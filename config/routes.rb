@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   } 
   
   root to: 'folders#top'
-  get 'folders/index', to: 'folders#index'
-  resource :folders
+  resources :folders
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
