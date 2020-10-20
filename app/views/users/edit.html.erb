@@ -1,0 +1,5 @@
+<%= form_for @user do |f| %>
+    <%= f.text_field :name, value: @user.name %>
+    <%= f.submit "保存" %>
+<% end %>
+<P><%= @user.email %></p>

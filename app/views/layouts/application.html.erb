@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><html>
+  
+  <head>
+    <title>Api</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   
+  </head>
+
+  <body>
+    <%= link_to  "/folders/index" do %>
+      <i class="fa fa-home fa-2x"></i>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to  "/users/#{current_user.id}" do %>
+        <i class="fa fa-user fa-2x"></i>
+      <% end %>
+    <% end %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <%= yield %>
+    
+  </body>
+</html>
