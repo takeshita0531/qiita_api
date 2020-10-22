@@ -9,15 +9,20 @@ class FoldersController < ApplicationController
     # @list = @items.each {|item| puts "[#{item['id']}"}
     @folder = Folder.new(folder_params)
     @folder.save
+    
   end
   
   def show
-
+    # query = 'created:>2015-10-09' # 参考 検索時に利用できるオプション
+    # status, next_page, @items = QiitaApiManager.search(query)
+    
   end 
   
   
   require 'net/http'
   require 'json'
+  
+  
 
   class QiitaApiManager
     PER_PAGE = 100
@@ -52,8 +57,9 @@ class FoldersController < ApplicationController
   end
   
   private
+  
   def folder_params
-    params.require(:folder).permit(:user_id, :article_id)
+    params.fetch(:folder, {}).permit(:user_id, :article_id)
   end 
 
 end
