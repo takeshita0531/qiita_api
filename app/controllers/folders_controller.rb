@@ -9,13 +9,18 @@ class FoldersController < ApplicationController
     # @list = @items.each {|item| puts "[#{item['id']}"}
     @folder = Folder.new(folder_params)
     @folder.save
-    
+    # article_id = Folder.new(article_id: folder_params[:article_id])
+    # @folders = Folder.where.not(article_id: nil)
+    # if @folders == article_id
+    #   render "users/edit"
+    # else
+    #   flash[:notice] = "すでに保存しています"
+    # end 
   end
   
   def show
     # query = 'created:>2015-10-09' # 参考 検索時に利用できるオプション
     # status, next_page, @items = QiitaApiManager.search(query)
-    
   end 
   
   
@@ -59,7 +64,7 @@ class FoldersController < ApplicationController
   private
   
   def folder_params
-    params.fetch(:folder, {}).permit(:user_id, :article_id)
+    params.fetch(:folder, {}).permit(:user_id, :article_id, :title, :url, :user_name)
   end 
 
 end

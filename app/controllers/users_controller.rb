@@ -6,6 +6,9 @@ class UsersController < ApplicationController
   
   def show
     @user = current_user
+    # @folders = Folder.all
+    @folders = Folder.where(user_id: current_user)
+    # @user = User.find_by(id: @folder.user_id)
   end
   
   def create

@@ -14,7 +14,15 @@
     <tbody>
     <%= @items.each do |item| %>
         <%= form_for @folder,:url => { action: "index" }, html: {method: "get"} do |f| %>
-           <tr><td><%= item['created_at'] %></td><td><%= f.hidden_field :article_id, value: item['id'] %><%= f.hidden_field :user_id, value: current_user.id %><%= item['user']['id'] %></td><td><%= link_to(item['title'], item['url']) %> <div class="save-btn"><%= f.submit "保存",  class: "btn btn-primary"  %></div></td></tr> 
+           <tr><td><%= item['created_at'] %></td>
+           <td><%= f.hidden_field :article_id, value: item['id'] %>
+           <%= f.hidden_field :user_id, value: current_user.id %>
+           <%= f.label :user_name, value: item['user']['id'] %>
+           <%= f.hidden_field :user_name, value: item['user']['id'] %></td>
+           <td><%= f.label :title, value: item['title'] %>
+           <%= f.hidden_field :title, value: item['title'] %>
+           <%= f.hidden_field :url, value: item['url'] %>
+           <div class="save-btn"><%= f.submit "保存",  class: "btn btn-primary"  %></div></td></tr> 
         <% end %>
     <% end %>
     </tbody>

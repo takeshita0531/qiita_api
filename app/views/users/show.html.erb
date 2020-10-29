@@ -1,4 +1,19 @@
-<P><%= @user.name%></p>
-<P><%= @user.email%></p>
-<%= link_to "編集", "/users/#{@user.id}/edit" %>
+<div class="user_show" style="text-align:center;">
+    <%= @user.name %>
+    <%= link_to "編集", "/users/#{@user.id}/edit" %>
+</div>
+<div class="container" style="padding:20px 0" >
+    <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+        <tr><th>ID</th><th>タイトル</th></tr>
+    </thead>
+    <tbody>
+    <% @folders.each do |folder| %>
+        <tr><td><%= folder.user_name %></td>
+        <td><a href=<%= folder.url %>><%= folder.title %></a></td></tr>
+    <% end %>
+    </tbody>
+    </table>
+</div>
+
 
