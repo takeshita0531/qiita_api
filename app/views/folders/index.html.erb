@@ -5,6 +5,17 @@
     }
 </style>
 
+<% if flash[:notice] %>
+    <div class="flash" style="float: right;">
+        <%= flash[:notice] %>
+    </div>
+<% end %>
+<%= form_tag(folders_path,:method => "get") do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag "記事を検索", :name => nil%>
+<% end %>
+
+
 
 <div class="container" style="padding:20px 0;">
     <table class="table table-striped table-bordered table-hover table-condensed">
@@ -12,14 +23,14 @@
         <tr><th>投稿日</th><th>ID</th><th>タイトル</th></tr>
     </thead>
     <tbody>
-    <%= @items.each do |item| %>
+    <% @items.each do |item| %>
         <%= form_for @folder,:url => { action: "index" }, html: {method: "get"} do |f| %>
            <tr><td><%= item['created_at'] %></td>
            <td><%= f.hidden_field :article_id, value: item['id'] %>
            <%= f.hidden_field :user_id, value: current_user.id %>
            <%= f.label :user_name, value: item['user']['id'] %>
            <%= f.hidden_field :user_name, value: item['user']['id'] %></td>
-           <td><%= f.label :title, value: item['title'] %>
+           <td><a href =<%= item['url'] %> target = ["_blenk"]><%= f.label :title, value: item['title'] %></a>
            <%= f.hidden_field :title, value: item['title'] %>
            <%= f.hidden_field :url, value: item['url'] %>
            <div class="save-btn"><%= f.submit "保存",  class: "btn btn-primary"  %></div></td></tr> 
@@ -28,3 +39,34 @@
     </tbody>
     </table>
 </div>
+
+<script>
+    $(function(){
+        setTimeout("$('.flash').fadeOut('slow')",2000);
+    });
+    
+     var imPayload = {
+    "token": token,　//必要なスコープはbot・im:write
+    "user": "https://ambitions-group.slack.com/archives/D01ECFF3S95",
+  };
+  
+  var imOptions ={
+    "method" : "post",
+    "contentType": "application/x-www-form-urlencoded",
+    "payload" : imPayload
+  };
+
+  var messagePayload = {
+    "token": token,　//必要なスコープはbot・chat:write:user・chat:write:bot
+    "channel":JSON.parse(UrlFetchApp.fetch('https://slack.com/api/im.open', imOptions)).channel.id,
+    "text": "テスト"
+  };
+
+  var messageOptions = {
+    "method" : "post",
+    "contentType": "application/x-www-form-urlencoded",
+    "payload" : messagePayload
+  };
+
+  var result = UrlFetchApp.fetch('https://slack.com/api/chat.postMessage', messageOptions);
+</script>

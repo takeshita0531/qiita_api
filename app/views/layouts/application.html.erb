@@ -17,6 +17,9 @@
         <i class="fa fa-user fa-2x"></i>
       <% end %>
     <% end %>
+    <%= link_to "/files" do %>
+      <i class="fa fa-folder-open fa-2x "></i> 
+    <% end %>
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     <%= yield %>
     
