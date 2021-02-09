@@ -1,9 +1,10 @@
 class Folder < ApplicationRecord
     has_many :users
+    has_many :file_names
     
-    def self.search(search)
-       search ? where("title LIKE ?", "%#{search}%") : all
-    end 
+    # def self.search(search)
+    #   search ? where("title LIKE ?", "%#{search}%") : all
+    # end 
     # before_save :set_json
     
     # def qiita_id

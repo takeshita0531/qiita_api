@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+  
   def new
     @user = User.new
     session[:user_id] = @user.id

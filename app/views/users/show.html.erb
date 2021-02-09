@@ -1,73 +1,95 @@
 <style>
-    /*.container-fluid{*/
-        /*dispry: inline-block*/
-    /*}*/
-    /*.icon{*/
-        /*margin-left:auto;*/
-        /*position: absolute;*/
-    /*    float: right;*/
-        /*text-align: right;*/
-        /*padding-left:50px;*/
-    /*}*/
-    .dropdown {
-        float: right;
-    }
-    .drop-hover:hover > .dropdown-menu {
-          display: block !important;
-    }
-    .delete {
-        padding-left: 33px;
-    }
-</style>
 
-<div class="user_show" style="text-align:center;">
-    <p><%= @user.name %></P>
-    <%= link_to "プロフィール編集", "/users/#{@user.id}/edit" %>
-</div>
-<% if @user.id == current_user.id %>
-    <div class="container" style="padding:20px 0" >
-        <table class="table table-striped table-bordered table-hover table-condensed">
-        <thead>
-            <tr><th>ID</th><th>タイトル</th></tr>
-        </thead>
-        <tbody>
-        <% @folders.zip(@files) do |folder, file| %>
-            <tr><td><%= folder.user_name %></td>
-            <td>
-            <a href=<%= folder.url %> target = ["_blank"]><%= folder.title %></a>
-            
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-                <a class="fa fa-ellipsis-v" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-              </button>
-                  <ul class="dropdown-menu">
-                    <li class="dropleft drop-hover">
-                      <a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">保存先</a>
-                      <ul class="dropdown-menu">
-                        <li class="dropleft drop-hover">
-                          <a class="dropdown-item" href="#">
-                           <% @files.each do |file| %>
-                              <ul><li><%= link_to file.file_name, {controller: "users", action: "update", file_id: file.id, folder_id: folder.id}, method: :put %>
-                                <% if folder.file_id == file.id %>
-                                   (保存中)
-                                <% end %>
-                              </li></ul>
-                           <% end %>
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <div class="delete">
-                        
-                      <li><a class="dropdown-item" href="#"><%= link_to "削除", "/folders/#{folder.id}/destroy", method: :get %></a></li>
-                    </div>
-                  </ul>
+
+  body {
+      overscroll-behavior: none;
+  }
+
+  .main {
+    /*height: 100%;*/
+  }
+
+  .user-show {
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+  }
+  
+  .dropdown {
+    float: right;
+  }
+  
+  .drop-hover:hover > .dropdown-menu {
+    display: block !important;
+  }
+  
+  .delete {
+    padding-left: 33px;
+  }
+  
+  .main {
+    width: 80%;
+    float: right;
+    margin-right: 20px;
+  }
+  
+  /*.dropdown {*/
+  /*  width: 50vw;*/
+  /*  min-width: ;*/
+  /*}*/
+    
+</style>
+<div class="main">
+<div class="user-show">
+  <%= @user.name %>
+</div
+
+  <% if @user.id == current_user.id %>
+      <div class="container" style="padding:20px 0" >
+          <table class="table table-striped table-bordered table-hover table-condensed">
+          <thead>
+              <tr><th>ID</th><th>タイトル</th></tr>
+          </thead>
+          <tbody>
+          <% @folders.zip(@files) do |folder, file| %>
+              <tr><td><%= folder.user_name %></td>
+              <td>
+              <a href=<%= folder.url %> target = ["_blank"]><%= folder.title %></a>
+              
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                  <a class="fa fa-ellipsis-v" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                      <li class="dropleft drop-hover">
+                        <a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">保存先</a>
+                        <ul class="dropdown-menu">
+                          <li class="dropleft drop-hover">
+                            <a class="dropdown-item" href="#">
+                             <% @files.each do |file| %>
+                                <ul><li><%= link_to file.file_name, {controller: "users", action: "update", file_id: file.id, folder_id: folder.id}, method: :put %>
+                                  <% if folder.file_id == file.id %>
+                                     (保存中)
+                                  <% end %>
+                                </li></ul>
+                             <% end %>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <div class="delete">
+                        <li><a class="dropdown-item" href="#"><%= link_to "削除", "/folders/#{folder.id}/destroy", method: :get %></a></li>
+                      </div>
+                    </ul>
                 </div>
-            </td></tr>
-        <% end %>
-        </tbody>
-        </table>
-    </div>
-<% end %>
+              </td></tr>
+          <% end %>
+          </tbody>
+          </table>
+  <% end %>
+</div>
+
 
 

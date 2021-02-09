@@ -1,34 +1,60 @@
 <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overscroll-behavior: none;
+}
+
 .width {
      width: 150px;
  }
  
- li {
-     padding-top: 5px;
- }
+ .main {
+    width: 80%;
+    float: right;
+    margin-right: 20px;
+  }
+  
+  .file-create {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-left: 1px solid #DDD;
+      border-right:  1px solid #DDD;
+  }
+  
+ 
 </style>
-<div>ファイルを作成する</div>
-<%= form_for(@file_name, url:{controller:'files', action:'create'}) do |f| %>
-    <%= f.text_field :file_name %>
-    <%= f.submit "新規作成" %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-<% end %>
-<div class="container" style="padding:20px 0;">
-    <table class="table table-striped table-bordered table-hover table-condensed">
-        <thead>
-            <tr><th class="width">ファイル名</th><th>保存内容</th></tr>
-        </thead>
-        <tbody>
-            <% @files.each do |file| %>
-                <tr><td class="width"><%=  file.file_name %></td>
-                <td>
-                <% @folders.each do |folder| %>
-                    <% if folder.file_id == file.id %>
-                        <li><a href=<%= folder.url %> target = ["_blank"]><%= folder.title %></a></li>
+
+<div class="main">
+    <div class="file-create">
+        <%= form_for(@file_name, url:{controller: 'files', action: 'create'}) do |f| %>
+            <%= f.text_field :file_name, placeholder: "ファイルを作成する" %>
+            <%= f.submit "新規作成" %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+        <% end %>
+    </div>
+        <table class="table table-striped table-bordered table-hover table-condensed">
+            <thead>
+                <tr><th class="width">ファイル名</th><th>保存内容</th></tr>
+            </thead>
+            <tbody>
+                <% @files.each do |file| %>
+                    <tr><td class="width"><%=  file.file_name %></td>
+                    <td>
+                    <% @folders.each do |folder| %>
+                        <% if folder.file_id == file.id %>
+                             <p><a href=<%= folder.url %> target = ["_blank"]><%= folder.title %></a></p>
+                        <% end %>
                     <% end %>
+                   </td></tr>
                 <% end %>
-                </td>
-            <% end %>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 </div>
