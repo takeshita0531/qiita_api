@@ -32,7 +32,7 @@
     width: 80%;
 }
 </style>
-
+<% if false %>
     <% if flash[:notice] %>
         <div class="flash" style="float: right;">
             <%= flash[:notice] %>
@@ -45,6 +45,7 @@
         <% end %>
     </div>
     <% end %>
+<% end %>
     <div class="main">
         <table class="table table-striped table-bordered table-hover table-condensed">
             <thead>

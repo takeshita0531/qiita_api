@@ -118,6 +118,7 @@ GEM
       omniauth-oauth (~> 1.1)
       rack
     orm_adapter (0.5.0)
+    pg (1.2.3)
     popper_js (1.16.0)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -230,6 +231,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   omniauth-twitter
+  pg
   pry-rails
   public_uid
   puma (~> 3.0)
@@ -239,7 +241,7 @@ DEPENDENCIES
   slack-api
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.3.6)
+  sqlite3
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
