@@ -9,7 +9,6 @@
   </head>
 
   <body>
-    <%= yield %>
     <div class="side-bar">
       <% if user_signed_in? %>
         <div class="home">
@@ -37,5 +36,6 @@
       <% end %>
     </div>
     
+    <%= yield %>
   </body>
 </html>
