@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'files/index'
+  # get 'files/index'
 
   devise_for :users, :controllers => {
   :registrations => 'users/registrations',
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :folders, only: [:index, :top, :update]
   get 'folders/:id/destroy' => 'folders#destroy'
 
-  resources :files
+  resources :files, only: [:index, :show, :create]
  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

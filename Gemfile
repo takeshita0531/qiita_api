@@ -63,3 +63,5 @@ gem 'rb-readline'
 group :production do
   gem 'pg'
 end
+
+gem 'ransack'

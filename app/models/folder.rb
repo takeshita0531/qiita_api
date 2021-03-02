@@ -1,7 +1,13 @@
 class Folder < ApplicationRecord
     has_many :users
     has_many :file_names
-    
+    def self.search(search) #self.はUser.を意味する
+     if search
+       where(['title LIKE ?', "%#{search}%"]) #検索とuseanameの部分一致を表示。
+     else
+       all #全て表示させる
+     end
+    end
     # def self.search(search)
     #   search ? where("title LIKE ?", "%#{search}%") : all
     # end 

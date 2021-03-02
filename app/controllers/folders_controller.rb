@@ -5,12 +5,28 @@ class FoldersController < ApplicationController
     @folder = Folder.new
   end 
   
+  def top
+  end 
+  
   def index
     query = 'created:>2015-10-09' # 参考 検索時に利用できるオプション
     status, next_page, @items = QiitaApiManager.search(query)
     # @list = @items.each {|item| puts "[#{item['id']}"}
     @folder = Folder.new(folder_params)
-    @folder.save
+    # a = @folder.user_id/
+    # user_id = Folder.find_by(user_id: @folder)
+    # user_id = Folder.where(user_id: current_user.id).where(article_id: @folder.article_id)
+    # Folder.where(user_id: @folder.article_id)
+    # article_id = user_id.where(user_id: @folder.article_id)
+    # article_ids = user_id.article_id
+    # article_ids = article_ids.find_by(article_ids: @folder.article_id)
+    # article_id = Folder.find_by(article_id: @folder.article_id)
+    # if user_id.present?
+    #   redirect_to folders_path
+    #   flash[:notice] = "すでに保存されています"
+    # else
+      @folder.save
+    # end 
     # article_id = Folder.new(article_id: folder_params[:article_id])
     # @folders = Folder.where.not(article_id: nil)
     # if @folders == article_id
@@ -18,6 +34,7 @@ class FoldersController < ApplicationController
     # else
     #   flash[:notice] = "すでに保存しています"
     # end 
+    @folders = Folder.search(params[:search])
   end
   
   def show
