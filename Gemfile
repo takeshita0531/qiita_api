@@ -65,3 +65,8 @@ group :production do
 end
 
 gem 'ransack'
+gem 'resque'
+gem 'resque-scheduler'
+gem 'sidekiq'
+gem 'daemons'
+gem 'delayed_job_active_record'

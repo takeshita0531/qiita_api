@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title_memo: MyString
+  url_memo: MyString
+  user_memo: MyString
+
+two:
+  title_memo: MyString
+  url_memo: MyString
+  user_memo: MyString

@@ -11,31 +11,43 @@ class FoldersController < ApplicationController
   def index
     query = 'created:>2015-10-09' # 参考 検索時に利用できるオプション
     status, next_page, @items = QiitaApiManager.search(query)
+    # @items.delay
+     QiitaMemoryJob.set(wait: 4.hour).perform_later
+    # SampleJob.set(wait: 1.hour).perform_later(arg)
+    # @qiita_memories = QiitaMemory.where.not(url: item['url'])
+    # @qiita_memories.delay
+    # QiitaMemoryJob.perform(@items)
     # @list = @items.each {|item| puts "[#{item['id']}"}
+      # @qiita_memories.delay.deliver
+    # @items.delay.each do |item|
+    #   # @qiita_memories = QiitaMemory.where.not(url: item['url'])
+    #   # @qiita_memories.delay.deliver
+    #     if QiitaMemory.where.not(url: item['url'])
+    #       qiita_memo = QiitaMemory.new
+    #       qiita_memo.title_memo = item['title']
+    #       qiita_memo.url_memo = item['url']
+    #       qiita_memo.user_memo = item['user']['id']
+    #       qiita_memo.save
+    #     end 
+    # end 
+    # QiitaMemoryJob.perform_later(@items) 
     @folder = Folder.new(folder_params)
-    # a = @folder.user_id/
-    # user_id = Folder.find_by(user_id: @folder)
-    # user_id = Folder.where(user_id: current_user.id).where(article_id: @folder.article_id)
-    # Folder.where(user_id: @folder.article_id)
-    # article_id = user_id.where(user_id: @folder.article_id)
-    # article_ids = user_id.article_id
-    # article_ids = article_ids.find_by(article_ids: @folder.article_id)
-    # article_id = Folder.find_by(article_id: @folder.article_id)
-    # if user_id.present?
-    #   redirect_to folders_path
-    #   flash[:notice] = "すでに保存されています"
-    # else
-      @folder.save
+    @folder.save
+    # @folder_search = @items.where(title: params[:sear])
+    # @items.each do |item|
+      # @folder = item['title']
+      @folders = Folder.search(params[:search])
     # end 
-    # article_id = Folder.new(article_id: folder_params[:article_id])
-    # @folders = Folder.where.not(article_id: nil)
-    # if @folders == article_id
-    #   render "users/edit"
-    # else
-    #   flash[:notice] = "すでに保存しています"
-    # end 
-    @folders = Folder.search(params[:search])
+    # @items.delay
+    # redirect_to folders_path
   end
+  
+  def delay
+    # query = 'created:>2015-10-09' # 参考 検索時に利用できるオプション
+    # status, next_page, @items = QiitaApiManager.search(query)
+    # @items.delay
+    # QiitaMemoryJob.perform_later(@items) 
+  end 
   
   def show
     # query = 'created:>2015-10-09' # 参考 検索時に利用できるオプション
