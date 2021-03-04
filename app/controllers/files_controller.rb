@@ -26,6 +26,12 @@ class FilesController < ApplicationController
    end 
   end 
   
+  def update
+      folder_id = Folder.new
+      file_id = params[:file_id]
+      folder_id.file_id = file_id
+  end 
+  
   private
   
   def file_params

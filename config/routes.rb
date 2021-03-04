@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :folders, only: [:index, :top, :update]
   get 'folders/:id/destroy' => 'folders#destroy'
 
-  resources :files, only: [:index, :show, :create]
+  resources :files, only: [:index, :show, :update, :create]
  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -2,18 +2,27 @@ class QiitaMemoryJob < ApplicationJob
   queue_as :default
 
   def perform
+    # @qiita_new = QiitaMemory.new
     query = 'created:>2015-10-09' # 参考 検索時に利用できるオプション
     status, next_page, @items = QiitaApiManager.search(query)
     # Do something later
     @items.each do |item|
-        if QiitaMemory.where.not(url: item['url'])
-          qiita_memo = QiitaMemory.new
-          qiita_memo.title_memo = item['title']
-          qiita_memo.url_memo = item['url']
-          qiita_memo.user_memo = item['user']['id']
-          qiita_memo.save
-        end 
+      @qiita_memo = QiitaMemory.new
+      @qiita_memo.title_memo = item['title']
+      @qiita_memo.url_memo = item['url']
+      @qiita_memo.user_memo = item['user']['id']
+      @qiita_memo.create_at_memo = item['created_at']
+      @qiita_memo.save
     end 
+      
+    sql = 'SELECT title_memo, url_memo, user_memo, create_at_memo FROM qiita_memories GROUP BY title_memo, url_memo, user_memo, create_at_memo HAVING COUNT(*) > 1;'
+    duplicates = QiitaMemory.find_by_sql(sql)
+    duplicate_ids = duplicates.inject([]) do |duplicate_ids, dup|
+    articles = QiitaMemory.select(:id).where(title_memo: dup.title_memo, url_memo: dup.url_memo, user_memo: dup.user_memo, create_at_memo: dup.create_at_memo) 
+    duplicate_ids << articles.pluck(:id)[1..-1]
+    end
+
+    QiitaMemory.where(id: duplicate_ids.flatten).destroy_all
   end
   
   require 'net/http'
@@ -53,10 +62,5 @@ class QiitaMemoryJob < ApplicationJob
     end
   end
   
-  private
-  
-  def folder_params
-    params.fetch(:folder, {}).permit(:user_id, :article_id, :title, :url, :user_name)
-  end 
 
 end

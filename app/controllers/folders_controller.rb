@@ -11,32 +11,25 @@ class FoldersController < ApplicationController
   def index
     query = 'created:>2015-10-09' # 参考 検索時に利用できるオプション
     status, next_page, @items = QiitaApiManager.search(query)
-    # @items.delay
-     QiitaMemoryJob.set(wait: 4.hour).perform_later
-    # SampleJob.set(wait: 1.hour).perform_later(arg)
-    # @qiita_memories = QiitaMemory.where.not(url: item['url'])
-    # @qiita_memories.delay
-    # QiitaMemoryJob.perform(@items)
-    # @list = @items.each {|item| puts "[#{item['id']}"}
-      # @qiita_memories.delay.deliver
-    # @items.delay.each do |item|
-    #   # @qiita_memories = QiitaMemory.where.not(url: item['url'])
-    #   # @qiita_memories.delay.deliver
-    #     if QiitaMemory.where.not(url: item['url'])
-    #       qiita_memo = QiitaMemory.new
-    #       qiita_memo.title_memo = item['title']
-    #       qiita_memo.url_memo = item['url']
-    #       qiita_memo.user_memo = item['user']['id']
-    #       qiita_memo.save
-    #     end 
-    # end 
-    # QiitaMemoryJob.perform_later(@items) 
+    QiitaMemoryJob.set(wait: 4.hour).perform_later
     @folder = Folder.new(folder_params)
     @folder.save
     # @folder_search = @items.where(title: params[:sear])
     # @items.each do |item|
       # @folder = item['title']
-      @folders = Folder.search(params[:search])
+    @folders = QiitaMemory.search(params[:search])
+    # @qiita_memo = @folders.select(:title_memo).distinct
+    
+#     sql = 'SELECT title_memo, url_memo, user_memo, create_at_memo FROM qiita_memories GROUP BY title_memo, url_memo, user_memo, create_at_memo HAVING COUNT(*) > 1;'
+#     duplicates = QiitaMemory.find_by_sql(sql)
+#     duplicate_ids = duplicates.inject([]) do |duplicate_ids, dup|
+#     articles = QiitaMemory.select(:id).where(title_memo: dup.title_memo, url_memo: dup.url_memo, user_memo: dup.user_memo, create_at_memo: dup.create_at_memo) 
+#     duplicate_ids << articles.pluck(:id)[1..-1]
+#     end
+
+# # 重複したレコードのIDを削除する
+#     QiitaMemory.where(id: duplicate_ids.flatten).destroy_all
+    
     # end 
     # @items.delay
     # redirect_to folders_path

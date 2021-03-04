@@ -10,6 +10,7 @@
     width: 80%;
     float: right;
     margin-right: 20px;
+    margin-top :60px;
     overflow: hidden;
 }
 
@@ -31,30 +32,54 @@
 .main {
     width: 80%;
 }
+
+.search {
+     height: 60px;
+     width: 80%;
+     margin-left: 268px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-left: 1px solid #DDD;
+     border-right:  1px solid #DDD;
+     position: fixed;
+     zindex: 2;
+     background-color:rgba(255,255,255,0.8);
+}
+
 </style>
-<% if false %>
-    <% if flash[:notice] %>
-        <div class="flash" style="float: right;">
-            <%= flash[:notice] %>
-        </div>
-<!--<div class="main">-->
-    <div class="search-form">
-        <%= form_tag(folders_path,:method => "get") do %>
-            <%= text_field_tag :search %>
-            <%= submit_tag "記事を検索", :name => nil%>
-        <% end %>
-    </div>
-    <% end %>
-<% end %>
 
-
+<div class="search">
+    <%= form_tag(folders_path, :method => "get") do %>
+        <%= text_field_tag :search %> 
+        <%= submit_tag "記事検索" ,:username => nil ,class: "button is-info"%> 
+    <% end %> 
+</div>
     <div class="main">
-        <%= form_tag(folders_path, :method => "get") do %>
-            <%= text_field_tag :search %> 
-        <%= submit_tag "Search" ,:username => nil ,class: "button is-info"%> 
-        <% end %> 
-        <% @folders.each do |folder| %>
-        <%= folder.title %>
+        <div class="folder-all">
+                <% if @folders.present? %>
+        <table class="table table-striped table-bordered table-hover table-condensed">
+            <thead>
+                <tr><th>投稿日</th><th>ID</th><th>タイトル</th></tr>
+            </thead>
+            <tbody>
+                    <% @folders.each do |folder| %>
+                        <%= form_for @folder, :url => { action: "index" }, html: { method: "get" } do |f| %>
+                            <tr>
+                            <td><%= folder.create_at_memo %></td>
+                            <td><%= f.hidden_field :article_id, value: folder %>
+                            <%= f.hidden_field :user_id, value: current_user.id%>
+                            <%= f.label :user_name, value: folder.user_memo %>
+                            <%= f.hidden_field :user_name, value: folder.user_memo %></td>
+                            <td><a href =<%= folder.url_memo %> target = ["_blenk"]><%= f.label :title, value: folder.title_memo %></a>
+                            <%= f.hidden_field :title, value: folder.title_memo %>
+                            <%= f.hidden_field :url, value: folder.url_memo %>
+                            <div class="save-btn"><%= f.submit "保存", class: "btn btn-primary" %></div></td>
+                            </tr>
+                        <% end %>
+                    <% end %>
+            </tbody>
+        </table> 
         <% end %>
         <table class="table table-striped table-bordered table-hover table-condensed">
             <thead>
@@ -62,8 +87,9 @@
             </thead>
             <tbody>
                 <% @items.each do |item| %>
-                    <%= form_for @folder,:url => { action: "index" }, html: {method: "get"} do |f| %>
-                       <tr><td><%= item['created_at'] %></td>
+                    <%= form_for @folder,:url => { action: "index" }, html: { method: "get" } do |f| %>
+                       <tr>
+                       <td><%= item['created_at'] %></td>
                        <td><%= f.hidden_field :article_id, value: item['id'] %>
                        <%= f.hidden_field :user_id, value: current_user.id %>
                        <%= f.label :user_name, value: item['user']['id'] %>
@@ -71,13 +97,14 @@
                        <td><a href =<%= item['url'] %> target = ["_blenk"]><%= f.label :title, value: item['title'] %></a>
                        <%= f.hidden_field :title, value: item['title'] %>
                        <%= f.hidden_field :url, value: item['url'] %>
-                       <div class="save-btn"><%= f.submit "保存",  class: "btn btn-primary"  %></div></td></tr> 
+                       <div class="save-btn"><%= f.submit "保存",  class: "btn btn-primary"  %></div></td>
+                       </tr> 
                     <% end %>
                 <% end %>
             </tbody>
         </table>
+        </div>
     </div>
-<!--</div>-->
 
 <script>
     $(function(){
