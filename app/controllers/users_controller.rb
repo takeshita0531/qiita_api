@@ -32,13 +32,13 @@ class UsersController < ApplicationController
   end 
   
   def update
-    @folder = Folder.new
-    @user = current_user
-    @folder = Folder.new
-    @file_id = params[:file_id]
-    @folder.file_id = @file_id
-    @folder.save
-    if @user.update(user_params)
+    folder = Folder.new
+    user = current_user
+    folder = Folder.new
+    file_id = params[:file_id]
+    folder.file_id = file_id
+    folder.save
+    if user.update(user_params)
       redirect_to ("/users/#{current_user.id}")
     end 
   end 

@@ -32,6 +32,14 @@ body {
   .notice {
       margin-left: 50px;
   }
+  
+  .dropdown {
+      float: right;
+  }
+  
+   .drop-hover:hover > .dropdown-menu {
+    display: block !important;
+  }
  
 </style>
 <div class="main">
@@ -51,42 +59,43 @@ body {
             </thead>
             <tbody>
                 <% if @file_all.present?%>
-                <% @file_all.each do |file| %>
-                    <tr><td class="width"><%=  file.file_name %></td>
-                    <td>
-                    <% @folders.each do |folder| %>
-                        <% if folder.file_id == file.id %>
-                             <p><a href=<%= folder.url %> target = ["_blank"]><%= folder.title %></a></p>
-                             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-                  <a class="fa fa-ellipsis-v" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-                </button>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                      <li class="dropleft drop-hover">
-                        <a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">保存先</a>
-                        <ul class="dropdown-menu">
-                          <li class="dropleft drop-hover">
-                            <a class="dropdown-item" href="#">
-                             <% @file_all.each do |file| %>
-                                <ul><li><%= link_to file.file_name, {controller: "files", action: "update", file_id: file.id}, method: :put %>
-                                  <% if folder.file_id == file.id %>
-                                     (保存中)
-                                  <% end %>
-                                </li></ul>
-                             <% end %>
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <div class="delete">
-                        <li><a class="dropdown-item" href="#"><%= link_to "削除", "/folders/#{folder.id}/destroy", method: :get %></a></li>
-                      </div>
-                    </ul>
-                </div>
+                    <% @file_all.each do |file| %>
+                        <tr><td class="width"><%= file.file_name %></td>
+                        <td>
+                        <% @folders.each do |folder| %>
+                            <% if folder.file_id == file.id %>
+                                <a href=<%= folder.url %> target = ["_blank"]><%= folder.title %></a>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                                      <a class="fa fa-ellipsis-v" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                    </button>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                          <li class="dropleft drop-hover">
+                                            <a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">保存先</a>
+                                            <ul class="dropdown-menu">
+                                              <li class="dropleft drop-hover">
+                                                <a class="dropdown-item" href="#">
+                                                <% @file_all.each do |file| %>
+                                                    <ul><li><%= link_to file.file_name, file_path(file), file_id: file.id, folder_id: folder.id, method: :patch %>
+                                                      <% if folder.file_id == file.id %>
+                                                         (保存中)
+                                                      <% end %>
+                                                      
+                                                    </li></ul>
+                                                 <% end %>
+                                                </a>
+                                              </li>
+                                            </ul>
+                                          </li>
+                                      <div class="delete">
+                                        <li><a class="dropdown-item" href="#"><%= link_to "削除", "/folders/#{folder.id}/destroy", method: :get %></a></li>
+                                      </div>
+                                    </ul>
+                                </div>
+                            <% end %>
                         <% end %>
+                       </td></tr>
                     <% end %>
-                   </td></tr>
-                <% end %>
                 <% end %>
             </tbody>
         </table>
