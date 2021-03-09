@@ -6,23 +6,47 @@ class FilesController < ApplicationController
   
   def index
     @file = FileName.new
+    @folders = Folder.where(user_id: current_user.id).order(created_at: :desc)
     @file_all = FileName.where(user_id: current_user.id)
-    @folders = Folder.where(user_id: current_user.id)
-  end
-  def show
-    @file_new = FileName.new
-    # @file = File.find(params[:id])
-    @file_all = FileName.where(user_id: current_user.id)
-    @folders = Folder.where(user_id: current_user.id)
-    folder_id = Folder.new
+    folder_id = params[:folder_id]
+    folder = Folder.find_by(id: folder_id)
     file_id = params[:file_id]
-    
-    folder_id.file_id = file_id
-    if file.save
-      redirect_fallback(fallback_location: root_path)
-      # redirect_to files_path
+    destroy = params[:destroy]
+    if file_id.present?
+      folder.file_id = file_id
+      if folder.save
+        redirect_back(fallback_location: root_path)
+      else
+        flash[:notice] = "保存できませんでした"
+        redirect_back(fallback_location: root_path)
+      end 
+    end 
+    if folder.present? && destroy.present?
+      if folder.delete
+        redirect_back(fallback_location: root_path)
+      else
+        flash[:notice] = "削除できませんでした"
+        redirect_back(fallback_location: root_path)
+      end 
     end 
   end
+  
+  # def show
+  #   @file_new = FileName.new
+  #   @file_all = FileName.where(user_id: current_user.id)
+  #   @folders = Folder.where(user_id: current_user.id)
+  #   folder_id = Folder.new
+  #   file_id = params[:file_id]
+  #   folder_id.file_id = file_id
+  #   if file.save
+  #     redirect_fallback(fallback_location: root_path)
+  #   end 
+  # end
+  
+  def edit
+    @file = FileName.find(params[:id])
+  end 
+  
   def create
      @file = FileName.new(file_params)
      if @file.save
@@ -34,15 +58,23 @@ class FilesController < ApplicationController
   end 
   
   def update
-      # file = File.find(params[:id])
-      # file.update(file_params)
-      folder_id = Folder.new
-      file_id = params[:file_id]
-      folder_id.file_id = file_id
-      if file.save
-        # redirect_fallback(fallback_location: root_path)
-        redirect_to files_path
-      end 
+    file = FileName.find(params[:id])
+    if file.update(file_name: file_params[:file_name])
+      redirect_to files_path
+    else
+      flash[:notice] = "保存できませんでした"
+      render "edit"
+    end 
+  end 
+  
+  def destroy
+    file = FileName.find(params[:id])
+    if file.delete
+      redirect_to files_path
+    else
+      flash[:notice] = "削除できませんでした。"
+      render "edit"
+    end 
   end 
   
   private

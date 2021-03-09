@@ -11,8 +11,10 @@
 // about supported directives.
 //
 //= require jquery3
+//= require jquery_ujs
 //= require turbolinks
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
 // = require data-confirm-modal
+//= require data-confirm-modal

@@ -1,5 +1,6 @@
 class FoldersController < ApplicationController
   before_action :authenticate_user!
+  skip_before_action :verify_authenticity_token
   
   def new
     @folder = Folder.new
@@ -12,39 +13,31 @@ class FoldersController < ApplicationController
     query = 'created:>2015-10-09' # 参考 検索時に利用できるオプション
     status, next_page, @items = QiitaApiManager.search(query)
     QiitaMemoryJob.set(wait: 4.hour).perform_later
-    @folder = Folder.new(folder_params)
-    @folder.save
-    # @folder_search = @items.where(title: params[:sear])
-    # @items.each do |item|
-      # @folder = item['title']
+    @folder_new = Folder.new
     @folders = QiitaMemory.search(params[:search])
-    # @qiita_memo = @folders.select(:title_memo).distinct
-    
-#     sql = 'SELECT title_memo, url_memo, user_memo, create_at_memo FROM qiita_memories GROUP BY title_memo, url_memo, user_memo, create_at_memo HAVING COUNT(*) > 1;'
-#     duplicates = QiitaMemory.find_by_sql(sql)
-#     duplicate_ids = duplicates.inject([]) do |duplicate_ids, dup|
-#     articles = QiitaMemory.select(:id).where(title_memo: dup.title_memo, url_memo: dup.url_memo, user_memo: dup.user_memo, create_at_memo: dup.create_at_memo) 
-#     duplicate_ids << articles.pluck(:id)[1..-1]
-#     end
-
-# # 重複したレコードのIDを削除する
-#     QiitaMemory.where(id: duplicate_ids.flatten).destroy_all
-    
-    # end 
-    # @items.delay
-    # redirect_to folders_path
   end
   
-  def delay
-    # query = 'created:>2015-10-09' # 参考 検索時に利用できるオプション
-    # status, next_page, @items = QiitaApiManager.search(query)
-    # @items.delay
-    # QiitaMemoryJob.perform_later(@items) 
+  def create
+    @folder = Folder.new(folder_params)
+    respond_to do |format|
+      if @folder.save
+        format.html  {redirect_back(fallback_location: true)}
+        format.js  
+      else
+        format.html { render :index } 
+        format.js { render :errors } 
+      end
+    end
   end 
-  
-  def show
-    # query = 'created:>2015-10-09' # 参考 検索時に利用できるオプション
-    # status, next_page, @items = QiitaApiManager.search(query)
+
+  def destroy
+    folder = Folder.find(params[:id])
+    if folder.delete
+      redirect_back(fallback_location: root_path)
+    else
+      flash[:notice] = "削除できませんでした"
+      render 'files/index'
+    end
   end 
   
   

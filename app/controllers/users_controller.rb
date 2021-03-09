@@ -9,23 +9,33 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @folders = Folder.where(user_id: current_user.id).order(created_at: :desc)
-    # @user = User.find_by(id: @folder.user_id)
     @files = FileName.where(user_id: current_user.id)
     folder_id = params[:folder_id]
     folder = Folder.find_by(id: folder_id)
-    @folder = Folder.new
-    @file_id = params[:file_id]
-    if @file_id.present?
-      folder.file_id = @file_id
+    destroy = params[:destroy]
+    file_id = params[:file_id]
+    if file_id.present?
+      folder.file_id = file_id
       if folder.save
-        redirect_to ("/users/#{current_user.id}")
+        redirect_back(fallback_location: root_path)
+      else
+        flash[:notice] = "保存できませんでした"
+        redirect_back(fallback_location: root_path)
       end 
     end 
+    if folder.present? && destroy.present?
+      if folder.delete
+        redirect_back(fallback_location: root_path)
+      else
+        flash[:notice] = "削除できませんでした"
+        redirect_back(fallback_location: root_path)
+      end 
+    end   
   end
   
-  def create
+  # def create
     
-  end 
+  # end 
   
   def edit
     @user = User.find_by(id: params[:id])

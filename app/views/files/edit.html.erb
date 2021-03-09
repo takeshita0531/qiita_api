@@ -1,0 +1,24 @@
+<style>
+    .container {
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div col-7>
+            <div class="file-edit">
+                <%= form_for(@file, url:{controller: 'files', action: 'update'}) do |f| %>
+                    <div class="label">
+                        <%= f.label :ファイル名 %>
+                    </div>
+                    <%= f.text_field :file_name, placeholder: "ファイル名", value: @file.file_name %>
+                    <%= f.submit "保存" %>
+                <% end %>
+                <%= button_to "ファイル削除", "/files/#{@file.id}", method: :delete, data: {comfirm: "Are you sure?"} %>
+            </div>
+        </div>
+    </div>
+</div>

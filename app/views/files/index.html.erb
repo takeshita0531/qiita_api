@@ -18,15 +18,18 @@ body {
     width: 80%;
     float: right;
     margin-right: 20px;
+    margin-top :60px;
   }
   
   .file-create {
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-left: 1px solid #DDD;
-      border-right:  1px solid #DDD;
+     position: fixed;
+     top: 0px;
+     left: 50%;
+     zindex: 2;
+     height: 60px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
   }
   
   .notice {
@@ -35,11 +38,25 @@ body {
   
   .dropdown {
       float: right;
+      /*text_align: right;*/
   }
   
    .drop-hover:hover > .dropdown-menu {
     display: block !important;
   }
+  
+  .folder-title {
+      padding-bottom: 20px;
+  }
+ 
+ .file-select {
+     padding-left: 40px;
+ }
+ 
+ .delete {
+     padding: 10px 0 10px 30px;
+     border-top: 1px solid #8c8b8b;
+ }
  
 </style>
 <div class="main">
@@ -60,23 +77,23 @@ body {
             <tbody>
                 <% if @file_all.present?%>
                     <% @file_all.each do |file| %>
-                        <tr><td class="width"><%= file.file_name %></td>
+                        <tr><td class="width"><%= file.file_name %><a class="fa fa-ellipsis-v" style="float: right;" href=<%= edit_file_path(file) %>></a></td>
                         <td>
                         <% @folders.each do |folder| %>
                             <% if folder.file_id == file.id %>
-                                <a href=<%= folder.url %> target = ["_blank"]><%= folder.title %></a>
+                               <div class="folder-title"><a href=<%= folder.url %> target = ["_blank"]><%= folder.title %></a>
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
                                       <a class="fa fa-ellipsis-v" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                                     </button>
                                         <ul class="dropdown-menu dropdown-menu-right">
                                           <li class="dropleft drop-hover">
-                                            <a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">保存先</a>
+                                            <a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown" style="padding-bottom: 9px;">保存先</a>
                                             <ul class="dropdown-menu">
                                               <li class="dropleft drop-hover">
                                                 <a class="dropdown-item" href="#">
                                                 <% @file_all.each do |file| %>
-                                                    <ul><li><%= link_to file.file_name, file_path(file), file_id: file.id, folder_id: folder.id, method: :patch %>
+                                                    <ul class="file-select"><li><%= link_to file.file_name, {controller: "files", action: "index", file_id: file.id, folder_id: folder.id} %>
                                                       <% if folder.file_id == file.id %>
                                                          (保存中)
                                                       <% end %>
@@ -88,9 +105,10 @@ body {
                                             </ul>
                                           </li>
                                       <div class="delete">
-                                        <li><a class="dropdown-item" href="#"><%= link_to "削除", "/folders/#{folder.id}/destroy", method: :get %></a></li>
+                                        <li><%= button_to "ファイル削除", "/folders/#{folder.id}", method: :delete %>
                                       </div>
                                     </ul>
+                                </div>
                                 </div>
                             <% end %>
                         <% end %>

@@ -1,4 +1,4 @@
 class FileName < ApplicationRecord
     validates :file_name, presence: true
-    belongs_to :folder
+    has_many:folders, dependent: :destroy
 end
