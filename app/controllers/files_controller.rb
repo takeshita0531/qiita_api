@@ -3,11 +3,12 @@ class FilesController < ApplicationController
   def new
     @file_name = FileName.new
   end 
-  
+  4/1AY0e-g6Em5Pv5YmNJ2dcWVRrR_dKqFZeODaTE3s_JYqy2JDNKgUoWtZJZlM
   def index
     @file = FileName.new
-    @folders = Folder.where(user_id: current_user.id).order(created_at: :desc)
-    @file_all = FileName.where(user_id: current_user.id)
+    user = current_user
+    @folders = user.folders.order(created_at: :desc)
+    @file_all = user.file_names
     folder_id = params[:folder_id]
     folder = Folder.find_by(id: folder_id)
     file_id = params[:file_id]

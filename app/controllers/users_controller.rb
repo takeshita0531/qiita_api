@@ -7,9 +7,9 @@ class UsersController < ApplicationController
   end 
   
   def show
-    @user = current_user
-    @folders = Folder.where(user_id: current_user.id).order(created_at: :desc)
-    @files = FileName.where(user_id: current_user.id)
+    user = current_user
+    @folders = user.folders.order(created_at: :desc)
+    @files = user.file_names
     folder_id = params[:folder_id]
     folder = Folder.find_by(id: folder_id)
     destroy = params[:destroy]

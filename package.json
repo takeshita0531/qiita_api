@@ -1,4 +1,6 @@
 {
+  "license": "UNLICENSED",
+  "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.0",
     "@rails/webpacker": "3.5",
@@ -8,5 +10,10 @@
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
-  }
+  },
+  "peerDependencies": {
+    "caniuse-lite@^1.0.30000697",
+    "webpack@^2.2.0",
+    "webpack@^1.0.0"
+  },
 }

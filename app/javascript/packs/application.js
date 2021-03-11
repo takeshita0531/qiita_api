@@ -8,9 +8,3 @@
 // layout file, like app/views/layouts/application.html.erb
 
 console.log('Hello World from Webpacker')
-import 'bootstrap'
-import '@fortawesome/fontawesome-free/js/all'
-import '../src/application.scss'
-import 'jquery/dist/jquery.js'
-import 'popper.js/dist/popper.js'
-import 'bootstrap/dist/js/bootstrap'
