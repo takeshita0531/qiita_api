@@ -19,8 +19,8 @@ class FoldersController < ApplicationController
   
   def create
       query = 'created:>2015-10-09'
-      @folder_new = Folder.new
       status, next_page, @items = QiitaApiManager.search(query)
+      @folder_new = Folder.new
       @folder = Folder.new(folder_params)
       respond_to do |format|
       if @folder.save
@@ -30,7 +30,7 @@ class FoldersController < ApplicationController
         format.html { render :index } 
         format.js { render :errors } 
       end
-    end
+      end
   end 
 
   def destroy

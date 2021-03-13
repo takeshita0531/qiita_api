@@ -51,43 +51,43 @@
 
   <% if @user.id == current_user.id %>
           <table class="table table-striped table-bordered table-hover table-condensed">
-          <thead>
+          <thead style="background-color: #E9FFA5">
               <tr><th>ID</th><th>タイトル</th></tr>
           </thead>
           <tbody>
-          <% @folders.zip(@files) do |folder, file| %>
-              <tr><td><%= folder.user_name %></td>
-              <td>
-              <a href=<%= folder.url %> target = ["_blank"]><%= folder.title %></a>
-              
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-                  <a class="fa fa-ellipsis-v" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-                </button>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                      <li class="dropleft drop-hover">
-                        <a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">保存先</a>
-                        <ul class="dropdown-menu">
-                          <li class="dropleft drop-hover">
-                            <a class="dropdown-item" href="#">
-                             <% @files.each do |file| %>
-                                <ul><li><%= link_to file.file_name, {controller: "users", action: "show", file_id: file.id, folder_id: folder.id} %>
-                                  <% if folder.file_id == file.id %>
-                                     (保存中)
-                                  <% end %>
-                                </li></ul>
-                             <% end %>
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <div class="delete">
-                        <li><a class="dropdown-item" href="#"><%= link_to "削除", {controller: "users", action: "show", folder_id: folder.id, destroy: "destroy"} %>
-                      </div> 
-                    </ul>
-                </div>
-              </td></tr>
-          <% end %>
+            <% @folders.zip(@files) do |folder, file| %>
+  <tr><td><%= folder.user_name %></td>
+  <td>
+  <a href=<%= folder.url %> target = ["_blank"]><%= folder.title %></a>
+  
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+      <a class="fa fa-ellipsis-v" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+    </button>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li class="dropleft drop-hover">
+            <a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">保存先</a>
+            <ul class="dropdown-menu">
+              <li class="dropleft drop-hover">
+                <a class="dropdown-item" href="#">
+                 <% @files.each do |file| %>
+                    <ul><li id="folder_save"><%= link_to file.file_name,  user_path(file_id: file.id, folder_id: folder.id, anchor: "folder_save") %>
+                      <% if folder.file_id == file.id %>
+                            (保存中)
+                      <% end %>
+                    </li></ul>
+                 <% end %>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <div class="delete">
+            <li id="folder_delete"><a class="dropdown-item" href="#"><%= link_to "削除", user_path(folder_id: folder.id, destroy: "destroy", anchor: "folder_delete") %></a>
+          </div> 
+        </ul>
+    </div>
+  </td></tr>
+<% end %>
           </tbody>
           </table>
   <% end %>

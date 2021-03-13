@@ -3,7 +3,6 @@ class FilesController < ApplicationController
   def new
     @file_name = FileName.new
   end 
-  4/1AY0e-g6Em5Pv5YmNJ2dcWVRrR_dKqFZeODaTE3s_JYqy2JDNKgUoWtZJZlM
   def index
     @file = FileName.new
     user = current_user

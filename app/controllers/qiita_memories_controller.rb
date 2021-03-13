@@ -7,7 +7,6 @@ class QiitaMemoriesController < ApplicationController
         # @items.each do |item|
         #     if QiitaMemory.where(url: item['url'])
         # end 
-        
     end
   
   

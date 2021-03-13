@@ -14,6 +14,18 @@ class UsersController < ApplicationController
     folder = Folder.find_by(id: folder_id)
     destroy = params[:destroy]
     file_id = params[:file_id]
+    # if file_id.present?
+    #   folder.file_id = file_id
+    #   respond_to do |format|
+    #   if folder.save
+    #     format.html  {redirect_back(fallback_location: true)}
+    #     format.js { render js: 'users/show.js.erb' }
+    #   else
+    #     format.html { render :index } 
+    #     format.js { render :errors } 
+    #   end
+    #   end
+    # end 
     if file_id.present?
       folder.file_id = file_id
       if folder.save
@@ -54,8 +66,6 @@ class UsersController < ApplicationController
   end 
   
   # def destroy
-  #   folder = Folder.find_id(id: params[:id])
-  #   folder.delete
   # end 
   
   private
