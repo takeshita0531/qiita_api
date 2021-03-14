@@ -100,13 +100,15 @@ body {
                                               <li class="dropleft drop-hover">
                                                 <a class="dropdown-item" href="#">
                                                 <% @file_all.each do |file| %>
-                                                    <ul class="file-select"><li><%= link_to file.file_name, {controller: "files", action: "index", file_id: file.id, folder_id: folder.id} %>
-                                                      <% if folder.file_id == file.id %>
-                                                         (保存中)
-                                                      <% end %>
-                                                      
-                                                    </li></ul>
+                                                    <ul class="file-select">
+                                                        <li><%= link_to file.file_name, {controller: "files", action: "index", file_id: file.id, folder_id: folder.id} %>
+                                                          <% if folder.file_id == file.id %>
+                                                             (保存中)
+                                                          <% end %>
+                                                        </li>
+                                                    </ul>
                                                  <% end %>
+                                                 <ul class="file-select"><li><%= link_to "保存しない", folder_path(folder), file_id: "nill", method: :put %></li></ul>
                                                 </a>
                                               </li>
                                             </ul>

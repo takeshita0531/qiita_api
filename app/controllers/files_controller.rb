@@ -3,6 +3,7 @@ class FilesController < ApplicationController
   def new
     @file_name = FileName.new
   end 
+  
   def index
     @file = FileName.new
     user = current_user

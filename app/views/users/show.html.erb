@@ -9,11 +9,15 @@
       overscroll-behavior: none;
   }
 
-  .user-show {
+  .user-show{
     text-align: center;
     height: 60px;
     line-height: 60px;
-    
+  }
+  
+  .user_edit {
+    text-align: center;
+    padding-bottom: 20px;
   }
   
   .dropdown {
@@ -38,16 +42,16 @@
     margin: 0;
   }
   
-  /*.dropdown {*/
-  /*  width: 50vw;*/
-  /*  min-width: ;*/
-  /*}*/
-    
 </style>
 <div class="main">
 <div class="user-show">
   <%= @user.name %>
 </div>
+    <div class="user_edit">
+      <% if @user.id == current_user.id %>
+        <%= link_to "プロフィール編集", edit_user_path(@user) %>
+      <% end %>
+    </div>
 
   <% if @user.id == current_user.id %>
           <table class="table table-striped table-bordered table-hover table-condensed">
@@ -71,12 +75,15 @@
               <li class="dropleft drop-hover">
                 <a class="dropdown-item" href="#">
                  <% @files.each do |file| %>
-                    <ul><li id="folder_save"><%= link_to file.file_name,  user_path(file_id: file.id, folder_id: folder.id, anchor: "folder_save") %>
+                 <ul>
+                    <li id="folder_save"><%= link_to file.file_name,  user_path(file_id: file.id, folder_id: folder.id, anchor: "folder_save") %>
                       <% if folder.file_id == file.id %>
                             (保存中)
                       <% end %>
-                    </li></ul>
+                    </li>
+                    </ul>
                  <% end %>
+                      <ul><li><%= link_to "保存しない", folder_path(folder), file_id: "nil", method: :put %></li></ul>
                 </a>
               </li>
             </ul>

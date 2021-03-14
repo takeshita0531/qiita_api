@@ -32,6 +32,18 @@ class FoldersController < ApplicationController
       end
       end
   end 
+  
+  def update
+      folder = Folder.find(params[:id])
+      file_id = params[:file_id]
+      folder.file_id = file_id
+      if folder.save
+        redirect_back(fallback_location: root_path)
+      else
+        flash[:notice] = "変更できませんでした"
+        render "user/show"
+      end 
+  end 
 
   def destroy
     folder = Folder.find(params[:id])
