@@ -11,7 +11,7 @@ body {
 }
 
 .width {
-     width: 150px;
+    width: 150px;
  }
  
  .main {
@@ -22,47 +22,46 @@ body {
   }
   
   .file-create {
-     position: fixed;
-     top: 0px;
-     left: 50%;
-     zindex: 2;
-     height: 60px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    zindex: 2;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .notice {
-      margin-left: 50px;
+    margin-left: 50px;
   }
   
   .dropdown {
-      float: right;
-      /*text_align: right;*/
+    float: right;
   }
   
-   .drop-hover:hover > .dropdown-menu {
+  .drop-hover:hover > .dropdown-menu {
     display: block !important;
   }
   
   .folder-title {
-      padding-bottom: 20px;
-      border-bottom: 1px solid #8c8b8b;
-      margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #8c8b8b;
+    margin-bottom: 20px;
   }
   
   .folder-title:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
+    border-bottom: none;
+    margin-bottom: 0;
   }
  
  .file-select {
-     padding-left: 40px;
+    padding-left: 40px;
  }
  
  .delete {
-     padding: 10px 0 10px 30px;
-     border-top: 1px solid #8c8b8b;
+    padding: 10px 0 10px 30px;
+    border-top: 1px solid #8c8b8b;
  }
  
 </style>
@@ -88,36 +87,36 @@ body {
                         <td>
                         <% @folders.each do |folder| %>
                             <% if folder.file_id == file.id %>
-                               <div class="folder-title"><a href=<%= folder.url %> target = ["_blank"]><%= folder.title %></a>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-                                      <a class="fa fa-ellipsis-v" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-                                    </button>
+                                <div class="folder-title"><a href=<%= folder.url %> target = ["_blank"]><%= folder.title %></a>
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                                          <a class="fa fa-ellipsis-v" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                        </button>
                                         <ul class="dropdown-menu dropdown-menu-right">
-                                          <li class="dropleft drop-hover">
-                                            <a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown" style="padding-bottom: 9px;">保存先</a>
-                                            <ul class="dropdown-menu">
-                                              <li class="dropleft drop-hover">
-                                                <a class="dropdown-item" href="#">
-                                                <% @file_all.each do |file| %>
-                                                    <ul class="file-select">
-                                                        <li><%= link_to file.file_name, {controller: "files", action: "index", file_id: file.id, folder_id: folder.id} %>
-                                                          <% if folder.file_id == file.id %>
-                                                             (保存中)
-                                                          <% end %>
-                                                        </li>
-                                                    </ul>
-                                                 <% end %>
-                                                 <ul class="file-select"><li><%= link_to "保存しない", folder_path(folder), file_id: "nill", method: :put %></li></ul>
-                                                </a>
-                                              </li>
-                                            </ul>
-                                          </li>
-                                      <div class="delete">
-                                        <li><%= button_to "記事削除", "/folders/#{folder.id}", method: :delete %>
-                                      </div>
-                                    </ul>
-                                </div>
+                                           <li class="dropleft drop-hover">
+                                                <a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown" style="padding-bottom: 9px;">保存先</a>
+                                                <ul class="dropdown-menu">
+                                                  <li class="dropleft drop-hover">
+                                                    <a class="dropdown-item" href="#">
+                                                    <% @file_all.each do |file| %>
+                                                        <ul class="file-select">
+                                                            <li><%= link_to file.file_name, {controller: "files", action: "index", file_id: file.id, folder_id: folder.id} %>
+                                                              <% if folder.file_id == file.id %>
+                                                                 (保存中)
+                                                              <% end %>
+                                                            </li>
+                                                        </ul>
+                                                    <% end %>
+                                                     <ul class="file-select"><li><%= link_to "保存しない", folder_path(folder), file_id: "nill", method: :put %></li></ul>
+                                                    </a>
+                                                  </li>
+                                                </ul>
+                                            </li>
+                                          <div class="delete">
+                                            <li><%= button_to "記事削除", "/folders/#{folder.id}", method: :delete, class: "btn btn-secondary" %>
+                                          </div>
+                                        </ul>
+                                    </div>
                                 </div>
                             <% end %>
                         <% end %>

@@ -32,25 +32,13 @@ class FilesController < ApplicationController
     end 
   end
   
-  # def show
-  #   @file_new = FileName.new
-  #   @file_all = FileName.where(user_id: current_user.id)
-  #   @folders = Folder.where(user_id: current_user.id)
-  #   folder_id = Folder.new
-  #   file_id = params[:file_id]
-  #   folder_id.file_id = file_id
-  #   if file.save
-  #     redirect_fallback(fallback_location: root_path)
-  #   end 
-  # end
-  
   def edit
     @file = FileName.find(params[:id])
   end 
   
   def create
-     @file = FileName.new(file_params)
-     if @file.save
+     file = FileName.new(file_params)
+     if file.save
        redirect_to files_path
      else
        redirect_to files_path

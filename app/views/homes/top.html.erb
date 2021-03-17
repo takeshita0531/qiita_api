@@ -1,0 +1,248 @@
+<style>
+    header {
+        position: fixed;
+        width: 100%;
+        background-color: #343a40;
+        height: 50px
+        margin-top: 50px;
+        z-index: 30;
+        left: 0;
+        top: 0;
+        opacity: 0.9;
+    }
+    
+    .header-menu li {
+        display: inline-block;
+        float: right;
+        padding-left: 15px;
+    }
+    
+    .qiita {
+        line-height:50px;
+    }
+    
+    li {
+        list-style: none
+    }
+    
+    .top-warapper {
+        background-image: url(https://image.shutterstock.com/image-photo/ryazan-russia-may-20-2018-260nw-1095525152.jpg);    
+        background-size: cover;
+        height: 700px;
+        padding-top: 6px;
+        padding-bottom: 80px;
+        opacity: 0.8;
+    }
+
+    .top-container {
+        color: white;
+        text-align: center;
+        padding-top: 550px;
+    }
+
+    .entry {
+        text-align: center;
+        font-size: 20px;
+    
+    }
+
+    .sign-up {
+        display: block;
+        background-color: rgba(0,0,255,0.7);
+        width: 100px;
+        margin:0 auto;
+    }
+
+    .sign-in {
+        display: block;
+        background-color: rgba(153,0,51,0.7);
+        width: 100px;
+        margin:0 auto;
+        margin-top: 10px;
+    }
+
+    .sign-up:hover {
+        background-color: rgba(0,0,255,1);
+    }
+    
+    .sign-in:hover {
+        background-color: rgba(153,0,51,1);
+    }
+    
+    .sub {
+        text-align: center;
+        padding-top: 30px;
+    }
+    
+    .descript {
+        background-color: #777777;
+        height: max;
+        padding: 30px 0 50px 30px;
+    }
+    
+    .top-img {
+        margin-left: 30px;
+    }
+    
+    .home-container {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .text-home, .text-file, .text-prf  {
+        background-color: white;
+        margin-right: 60px;
+        margin-left: 30px;
+        margin-top: 30px;
+        padding: 10px;
+        border-radius: 10px; 
+    }
+    
+    .home-about, .file-about, .prf-about {
+        width: 300px;
+        background-color: white;
+        border-radius: 10px; 
+        margin-left: 55px;
+    }
+    
+    .home-img, .file-img, .prf-img {
+        text-align: center;
+    }
+    
+    .descript-prf, .descript-file {
+        margin-top: 50px;
+    }
+
+</style>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="header-qiita">
+                    <h5 class="qiita"><%= link_to "キーメモ", root_path, :style => "color: white" %></h5>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="header-menu">
+                <ul>
+                    <li>
+                        <%= link_to "新規登録", new_user_registration_path, :style => "color: white" %>
+                    </li>
+                    <li>
+                        <%= link_to "ログイン", new_user_session_path, :style => "color: white"  %>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="top-warapper">
+    <div class="top-container">
+        <h1>Qiitaで気になった記事をいつでも見れるようにしよう！</h1>
+    </div>
+    <div class="entry">
+        <div class="sign-up">
+            <%= link_to("新規登録", "/users/sign_up") %>
+        </div>
+        <div class="sign-in">
+            <%= link_to("ログイン", "/users/sign_in") %>
+        </div>
+    </div>
+</div>
+<h3 class="sub">
+    サービス説明
+</h3>
+<div class="descript">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <div class="top-img">
+                    <%= image_tag '13.42.37.png', :size => '900x500' %>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="home-about">
+                    <div class="home-img">
+                        <h4 style="padding-top: 10px">ホームについて</h4>
+                        <%= image_tag '12.39.27.png', :size => '150x70' %>
+                    </div>
+                </div>
+                <div class="home-container">
+                    <div class="text-home">
+                        <p>ログイン後、ホームページへ推移します。</p>
+                        <p>ホームページでは、Qiitaに投稿された新着記事が100件表示されています。</p>
+                        <p>上部の検索フォーム<%= image_tag '13.40.49.png', :size => '120x40' %>からは、Qiitaから保存された記事が検索できます。</p>
+                        <p>記事右側の保存ボタン<%= image_tag '12.26.18.png', :size => '50x40' %>は、あなたが気になった記事、いつでも見れるようにしたいと思った記事を保存することができます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="descript-file">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-8">
+                    <div class="top-img">
+                        <%= image_tag '11.46.08.png', :size => '900x300' %>
+                    </div>
+                    <div class="top-img" style="padding-top: 20px">
+                        <%= image_tag '11.46.30.png', :size => '900x300' %>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="file-about">
+                        <div class="file-img">
+                            <h4 style="padding-top: 10px">ファイルページについて</h4>
+                            <%= image_tag '13.07.10.png', :size => '150x70' %>
+                        </div>
+                    </div>
+                    <div class="file-container">
+                        <div class="text-file">
+                            <p>ファイルページでは、ホームページで保存した記事をファイル別に分けることができます。</p>
+                            <p>上部のファイル作成フォーム<%= image_tag '13.44.29.png', :size => '120x40' %>からファイルを作成することができます。</p>
+                            <p>ファイル名横の<%= image_tag '13.48.20.png', :size => '30x40' %>からは、ファイル名の変更、削除が行なえます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="descript-prf">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-8">
+                    <div class="top-img">
+                        <%= image_tag '11.45.33.png', :size => '900x300' %>
+                    </div>
+                    <div class="top-img" style="padding-top: 20px;">
+                        <%= image_tag '14.02.36.png', :size => '900x300' %>
+                    </div>
+                    <div class="top-img" style="padding-top: 20px;">
+                        <%= image_tag '14.07.43.png', :size => '900x300' %>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="prf-about">
+                        <div class="prf-img">
+                            <h4 style="padding-top: 10px">プロフィールについて</h4>
+                            <%= image_tag '13.14.58.png', :size => '150x70' %>
+                        </div>
+                    </div>
+                    <div class="prf-container">
+                        <div class="text-prf">
+                            <p>プロフィールページでは、プロフィール編集ボタンからユーザー名の変更ができます。</p>
+                            <p>保存した記事が表示がされます。</p>
+                            <p>タイトル横の<%= image_tag '13.54.43.png', :size => '40x40' %>からは、作成したファイルに保存したい記事を選択できます。</p>
+                            <%= image_tag '14.09.07.png', :size => '330x200' %>
+                            <p>保存先にマウスを乗せると保存先一覧が出ます。保存したいファイルを選択します。<br >保存中のファイルには（保存中）となります。</p>
+                            <p>ファイルページでも、保存先の移動、記事の削除ができます。</p>
+                            <p><%= image_tag '14.19.50.png', :size => '60x40' %>からログアウトできます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

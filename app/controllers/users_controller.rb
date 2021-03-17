@@ -7,9 +7,9 @@ class UsersController < ApplicationController
   end 
   
   def show
-    user = current_user
-    @folders = user.folders.order(created_at: :desc)
-    @files = user.file_names
+    @user = current_user
+    @folders = @user.folders.order(created_at: :desc)
+    @files = @user.file_names
     folder_id = params[:folder_id]
     folder = Folder.find_by(id: folder_id)
     destroy = params[:destroy]
@@ -32,11 +32,7 @@ class UsersController < ApplicationController
       end 
     end   
   end
-  
-  # def create
-    
-  # end 
-  
+
   def edit
     @user = User.find_by(id: params[:id])
   end 
@@ -52,9 +48,6 @@ class UsersController < ApplicationController
       redirect_to ("/users/#{current_user.id}")
     end 
   end 
-  
-  # def destroy
-  # end 
   
   private
   

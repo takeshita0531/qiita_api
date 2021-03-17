@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
    
   </head>
 
@@ -13,25 +14,25 @@
     <div class="side-bar">
       <% if user_signed_in? %>
         <div class="home">
-          <%= link_to  "/folders" do %>
+          <%= link_to  "/folders", class: "btn btn-success" do %>
             <i class="fa fa-home fa-2x"></i>
             <div class="home-letter">ホーム</div>
           <% end %>
         </div>
         <div class="file">
-          <%= link_to "/files" do %>
-            <i class="fa fa-folder-open fa-2x "></i> 
+          <%= link_to "/files", class: "btn btn-success" do %>
+            <i class="fa fa-folder-open fa-2x"></i> 
             <div class="file-letter">ファイル</div>
           <% end %>
         </div>
         <div class="user">
-          <%= link_to  "/users/#{current_user.id}" do %>
+          <%= link_to  "/users/#{current_user.id}", class: "btn btn-success" do %>
             <i class="fa fa-user fa-2x"></i>
             <div class="user-letter">プロフィール</div>
           <% end %>
         </div>
         <div class="logout">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-success", method: :delete %>
           <div class="logout-letter"></div>
         </div>
       <% end %>

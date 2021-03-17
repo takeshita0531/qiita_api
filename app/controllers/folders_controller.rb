@@ -20,10 +20,9 @@ class FoldersController < ApplicationController
   def create
       query = 'created:>2015-10-09'
       status, next_page, @items = QiitaApiManager.search(query)
-      @folder_new = Folder.new
-      @folder = Folder.new(folder_params)
+      folder = Folder.new(folder_params)
       respond_to do |format|
-      if @folder.save
+      if folder.save
         format.html  {redirect_back(fallback_location: true)}
         format.js { render js: 'folders/create.js.erb' }
       else
