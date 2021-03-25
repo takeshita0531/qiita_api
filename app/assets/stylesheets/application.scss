@@ -13,6 +13,12 @@
  */
  @import "bootstrap";
  
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
  .side-bar {
     display: block;
     width: 20%;
@@ -45,6 +51,6 @@
  }
  
  a {
-  color: black;
+   color: black;
  }
  
