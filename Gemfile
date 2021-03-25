@@ -61,7 +61,7 @@ gem 'slack-api'
 gem 'rb-readline'
 
 group :production do
-  gem 'pg'
+  gem 'mysql2', '~> 0.5.3'
 end
 
 gem 'ransack'
@@ -71,3 +71,5 @@ gem 'sidekiq'
 gem 'daemons'
 gem 'delayed_job_active_record'
 gem 'data-confirm-modal'
+gem "appengine", "~> 0.6.0"
+

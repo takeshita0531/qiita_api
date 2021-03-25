@@ -21,5 +21,11 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  timeout: 5000
+  username: takeshitarin
+  password: rintakeshita
+  database: qiita_app
+  socket: /cloudsql/molten-avatar-285401:us-central1:rin90531
