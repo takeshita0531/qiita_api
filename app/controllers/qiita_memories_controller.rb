@@ -3,18 +3,10 @@ class QiitaMemoriesController < ApplicationController
     def deliver
         query = 'created:>2015-10-09' # 参考 検索時に利用できるオプション
         status, next_page, @items = QiitaApiManager.search(query)
-        # @list = @items.each {|item| puts "[#{item['id']}"}
-        # @items.each do |item|
-        #     if QiitaMemory.where(url: item['url'])
-        # end 
     end
-  
-  
   
   require 'net/http'
   require 'json'
-  
-  
 
      class QiitaApiManager
         PER_PAGE = 100

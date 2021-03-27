@@ -1,5 +1,6 @@
 class FilesController < ApplicationController
    before_action :authenticate_user!
+   
   def new
     @file_name = FileName.new
   end 

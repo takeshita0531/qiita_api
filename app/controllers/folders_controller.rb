@@ -6,11 +6,8 @@ class FoldersController < ApplicationController
     @folder = Folder.new
   end 
   
-  def top
-  end 
-  
   def index
-    query = 'created:>2015-10-09' # 参考 検索時に利用できるオプション
+    query = 'created:>2015-10-09' 
     status, next_page, @items = QiitaApiManager.search(query)
     QiitaMemoryJob.set(wait: 4.hour).perform_later
     @folder_new = Folder.new
