@@ -201,6 +201,7 @@ GEM
       rack
     orm_adapter (0.5.0)
     os (1.1.1)
+    pg (1.2.3)
     polyamorous (2.3.0)
       activerecord (>= 5.0)
     popper_js (1.16.0)
@@ -369,6 +370,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mysql2 (~> 0.5.3)
   omniauth-twitter
+  pg
   pry-rails
   public_uid
   puma (~> 3.0)
