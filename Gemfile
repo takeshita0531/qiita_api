@@ -73,4 +73,4 @@ gem 'daemons'
 gem 'delayed_job_active_record'
 gem 'data-confirm-modal'
 gem "appengine", "~> 0.6.0"
-
+gem "daemons"

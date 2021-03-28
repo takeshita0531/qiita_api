@@ -2,7 +2,6 @@ class QiitaMemoryJob < ApplicationJob
   queue_as :default
 
   def perform
-    # @qiita_new = QiitaMemory.new
     query = 'created:>2015-10-09' # 参考 検索時に利用できるオプション
     status, next_page, @items = QiitaApiManager.search(query)
     # Do something later
