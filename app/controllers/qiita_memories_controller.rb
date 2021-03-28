@@ -45,6 +45,5 @@ class QiitaMemoriesController < ApplicationController
      def folder_params
         params.fetch(:folder, {}).permit(:user_id, :article_id, :title, :url, :user_name)
      end 
-
-
+     
 end
