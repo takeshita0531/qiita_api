@@ -49,7 +49,9 @@
             <tr><th>投稿日</th><th>ID</th><th>タイトル</th></tr>
         </thead>
         <tbody>
-            <%= render partial: "folders/search_folder", :locals => {folders: @folders, folder_new: @folder_new} %>
+            <div class="search">
+                <%= render partial: "folders/search_folder", :locals => {folders: @folders, folder_new: @folder_new} %>
+            </div>
         </tbody>
     </table> 
     <% end %>

@@ -1,6 +1,6 @@
 <% items.each do |item| %>
     <div class="folder_form">
-        <%= form_for(folder_new, remote: true)do |f| %>
+        <%= form_for folder_new, remote: true do |f| %>
            <tr>
            <td><%= item['created_at'] %></td>
            <td><%= f.hidden_field :article_id, value: item['id'] %>
