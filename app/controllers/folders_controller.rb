@@ -1,14 +1,10 @@
 class FoldersController < ApplicationController
   skip_before_action :verify_authenticity_token
-  
-  def new
-    @folder = Folder.new
-  end 
-  
+
   def index
     query = 'created:>2015-10-09' 
     status, next_page, @items = QiitaApiManager.search(query)
-    QiitaMemoryJob.perform_later
+    QiitaMemoryJob.set(wait: 4.hour).perform_later
     @folder_new = Folder.new
     @folders = QiitaMemory.search(params[:search])
   end
