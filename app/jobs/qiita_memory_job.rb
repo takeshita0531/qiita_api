@@ -11,13 +11,14 @@ class QiitaMemoryJob < ApplicationJob
       @qiita_memo.url_memo = item['url']
       @qiita_memo.user_memo = item['user']['id']
       @qiita_memo.create_at_memo = item['created_at']
+      @qiita_memo.id_memo = item['id']
       @qiita_memo.save
     end 
       
-    sql = 'SELECT title_memo, url_memo, user_memo, create_at_memo FROM qiita_memories GROUP BY title_memo, url_memo, user_memo, create_at_memo HAVING COUNT(*) > 1;'
+    sql = 'SELECT title_memo, url_memo, user_memo, create_at_memo, id_memo FROM qiita_memories GROUP BY title_memo, url_memo, user_memo, create_at_memo, id_memo HAVING COUNT(*) > 1;'
     duplicates = QiitaMemory.find_by_sql(sql)
     duplicate_ids = duplicates.inject([]) do |duplicate_ids, dup|
-    articles = QiitaMemory.select(:id).where(title_memo: dup.title_memo, url_memo: dup.url_memo, user_memo: dup.user_memo, create_at_memo: dup.create_at_memo) 
+    articles = QiitaMemory.select(:id).where(title_memo: dup.title_memo, url_memo: dup.url_memo, user_memo: dup.user_memo, create_at_memo: dup.create_at_memo, id_memo: dup.id_memo) 
     duplicate_ids << articles.pluck(:id)[1..-1]
     end
 

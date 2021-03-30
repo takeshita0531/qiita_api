@@ -4,7 +4,7 @@ class FoldersController < ApplicationController
   def index
     query = 'created:>2015-10-09' 
     status, next_page, @items = QiitaApiManager.search(query)
-    QiitaMemoryJob.set(wait: 4.hour).perform_later
+    QiitaMemoryJob.perform_later
     @folder_new = Folder.new
     @folders = QiitaMemory.search(params[:search])
   end
