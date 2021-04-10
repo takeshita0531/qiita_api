@@ -1,8 +1,16 @@
 class FoldersController < ApplicationController
+  before_action :authenticate_user!
   skip_before_action :verify_authenticity_token
-
+  
+  def new
+    @folder = Folder.new
+  end 
+  
+  def top
+  end 
+  
   def index
-    query = 'created:>2015-10-09' 
+    query = 'created:>2015-10-09' # 参考 検索時に利用できるオプション
     status, next_page, @items = QiitaApiManager.search(query)
     QiitaMemoryJob.perform_later
     @folder_new = Folder.new
