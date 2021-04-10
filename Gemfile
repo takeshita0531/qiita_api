@@ -65,6 +65,7 @@ group :production do
   gem 'pg'
 end
 
+gem 'redis'
 gem 'ransack'
 gem 'resque'
 gem 'resque-scheduler'

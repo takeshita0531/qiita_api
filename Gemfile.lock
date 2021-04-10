@@ -377,6 +377,7 @@ DEPENDENCIES
   rails (~> 5.0.0)
   ransack
   rb-readline
+  redis
   resque
   resque-scheduler
   sass-rails (~> 5.0)
