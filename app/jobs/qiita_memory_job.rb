@@ -4,7 +4,6 @@ class QiitaMemoryJob < ApplicationJob
   def perform
     query = 'created:>2015-10-09' # 参考 検索時に利用できるオプション
     status, next_page, @items = QiitaApiManager.search(query)
-    # Do something later
     @items.each do |item|
       @qiita_memo = QiitaMemory.new
       @qiita_memo.title_memo = item['title']

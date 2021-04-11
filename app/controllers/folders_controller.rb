@@ -15,6 +15,7 @@ class FoldersController < ApplicationController
     QiitaMemoryJob.perform_later
     @folder_new = Folder.new
     @folders = QiitaMemory.search(params[:search])
+    
   end
   
   def create
