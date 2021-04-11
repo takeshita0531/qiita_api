@@ -70,7 +70,7 @@ gem 'ransack'
 gem 'resque'
 gem 'resque-scheduler'
 gem 'sidekiq'
-gem "delayed_job"
+# gem "delayed_job"
 gem 'delayed_job_active_record'
 gem 'data-confirm-modal'
 gem "appengine", "~> 0.6.0"

@@ -362,7 +362,6 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   daemons
   data-confirm-modal
-  delayed_job
   delayed_job_active_record
   devise
   dotenv
