@@ -54,11 +54,8 @@ class FoldersController < ApplicationController
     end
   end 
   
-  
   require 'net/http'
   require 'json'
-  
-  
 
   class QiitaApiManager
     PER_PAGE = 100

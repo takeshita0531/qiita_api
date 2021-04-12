@@ -8,7 +8,9 @@ class QiitaMemoryJob < ApplicationJob
       @qiita_memo = QiitaMemory.new
       @qiita_memo.title_memo = item['title']
       @qiita_memo.url_memo = item['url']
-      @qiita_memo.user_memo = item['user']['id']
+      if item['user'].present?
+        @qiita_memo.user_memo = item['user']['id']
+      end 
       @qiita_memo.create_at_memo = item['created_at']
       @qiita_memo.id_memo = item['id']
       @qiita_memo.save

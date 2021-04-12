@@ -5,8 +5,10 @@
            <td><%= item['created_at'] %></td>
            <td><%= f.hidden_field :article_id, value: item['id'] %>
            <%= f.hidden_field :user_id, value: current_user.id %>
-           <%= f.label :user_name, value: item['user']['id'] %>
-           <%= f.hidden_field :user_name, value: item['user']['id'] %></td>
+           <% if item['user'].present? %>
+                <%= f.label :user_name, value: item['user']['id'] %>
+                <%= f.hidden_field :user_name, value: item['user']['id'] %></td>
+           <% end %>
            <td><a href =<%= item['url'] %> target = ["_blenk"]><%= f.label :title, value: item['title'] %></a>
            <%= f.hidden_field :title, value: item['title'] %>
            <%= f.hidden_field :url, value: item['url'] %>
@@ -14,4 +16,4 @@
            </tr> 
         <% end %>
     </div>
-<% end %>
+<% end %> 
