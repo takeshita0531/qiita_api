@@ -3,3 +3,4 @@ class AddFileIdtoFolders < ActiveRecord::Migration[5.0]
     add_column :folders, :file_id, :integer
   end
 end
+rails generate migration AddDetailsToTitles price:integer author:string

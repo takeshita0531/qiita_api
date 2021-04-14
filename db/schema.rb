@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210303140637) do
+ActiveRecord::Schema.define(version: 20210414150004) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20210303140637) do
     t.string   "user_memo"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.datetime "create_at_memo"
+    t.time     "create_at_memo"
     t.string   "id_memo"
   end
 
@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 20210303140637) do
     t.string   "name"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.binary   "image_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
