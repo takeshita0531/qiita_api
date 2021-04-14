@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210414150004) do
+ActiveRecord::Schema.define(version: 20210414174953) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -49,10 +49,10 @@ ActiveRecord::Schema.define(version: 20210414150004) do
     t.string   "title_memo"
     t.string   "url_memo"
     t.string   "user_memo"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.time     "create_at_memo"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "id_memo"
+    t.time     "create_time_memo"
   end
 
   create_table "users", force: :cascade do |t|
