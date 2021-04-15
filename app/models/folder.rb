@@ -4,7 +4,7 @@ class Folder < ApplicationRecord
     
     def QiitaMemory.search(search) #self.はUser.を意味する
      if search
-       where(['title_memo LIKE ?', "%#{search.downcase}%"])
+       where(['UPPER(title_memo) LIKE ?', "%#{search.upcase}%"])
      end
     end
 end
