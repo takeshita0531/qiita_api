@@ -13,5 +13,7 @@ module Api
     # -- all .rb files in that directory are automatically loaded.
     # config.active_job.queue_adapter = :sidekiq
     config.active_job.queue_adapter = :delayed_job
+    config.time_zone = 'Tokyo'
+    config.active_record.time_zone_aware_types = [:datetime, :time]
   end
 end
