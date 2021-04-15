@@ -2,7 +2,6 @@
     <div class="folder_form">
         <%= form_for folder_new, remote: true do |f| %>
             <tr>
-            <td><%= folder.create_time_memo %></td>
             <td><%= f.hidden_field :article_id, value: folder %>
             <%= f.hidden_field :user_id, value: current_user.id%>
             <%= f.label :user_name, value: folder.user_memo %>
