@@ -1,27 +1,66 @@
+<style>
+  main {
+   height: 100%;
+   width: 100%;
+   background: radial-gradient(#43FF6B, #007700);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+ 
+ .sign_in {
+     padding-bottom: 50px;
+ }
+
+ .font_fam {
+   font-family: fantasy;
+ }
+ 
+ .font_fam {
+   color: white;
+   padding-bottom: 30px;
+ }
+ 
+ .field {
+   padding-top: 10px;
+ }
+ 
+ input[type="email"]{
+  width: 200px;
+  height: 50px;
+ }
+ 
+ input[type="password"]{
+  width: 200px;
+  height: 50px;
+}
+
+.actions {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.login_btn {
+  width: 200px;
+  height: 50px;
+}
+</style>
+<%= render 'layouts/header' %>
 <main style="padding-top: 20px;">
   <div class="login" style="text-align: center;">
-  <h2>ログイン</h2>
+  <h2 class="font_fam"><span style="font-family: Comic Sans MS;">QiiMemo</span></h2>
   
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.label :メールアドレス %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス" %>
     </div>
   
     <div class="field">
-      <%= f.label :パスワード %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード" %>
     </div>
   
-    <% if devise_mapping.rememberable? %>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
-      </div>
-    <% end %>
-  
     <div class="actions">
-      <%= f.submit "ログイン" %>
+      <%= f.submit "ログイン", class: "btn btn-danger login_btn" %>
     </div>
   <% end %>
   

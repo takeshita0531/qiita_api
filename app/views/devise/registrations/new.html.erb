@@ -1,30 +1,73 @@
+<style>
+ 
+ main {
+   height: 100%;
+   width: 100%;
+   background: radial-gradient(#43FF6B, #007700);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ .sign_in {
+     padding-bottom: 50px;
+ }
+
+ .font_fam {
+   font-family: fantasy;
+ }
+ 
+ .font_fam {
+   color: white;
+   padding-bottom: 30px;
+ }
+ 
+ .field {
+   padding-top: 10px;
+ }
+ 
+ input[type="email"]{
+  width: 200px;
+  height: 50px;
+ }
+ 
+ input[type="password"]{
+  width: 200px;
+  height: 50px;
+}
+
+.actions {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.sign_in_btn {
+  width: 200px;
+  height: 50px;
+}
+
+</style>
+<%= render 'layouts/header' %>
 <main style="padding-top: 20px;">
   <div class="sign_in" style="text-align: center;">
-    <h2>新規登録</h2>
-    
+    <h2 class="font_fam"><span style="font-family: Comic Sans MS;">QiiMemo</span></h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
     
       <div class="field">
-        <%= f.label :メールアドレス %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス" %>
       </div>
     
       <div class="field">
-        <%= f.label :パスワード %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> 字以上)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード(6文字以上)" %>
       </div>
     
       <div class="field">
-        <%= f.label :パスワード%><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード再入力" %>
       </div>
     
       <div class="actions">
-        <%= f.submit "新規登録" %>
+        <%= f.submit "新規登録", class: "btn btn-primary sign_in_btn" %>
       </div>
     <% end %>
     

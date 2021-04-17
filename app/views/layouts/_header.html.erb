@@ -1,0 +1,84 @@
+<style>
+    header {
+        position: fixed;
+        width: 100%;
+        background-color: #343a40;
+        height: 50px
+        margin-top: 50px;
+        z-index: 30;
+        left: 0;
+        top: 0;
+        opacity: 0.9;
+    }
+    
+    .header-menu li {
+        display: inline-block;
+        float: right;
+        padding-left: 15px;
+        list-style: none
+    }
+    
+    .qiita {
+        line-height:50px;
+    }
+    
+    .top-warapper {
+        background-image: url(https://image.shutterstock.com/image-photo/ryazan-russia-may-20-2018-260nw-1095525152.jpg);    
+        background-size: cover;
+        height: 700px;
+        padding-top: 6px;
+        padding-bottom: 80px;
+        opacity: 0.8;
+    }
+
+    .top-container {
+        color: white;
+        text-align: center;
+        padding-top: 550px;
+    }
+
+    .entry {
+        text-align: center;
+        font-size: 20px;
+    
+    }
+
+    .sign-up {
+        display: block;
+        background-color: rgba(0,0,255,0.7);
+        width: 100px;
+        margin:0 auto;
+    }
+
+    .sign-in {
+        display: block;
+        background-color: rgba(153,0,51,0.7);
+        width: 100px;
+        margin:0 auto;
+        margin-top: 10px;
+    }
+</style>
+
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="header-qiita">
+                    <h5 class="qiita"><%= link_to "キーメモ", root_path, :style => "color: white" %></h5>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="header-menu">
+                <ul>
+                    <li>
+                        <%= link_to "新規登録", new_user_registration_path, :style => "color: white" %>
+                    </li>
+                    <li>
+                        <%= link_to "ログイン", new_user_session_path, :style => "color: white"  %>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
