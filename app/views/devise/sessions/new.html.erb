@@ -9,42 +9,108 @@
   }
  
  .sign_in {
-     padding-bottom: 50px;
+    padding-bottom: 50px;
  }
 
  .font_fam {
-   font-family: fantasy;
+    font-family: fantasy;
  }
  
  .font_fam {
-   color: white;
-   padding-bottom: 30px;
+    color: white;
+    padding-bottom: 30px;
  }
  
  .field {
-   padding-top: 10px;
+    padding-top: 10px;
  }
  
  input[type="email"]{
-  width: 200px;
-  height: 50px;
+    width: 200px;
+    height: 50px;
  }
  
  input[type="password"]{
-  width: 200px;
-  height: 50px;
+    width: 200px;
+    height: 50px;
 }
 
 .actions {
-  padding-top: 10px;
-  padding-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.login_btn {
-  width: 200px;
-  height: 50px;
+@media screen and (max-width: 767px) {
+    
+ main {
+    height: 100%;
+    padding-top: 0px;
+ }
+    
+ input[type="email"]{
+    width: 200px;
+    height: 30px;
+ }
+ 
+ input[type="password"]{
+    width: 200px;
+    height: 30px;
+ }
+ 
+ .field {
+    padding-top: 5px;
+ }
+ 
+ .sign_in_btn {
+    width: 100px;
+    height: 30px;
+ }
+ 
+ .font-fam {
+    padding-bottom: 0px;
+ }
+ 
+ .sign_in {
+    padding-bottom: 0px;
+ }
+}
+
+@media screen and (max-height: 500px) {
+    
+ main {
+    height: 100%;
+    padding-top: 0px;
+ }
+    
+ input[type="email"]{
+    width: 200px;
+    height: 30px;
+ }
+ 
+ input[type="password"]{
+    width: 200px;
+    height: 30px;
+ }
+ 
+ .field {
+    padding-top: 5px;
+ }
+ 
+ .sign_in_btn {
+    width: 100px;
+    height: 30px;
+ }
+ 
+ .font-fam {
+    padding-bottom: 0px;
+ }
+ 
+ .sign_in {
+    padding-bottom: 0px;
+ }
 }
 </style>
+
 <%= render 'layouts/header' %>
 <main style="padding-top: 20px;">
   <div class="login" style="text-align: center;">

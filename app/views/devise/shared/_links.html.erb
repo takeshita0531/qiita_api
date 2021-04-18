@@ -5,7 +5,23 @@
     height: 50px;
   }
   
+  @media screen and (max-width: 767px) {
+    .login_btn, .sign_in_btn {
+      padding-top: 3px;
+      width: 200px;
+      height: 30px;
+    }
+  }
+  
+  @media screen and (max-height: 500px) {
+    .login_btn, .sign_in_btn {
+      padding-top: 3px;
+      width: 200px;
+      height: 30px;
+    }
+  }
 </style>
+
 <%- if controller_name != 'sessions' %>
   <%= link_to "ログイン", new_session_path(resource_name), class: "btn btn-danger login_btn" %><br />
 <% end %>
