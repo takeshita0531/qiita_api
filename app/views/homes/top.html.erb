@@ -23,9 +23,9 @@
     }
     
     .top-warapper {
-        background-image: url(https://image.shutterstock.com/image-photo/ryazan-russia-may-20-2018-260nw-1095525152.jpg);    
+        background-image: url("https://image.shutterstock.com/image-photo/ryazan-russia-may-20-2018-260nw-1095525152.jpg");
         background-size: cover;
-        height: 700px;
+        height: 750px;
         padding-top: 6px;
         padding-bottom: 80px;
         opacity: 0.8;
@@ -40,6 +40,7 @@
     .entry {
         text-align: center;
         font-size: 20px;
+        /*padding-bottom: 20px;*/
     
     }
 
@@ -67,18 +68,25 @@
     }
     
     .sub {
+        background-color: white;
+        height: 80px;
         text-align: center;
-        padding-top: 30px;
+        margin-top: 20px;
+        /*margin-bottom: 20px;*/
+        padding-top: 25px;
     }
     
     .descript {
         background-color: #777777;
         height: max;
         padding: 30px 0 50px 30px;
+        margin-top: 42px;
     }
     
     .top-img {
-        margin-left: 30px;
+        /*margin-left: 30px;*/
+  /*     width: auto;*/
+  /*height: auto;*/
     }
     
     .home-container {
@@ -110,7 +118,73 @@
     .descript-prf, .descript-file {
         margin-top: 50px;
     }
-
+    
+    @media screen and (max-width: 1500px) {
+        .top-warapper {
+            background-image: url("https://image.shutterstock.com/image-photo/ryazan-russia-may-20-2018-260nw-1095525152.jpg");    
+            height: 850px;
+            opacity: 0.8;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            positoin: relative;
+            
+        }
+       
+        .descript {
+            background-color: #777777;
+            height: max;
+            padding: 30px 0 50px 0px;
+            margin-top: 30px;
+        }
+        
+        .top-img img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .home-img, .file-img, .prf-img {
+            height: 100px;
+        }
+        
+        .home-img img, .home-img img, .file-img img, .prf-img img {
+            height: 60px;
+        }
+        
+        .home-img h4, .home-img h4, .file-img h4, .prf-img h4 {
+            font-size: 17px;
+        }
+        
+        .text-home, .text-file, .text-prf  {
+            background-color: white;
+            margin-right: 30px;
+            margin-left: 30px;
+            margin-top: 30px;
+            padding: 10px;
+            border-radius: 10px; 
+        }
+        
+        .home-about, .file-about, .prf-about {
+            width: 300px;
+            background-color: white;
+            border-radius: 10px; 
+            /*margin-left: 0px;*/
+            margin: 0 auto ;
+        }
+        
+        .home-container, .file-container, .prf-container {
+            margin-bottom: 10px;
+        }
+        
+        .sub {
+            position: absolute;
+            top: 760px;
+            left: 0;
+            width: 100%;
+            padding-top: 20px;
+            margin-top: 30px;
+        }
+    }
 </style>
 <header>
     <div class="container">
@@ -147,19 +221,14 @@
             <%= link_to "ログイン", new_user_session_path, :style => "color: white"  %>
         </div>
     </div>
-</div>
 <h3 class="sub">
     サービス説明
 </h3>
+</div>
 <div class="descript">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-8">
-                <div class="top-img">
-                    <%= image_tag '13.42.37.png', :size => '900x500' %>
-                </div>
-            </div>
-            <div class="col-4">
+            <div class="col-xl-4">
                 <div class="home-about">
                     <div class="home-img">
                         <h4 style="padding-top: 10px">ホームについて</h4>
@@ -176,20 +245,17 @@
                     </div>
                 </div>
             </div>
+            <div class="col-xl-8">
+                <div class="top-img">
+                    <%= image_tag '13.42.37.png', :size => '900x500' %>
+                </div>
+            </div>
         </div>
     </div>
     <div class="descript-file">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-8">
-                    <div class="top-img">
-                        <%= image_tag '11.46.08.png', :size => '900x300' %>
-                    </div>
-                    <div class="top-img" style="padding-top: 20px">
-                        <%= image_tag '11.46.30.png', :size => '900x300' %>
-                    </div>
-                </div>
-                <div class="col-4">
+                <div class="col-lg-4">
                     <div class="file-about">
                         <div class="file-img">
                             <h4 style="padding-top: 10px">ファイルについて</h4>
@@ -204,24 +270,21 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-8">
+                    <div class="top-img">
+                        <%= image_tag '11.46.08.png', :size => '900x300' %>
+                    </div>
+                    <div class="top-img" style="padding-top: 20px">
+                        <%= image_tag '11.46.30.png', :size => '900x300' %>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="descript-prf">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-8">
-                    <div class="top-img">
-                        <%= image_tag '11.45.33.png', :size => '900x300' %>
-                    </div>
-                    <div class="top-img" style="padding-top: 20px;">
-                        <%= image_tag '14.02.36.png', :size => '900x300' %>
-                    </div>
-                    <div class="top-img" style="padding-top: 20px;">
-                        <%= image_tag '14.07.43.png', :size => '900x300' %>
-                    </div>
-                </div>
-                <div class="col-4">
+                <div class="col-lg-4">
                     <div class="prf-about">
                         <div class="prf-img">
                             <h4 style="padding-top: 10px">プロフィールについて</h4>
@@ -238,6 +301,17 @@
                             <p>ファイルページでも、保存先の移動、記事の削除ができます。</p>
                             <p><%= image_tag '14.19.50.png', :size => '60x40' %>からログアウトできます。</p>
                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="top-img">
+                        <%= image_tag '11.45.33.png', :size => '900x300' %>
+                    </div>
+                    <div class="top-img" style="padding-top: 20px;">
+                        <%= image_tag '14.02.36.png', :size => '900x300' %>
+                    </div>
+                    <div class="top-img" style="padding-top: 20px;">
+                        <%= image_tag '14.07.43.png', :size => '900x300' %>
                     </div>
                 </div>
             </div>
