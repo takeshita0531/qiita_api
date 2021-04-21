@@ -54,3 +54,43 @@
    color: black;
  }
  
+ @media screen and (max-width: 1300px) {
+  .home-letter, .file-letter, .user-letter {
+    display: none;
+  }
+  
+  .fa-home {
+    padding-right: 5px;
+  }
+  
+  .fa-user {
+   padding-left: 5px;
+   padding-right: 4px;
+  }
+ }
+
+ @media screen and (max-width: 850px) {
+  .home, .file, .user {
+    padding: 10px 0 20px 0;
+  }
+  
+  .home {
+    margin-right: 30px;
+  }
+  
+  .user {
+    margin-left: 30px;
+  }
+  
+  .side-bar {
+    width: 100%;
+    background-color: white;
+	position: fixed;
+	bottom: 0;
+	zindex: 1;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    border-top: solid 1px #DDDDDD;
+  }
+ }
