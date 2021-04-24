@@ -28,6 +28,15 @@ header {
     padding-right: 10px;
 }
 
+ul {
+    list-style: none
+}
+
+li {
+    color: gray;
+    padding-top: 10px;
+}
+
 @media screen and (max-width: 850px) {
     
     .container-index {
@@ -41,29 +50,35 @@ header {
         position: relative;
         top: 0px;
         position: fixed;
+        zindex: 10;
     }
 }
 
     
-    @media screen and (max-width: 500px) {
-        .container-index {
-            width: 100%;
-            float: none;
-            margin: 50px auto 77px auto;
-            padding-left: 3px;
-            padding-right: 3px;
-        }
+    /*@media screen and (max-width: 370px) {*/
+    /*    .container-index {*/
+            /*width: 100%;*/
+            /*float: none;*/
+    /*        margin: 50px auto 77px auto;*/
+    /*        padding-left: 3px;*/
+    /*        padding-right: 3px;*/
+    /*    }*/
             
-        .table .create-index {
-            padding-left: 10px;
-            padding-right: 2px;
-        }
+        /*.table td {*/
+            /*padding-left: 0px;*/
+            /*padding-right: 0px;*/
+        /*    width: 29%;*/
+        /*}*/
         
-        .table .search-index {
-            padding-left: 10px;
-            padding-right: 3px;
-        }
-    }
+        /*.table th {*/
+        /*    padding: 5px;*/
+        /*}*/
+        
+    /*    .table .search-index {*/
+    /*        padding-left: 10px;*/
+    /*        padding-right: 3px;*/
+    /*    }*/
+    /*}*/
 </style>
 
 <header>
@@ -79,7 +94,7 @@ header {
         <% if @folders.present? %>
         <table class="table table-striped table-bordered table-hover table-condensed" style="margin-bottom: 30px;">
             <thead style="background-color: #CBFFD3;">
-                <tr><th>ID</th><th>タイトル</th></tr>
+                <tr><th>検索結果<br>ID</th><th>タイトル</th></tr>
             </thead>
             <tbody>
                 <div class="search-file">
@@ -90,7 +105,7 @@ header {
         <% end %>
         <table class="table table-striped table-bordered table-hover table-condensed create-index">
             <thead style="background-color: #BAD3FF;">
-                <tr><th>新規記事<br>投稿日</th><th>ID</th><th>タイトル</th></tr>
+                <tr></tr><th>ID</th><th>タイトル</th></tr>
             </thead>
             <tbody>
                 <div id="folder_create">

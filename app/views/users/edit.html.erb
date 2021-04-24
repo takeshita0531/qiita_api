@@ -1,6 +1,13 @@
+<style>
+    .edit_page {
+        margin-top: 10px;
+    }
+</style>
+
 <div class="edit_page" style="text-align:center;">
     <%= form_for @user do |f| %>
+        <%= f.label :名前%>
         <%= f.text_field :name, value: @user.name %>
-        <%= f.submit "保存" %>
+        <%= f.submit "保存", class: "btn btn-primary", :style=>"margin-left: 7px" %>
     <% end %>
 </div>
