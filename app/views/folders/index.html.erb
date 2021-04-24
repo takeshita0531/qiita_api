@@ -34,7 +34,7 @@ header {
         width: 100%;
         float: none;
         margin: 50px auto 77px auto;
-        padding: 0 10px;
+        padding-left: 10px;
     }
     
     header {
@@ -42,11 +42,24 @@ header {
         top: 0px;
         position: fixed;
     }
-    
-    .table td {
-        padding-right: 0;
-    }
 }
+
+    
+    @media screen and (max-width: 500px) {
+        .container-index {
+            width: 100%;
+            float: none;
+            margin: 50px auto 77px auto;
+            padding-left: 3px;
+        }
+            
+        .table td {
+            padding-left: 10px;
+            padding-right: 3px;
+            
+        }
+    }
+
 </style>
 
 <header>
