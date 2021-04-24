@@ -51,9 +51,15 @@ header {
             float: none;
             margin: 50px auto 77px auto;
             padding-left: 3px;
+            padding-right: 3px;
         }
             
-        .table td  {
+        .table .create-index {
+            padding-left: 10px;
+            padding-right: 2px;
+        }
+        
+        .table .search-index {
             padding-left: 10px;
             padding-right: 3px;
         }
@@ -82,9 +88,9 @@ header {
             </tbody>
         </table> 
         <% end %>
-        <table class="table table-striped table-bordered table-hover table-condensed">
+        <table class="table table-striped table-bordered table-hover table-condensed create-index">
             <thead style="background-color: #BAD3FF;">
-                <tr><th style="width: 15%;">新規記事<br>投稿日</th><th>ID</th><th>タイトル</th></tr>
+                <tr><th>新規記事<br>投稿日</th><th>ID</th><th>タイトル</th></tr>
             </thead>
             <tbody>
                 <div id="folder_create">

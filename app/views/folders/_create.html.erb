@@ -1,7 +1,7 @@
 <% items.each do |item| %>
     <div class="folder_form">
         <%= form_for folder_new, remote: true do |f| %>
-           <tr>
+           <tr class="create-index">
            <td class="create-index"><%= item['created_at'] %></td>
            <td class="create-index"><%= f.hidden_field :article_id, value: item['id'] %>
            <%= f.hidden_field :user_id, value: current_user.id %>
