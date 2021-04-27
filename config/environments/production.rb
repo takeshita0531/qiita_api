@@ -86,21 +86,21 @@ config.webpacker.check_yarn_integrity = false
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  # host = 'https://limitless-thicket-41526.herokuapp.com'
-  # Rails.application.routes.default_url_options[:host] = host
-  # config.action_mailer.default_url_options = { host: host }
-  # # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  host = 'https://limitless-thicket-41526.herokuapp.com'
+  Rails.application.routes.default_url_options[:host] = host
+  config.action_mailer.default_url_options = { host: host }
+  # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  # config.action_mailer.default_url_options = {  host: 'https://limitless-thicket-41526.herokuapp.com' }
-  # config.action_mailer.raise_delivery_errors = true
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   :enable_starttls_auto => true,
-  #   :port           => ENV['MAILGUN_SMTP_PORT'],
-  #   :address        => ENV['MAILGUN_SMTP_SERVER'],
-  #   :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-  #   :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-  #   :domain         => host,
-  #   :authentication => :plain,
-  # }
+  config.action_mailer.default_url_options = {  host: 'https://limitless-thicket-41526.herokuapp.com' }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => host,
+    :authentication => :plain,
+  }
 end
