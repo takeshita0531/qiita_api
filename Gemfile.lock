@@ -80,6 +80,9 @@ GEM
       responders
       warden (~> 1.2.3)
     dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubis (2.7.0)
     et-orbi (1.2.4)
       tzinfo
@@ -365,7 +368,7 @@ DEPENDENCIES
   delayed_job
   delayed_job_active_record
   devise
-  dotenv
+  dotenv-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
@@ -394,4 +397,4 @@ DEPENDENCIES
   webpacker (~> 3.5)
 
 BUNDLED WITH
-   2.2.15
+   2.2.16

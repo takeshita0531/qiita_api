@@ -56,7 +56,7 @@ gem 'webpacker', '~> 3.5'
 gem 'pry-rails'
 gem 'public_uid'
 gem 'data-confirm-modal'
-gem 'dotenv'
+gem 'dotenv-rails'
 gem 'slack-api'
 gem 'rb-readline'
 
