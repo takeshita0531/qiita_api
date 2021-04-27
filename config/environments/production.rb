@@ -89,7 +89,7 @@ config.webpacker.check_yarn_integrity = false
   host = 'https://limitless-thicket-41526.herokuapp.com'
   Rails.application.routes.default_url_options[:host] = host
   config.action_mailer.default_url_options = { host: host }
-  config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_mailer.default_url_options = {  host: 'https://limitless-thicket-41526.herokuapp.com' }
   config.action_mailer.raise_delivery_errors = true
