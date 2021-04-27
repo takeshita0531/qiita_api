@@ -54,9 +54,9 @@ config.webpacker.check_yarn_integrity = true
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
-  config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  config.webpacker.check_yarn_integrity = false
-  host = 'localhost'
-  Rails.application.routes.default_url_options[:host] = host
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  # config.webpacker.check_yarn_integrity = false
+  # host = 'localhost'
+  # Rails.application.routes.default_url_options[:host] = host
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
