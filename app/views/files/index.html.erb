@@ -30,9 +30,10 @@
   }
   
   .folder-title {
-    padding-bottom: 20px;
+    padding-bottom: 40px;
     border-bottom: 1px solid #8c8b8b;
     margin-bottom: 20px;
+    position: relative;
   }
   
   .folder-title:last-child {
@@ -47,6 +48,12 @@
   .delete {
     padding: 10px 0 10px 30px;
     border-top: 1px solid #8c8b8b;
+  }
+  
+  .dropdown .btn-menu {
+      position: absolute;
+      bottom: 0;
+      right: 0px;
   }
  
   dropup, .dropright, .dropdown, .dropleft {
@@ -87,20 +94,20 @@
             <tbody>
                 <% if @file_all.present?%>
                     <% @file_all.each do |file| %>
-                        <tr><td class="width"><%= file.file_name %><a class="fa fa-ellipsis-v" style="float: right;" href=<%= edit_file_path(file) %>></a></td>
+                        <tr><td class="width" style="width: 35%;"><%= file.file_name %><a class="fa fa-ellipsis-v" style="float: right;" href=<%= edit_file_path(file) %>></a></td>
                         <td>
                         <% @folders.each do |folder| %>
                             <% if folder.file_id == file.id %>
                                 <div class="folder-title"><a href=<%= folder.url %> target = ["_blank"]><%= folder.title %></a>
                                     <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle btn-menu" type="button" data-toggle="dropdown">
                                           <a class="fa fa-ellipsis-v" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-right">
                                            <li class="dropleft drop-hover">
                                                 <a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown" style="padding-bottom: 9px;">保存先</a>
                                                 <ul class="dropdown-menu">
-                                                  <li class="dropleft drop-hover" style="height:100px;overflow:auto;>
+                                                  <li class="dropleft drop-hover" style="height:100px;overflow:auto;">
                                                     <a class="dropdown-item" href="#">
                                                     <% @file_all.each do |file| %>
                                                         <ul class="file-select">
