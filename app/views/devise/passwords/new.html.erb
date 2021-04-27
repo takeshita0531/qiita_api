@@ -1,16 +1,69 @@
-<h2>Forgot your password?</h2>
+<style>
+  main {
+   height: 100%;
+   width: 100%;
+   background: radial-gradient(#43FF6B, #007700);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+  
+  .font_fam {
+    font-family: fantasy;
+  }
+ 
+  .font_fam {
+    color: white;
+    padding-bottom: 30px;
+  }
+  
+  .login_btn, .sign_in_btn {
+    padding-top: 13px;
+    width: 200px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="email"]{
+    width: 200px;
+    height: 50px;
+  }
+  @media screen and (max-height: 500px) {
+    
+    main {
+      height: 100%;
+      padding-top: 0px;
+    }
+    
+    input[type="email"]{
+      width: 200px;
+      height: 30px;
+    }
+    
+    .font_fam {
+      padding-bottom: 0px;
+    }
+  }
+</style>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<%= render 'layouts/header' %>
+<main style="padding-top: 20px;">
+  <div class="password_form" style="text-align: center;">
+    <h2 class="font_fam"><span style="font-family: Comic Sans MS;">QiiMemo</span></h2>
+    <h2 style="padding-top: 10px">パスワード再設定</h2>
+    
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+    
+      <div class="field" style="padding-bottom: 10px">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス" %>
+      </div>
+    
+      <div class="actions" style="padding-bottom: 10px">
+        <%= f.submit "パスワード再設定メールを送る" %>
+      </div>
+    <% end %>
+    
+    <%= render "devise/shared/links" %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</main>

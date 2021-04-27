@@ -10,4 +10,7 @@
         <%= f.text_field :name, value: @user.name %>
         <%= f.submit "保存", class: "btn btn-primary", :style=>"margin-left: 7px" %>
     <% end %>
+    <div class="logout" style="padding-top: 20px">
+      <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-success", method: :delete %>
+    </div>
 </div>

@@ -56,4 +56,7 @@ config.webpacker.check_yarn_integrity = true
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.webpacker.check_yarn_integrity = false
+  host = 'samplehost'
+  Rails.application.routes.default_url_options[:host] = host
+  config.action_mailer.default_url_options = { host: 'samplehost' }
 end
