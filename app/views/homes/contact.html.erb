@@ -1,0 +1,46 @@
+<style>
+  main {
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(#43FF6B, #007700);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contact_form {
+    text-align: center;  
+  }
+  
+  .font_fam {
+    color: white;
+    padding-bottom: 30px;
+  }
+</style>
+
+<%= render 'layouts/header' %>
+<main>
+  <div class="contact_form">
+  <h2 class="font_fam"><span style="font-family: Comic Sans MS;">QiiMemo</span></h2>
+    <form action="https://api.staticforms.xyz/submit" method="post">
+      <input type="hidden" name="accessKey" value="036bb6ba-c2c0-4b35-aea7-051b4c047a76">
+      <input type="hidden" name="subject" value="件名">
+      <input type="hidden" name="redirectTo" value="https://limitless-thicket-41526.herokuapp.com/homes/contact_after">
+      <div class="form-group row">
+        <label for="inputName">お名前</label>
+        <input type="text" name="name" class="form-control" id="inputName">
+      </div>
+      <div class="form-group row">
+        <label for="inputEmail">メールアドレス</label>
+        <input type="text" name="email" class="form-control" id="inputEmail">
+      </div>
+      <div class="form-group row">
+        <label for="inputTextarea">メッセージ</label>
+        <textarea name="message" rows="3" class="form-control" id="inputTextarea"></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary mb-2">送信</button>
+      </div>
+    </form>
+  </div>
+</main>
