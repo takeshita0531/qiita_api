@@ -11,7 +11,7 @@
   </head>
 
   <body>
-  <% unless current_page?(root_path) || current_page?(homes_contact_path) %> 
+  <% unless current_page?(root_path) || current_page?(homes_contact_path) || current_page?(homes_contact_after_path) %> 
     <div class="side-bar">
       <% if user_signed_in? %>
         <div class="home">
