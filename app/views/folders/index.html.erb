@@ -29,7 +29,7 @@ header {
 }
 
 ul {
-    list-style: none
+    list-style: none;
 }
 
 li {
@@ -37,20 +37,31 @@ li {
     padding-top: 10px;
 }
 
+.create-table {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.title-width {
+    width: 25%;
+}
+
 @media screen and (max-width: 850px) {
-    
     .container-index {
         width: 100%;
         float: none;
         margin: 50px auto 77px auto;
-        padding-left: 10px;
+        padding: 0 20px 0 20px;
     }
     
     header {
         position: relative;
         top: 0px;
         position: fixed;
-        z-index: 10;
+    }
+    
+    .title-width {
+        width: 30%;
     }
 }
 </style>
@@ -77,9 +88,9 @@ li {
             </tbody>
         </table> 
         <% end %>
-        <table class="table table-striped table-bordered table-hover table-condensed create-index">
+        <table class="table table-striped table-bordered table-hover table-condensed create-table">
             <thead style="background-color: #BAD3FF;">
-                <tr></tr><th>ID</th><th>タイトル</th></tr>
+                <tr><th>ID</th><th>タイトル</th></tr>
             </thead>
             <tbody>
                 <div id="folder_create">

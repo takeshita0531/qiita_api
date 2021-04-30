@@ -1,26 +1,24 @@
 <% items.each do |item| %>
     <div class="folder_form">
         <%= form_for folder_new, remote: true do |f| %>
-           <tr class="create-index">
-           <td class="create-index"><%= f.hidden_field :article_id, value: item['id'] %>
-           <%= f.hidden_field :user_id, value: current_user.id %>
-           <% if item['user'].present? %>
+            <tr>
+            <td class="title-width"><%= f.hidden_field :article_id, value: item['id'] %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <% if item['user'].present? %>
                 <%= f.label :user_name, value: item['user']['id'] %>
+                <%= f.hidden_field :user_name, value: item['user']['id'] %>
                 <ul>
                     <li>
-                        <%= f.hidden_field :user_name, value: item['user']['id'] %>
-                    </li>
-                    <li>
-                        <div class="item-create"><%= item['created_at'] %></div>
+                        <%= item['created_at'] %>
                     </li>
                 </ul>
            <% end %>
            </td>
-           <td class="create-index"><a href =<%= item['url'] %> target = ["_blenk"]><%= f.label :title, value: item['title'] %></a>
-           <%= f.hidden_field :title, value: item['title'] %>
-           <%= f.hidden_field :url, value: item['url'] %>
-           <div class="save-btn"><%= f.submit "保存", class: "btn btn-primary" %></div></td>
-           </tr> 
+            <td class="title-wrap"><a href =<%= item['url'] %> target = ["_blenk"]><%= f.label :title, value: item['title'] %></a>
+            <%= f.hidden_field :title, value: item['title'] %>
+            <%= f.hidden_field :url, value: item['url'] %>
+            <div class="save-btn"><%= f.submit "保存", class: "btn btn-primary" %></div></td>
+            </tr>
         <% end %>
     </div>
-<% end %> 
+<% end %>

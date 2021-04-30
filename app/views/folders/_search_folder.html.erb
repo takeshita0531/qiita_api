@@ -2,11 +2,11 @@
     <div class="folder_form">
         <%= form_for folder_new, remote: true do |f| %>
             <tr>
-            <td class="search-index"><%= f.hidden_field :article_id, value: folder %>
+            <td><%= f.hidden_field :article_id, value: folder %>
             <%= f.hidden_field :user_id, value: current_user.id%>
             <%= f.label :user_name, value: folder.user_memo %>
             <%= f.hidden_field :user_name, value: folder.user_memo %></td>
-            <td class="search-index"><a href =<%= folder.url_memo %> target = ["_blenk"]><%= f.label :title, value: folder.title_memo %></a>
+            <td><a href =<%= folder.url_memo %> target = ["_blenk"]><%= f.label :title, value: folder.title_memo %></a>
             <%= f.hidden_field :title, value: folder.title_memo %>
             <%= f.hidden_field :url, value: folder.url_memo %>
             <div class="save-btn"><%= f.submit "保存", class: "btn btn-primary" %></div></td>
