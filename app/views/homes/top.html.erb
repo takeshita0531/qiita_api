@@ -74,14 +74,6 @@
         float: right;
     }
     
-    .home-img, .file-img, .prf-img {
-        text-align: center;
-        width: 320px;
-        background-color: white;
-        border-radius: 10px; 
-        margin: 0 auto;
-    }
-    
     .descript-prf, .descript-file {
         margin-top: 50px;
     }
@@ -125,12 +117,21 @@
     }
     
     footer {
-        border-top: solid 1px #c8c7cc;
         height: 110px;
         background-color: black;
         opacity: 0.8;
         text-align: center;
         line-height: 100px;
+    }
+    
+    .plan {
+        border-top: solid 1px #c8c7cc;
+        height: 80px;
+        text-align: center;
+    }
+    
+    .plan h3 {
+        line-height: 80px;
     }
     
      @media screen and (max-width: 1400px) {
@@ -177,9 +178,36 @@
         .text-content {
             padding-top: 0;
         }
+        
+        .top-container {
+            padding-top: 550px;
+        }
      }
      
       @media screen and (max-width: 1100px) {
+        .top-warapper {
+            background-image: url("https://image.shutterstock.com/image-photo/ryazan-russia-may-20-2018-260nw-1095525152.jpg");    
+            height: 850px;
+            opacity: 0.8;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            positoin: relative;
+        }
+        
+        .sub {
+            position: absolute;
+            top: 760px;
+            left: 0;
+            width: 100%;
+            padding-top: 20px;
+            margin-top: 30px;
+        }
+        
+        .top-container {
+            padding-top: 500px;
+        }
+        
         .all-img {
             width: 100%;
         }
@@ -218,7 +246,7 @@
                 ホームページでは、Qiitaに投稿された新着記事が100件表示されています。
                 上部の検索フォーム<%= image_tag '13.40.49.png', :size => '120x40' %>からは、Qiitaから保存された記事が検索できます。
                 記事右側の保存ボタン<%= image_tag '12.26.18.png', :size => '50x40' %>は、あなたが気になった記事、いつでも見れるようにしたいと思った記事を保存することができます。
-                <%= image_tag '0.48.17.png', :size => '300x50' %>記事のタイトルをクリックすることで記事へ推移できます。</p>
+                <%= image_tag '0.48.17.png', :size => '280x50' %>記事のタイトルをクリックすることで記事へ推移できます。</p>
             </div>
             <div class="top-img" style="padding-top: 20px">
                 <%= image_tag '0.47.33.png', :size => '900x500', class: "all-img", style: "margin-top: 20px;" %>
@@ -273,7 +301,7 @@
                         保存記事一覧　記事の保存先指定
                     </h3>
                     <p>タイトル横の<%= image_tag '13.54.43.png', :size => '40x40' %>からは、作成したファイルに保存したい記事を選択できます。
-                    <div class="prf-width"><%= image_tag '14.09.07.png', :size => '300x100' %></div>
+                    <div class="prf-width"><%= image_tag '14.09.07.png', :size => '280x100' %></div>
                     保存先にマウスを乗せると保存先一覧が出ます。保存したいファイルを選択します。<br >保存中のファイルには（保存中）となります。</p>
                 </div>
                 <div class="top-img">
@@ -292,6 +320,11 @@
             </div>
         </div>
     </div>
+</div>
+<div class="plan">
+    <h3>
+        全機能無料
+    </h3>
 </div>
 <footer>
     <p style="color: white;">
