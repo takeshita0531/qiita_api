@@ -54,26 +54,25 @@
     .descript {
         height: max;
         padding: 30px 0 50px 30px;
-        /*margin-top: 42px;*/
         margin: 0 auto;
         max-width: 1400px;
     }
     
-    .text-home, .text-file, .text-prf, .text-prf-2  {
+    .text-home, .text-file, .text-prf, .text-prf-2, .text-prf-3 {
         background-color: white;
         margin-right: 60px;
         margin-left: 30px;
-        margin-top: 30px;
-        padding: 10px;
+        padding-bottom: 10px;
         border-radius: 10px; 
         line-height: 2em;
+        width: 500px;
+        float: right;
     }
     
-    
-    .text-prf {
-        margin-top: 100px;
+    .text-home, .text-prf, .text-prf-2, .text-prf-3 {
+        width: 500px;
+        float: right;
     }
-    
     
     .home-img, .file-img, .prf-img {
         text-align: center;
@@ -91,10 +90,24 @@
         width: 700px;
     }
     
-    .text-home, .text-prf, .text-prf-2{
-        width: 500px;
-        height: 100px;
-        float: right;
+    .file-content {
+        padding-top: 50px;
+    }
+    
+    .text-content {
+        padding-top: 100px;
+    }
+    
+    .text-prf-3 {
+        height: 250px;
+        display: flex;
+        justify-align: center;
+        align-items: center;
+    }
+    
+    .text-prf-2 {
+        paddin: 30px;
+
     }
     
     .text-file {
@@ -113,93 +126,64 @@
     
     footer {
         border-top: solid 1px #c8c7cc;
-        height: 100px;
+        height: 110px;
         background-color: black;
         opacity: 0.8;
         text-align: center;
         line-height: 100px;
     }
-    @media screen and (max-width: 1000px) {
-        .top-warapper {
-            background-image: url("https://image.shutterstock.com/image-photo/ryazan-russia-may-20-2018-260nw-1095525152.jpg");    
-            height: 850px;
-            opacity: 0.8;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            positoin: relative;
-        }
-        
-        .sub {
-            position: absolute;
-            top: 760px;
-            left: 0;
-            width: 100%;
-            padding-top: 20px;
-            margin-top: 30px;
-        }
-    }
     
      @media screen and (max-width: 1400px) {
           .descript {
-            background-color: #777777;
             height: max;
             padding: 30px 0 50px 0px;
             margin-top: 30px;
-            /*width: 100%;*/
         }
         
-        .top-img img {
+        .all-img {
+            width: 80%;
+        }
+        
+        .text-home, .text-file, .text-prf, .text-prf-2, .text-prf-3 {
             width: 100%;
-            height: auto;
+            paddin: 0;
+            float: none;
+            text-align: center;
+            margin-left: 0;
         }
         
-        .home-img, .file-img, .prf-img {
-            height: 100px;
-        }
-        
-        .home-img img, .home-img img, .file-img img, .prf-img img {
-            height: 60px;
-        }
-        
-        .home-img h4, .home-img h4, .file-img h4, .prf-img h4 {
-            font-size: 17px;
-        }
-        
-        .prf-width img {
-            width: 230px;
-            height: 100px;
-        }
-        
-        .prf-width {
+        .text-content, .top-content, .file-content, .prf-content {
             text-align: center;
         }
         
-        .text-home, .text-file, .text-prf  {
-            background-color: white;
-            margin-right: 30px;
-            margin-left: 30px;
-            margin-top: 30px;
-            padding: 10px;
-            border-radius: 10px; 
-            line-height: 3em;
+        .text-prf-3 {
+            height: 50px;
         }
         
-        .home-about, .file-about, .prf-about {
-            width: 300px;
-            background-color: white;
-            border-radius: 10px; 
-            margin: 0 auto ;
+         .text-prf-3 p {
+            width: 80%;
+            margin: 0 auto;
         }
         
-        .home-container, .file-container, .prf-container {
-            margin-bottom: 10px;
+        .text-home, .text-file, .text-prf, .text-prf-2  {
+            width: 80%;
+            margin: 0 auto;
         }
         
-        #top-img img{
-            margin-top: 50px;
+        .text-prf-2 {
+            padding-top: 20px;
+        }
+        
+        .text-content {
+            padding-top: 0;
         }
      }
+     
+      @media screen and (max-width: 1100px) {
+        .all-img {
+            width: 100%;
+        }
+    }
 </style>
     
 <%= render 'layouts/header' %>
@@ -220,13 +204,13 @@
 </h3>
 </div>
 <div class="descript">
-    <div class="home-img">
-        <h2 style="padding-top: 10px">ホームについて</h2>
-        <%= image_tag '12.39.27.png', :size => '150x70' %>
-    </div>
     <div class="contents-wrp">
         <div class="top-content">
             <div class="text-home">
+                <div class="home-img">
+                    <h2>ホームについて</h2>
+                    <%= image_tag '12.39.27.png', :size => '150x70', style: "margin-bottom: 10px;" %>
+                </div>
                 <h3 class="text-weight">
                     記事の一覧と記事の検索
                 </h3>
@@ -244,14 +228,14 @@
     
     <div class="descript-file">
         <div class="file-about">
-            <div class="file-img">
-                <h2 style="padding-top: 10px">ファイルについて</h2>
-                <%= image_tag '13.07.10.png', :size => '150x70' %>
-            </div>
         </div>
          <div class="contents-wrp">
             <div class="file-content">
                 <div class="text-file">
+                    <div class="file-img">
+                        <h2 style="padding-top: 10px">ファイルについて</h2>
+                        <%= image_tag '13.07.10.png', :size => '150x70', style: "margin-bottom: 10px;" %>
+                    </div>
                     <h3 class="text-weight">
                         ファイルの作成
                     </h3>
@@ -266,24 +250,23 @@
         </div>
     </div>
     <div class="descript-prf">
-        <div class="prf-about">
-            <div class="prf-img">
-                <h2 style="padding-top: 10px">プロフィールについて</h2>
-                <%= image_tag '13.14.58.png', :size => '150x70' %>
-            </div>
         </div>
         <div class="contents-wrp">
-            <div class="file-content">
+        <div class="prf-about">
+            <div class="prf-content">
                 <div class="text-prf">
+                    <div class="prf-img">
+                        <h2 style="padding-top: 10px">プロフィールについて</h2>
+                        <%= image_tag '13.14.58.png', :size => '150x70', style: "margin-bottom: 10px;" %>
+                    </div>
                     <h3 class="text-weight">
                         プロフィール編集
                     </h3>
-                    <p>プロフィールページでは、プロフィール編集ボタンからユーザー名の変更ができます。
-                    保存した記事が表示がされます。
+                    <p>プロフィールページでは、プロフィール編集ボタンからユーザー名の変更ができます。保存した記事が表示がされます。
                     </p>
                 </div>
                 <div class="top-img">
-                    <%= image_tag '0.54.18.png', :size => '900x250', class: "all-img", style: "margin-top: 20px;" %>
+                    <%= image_tag '2.46.11.png', :size => '900x250', class: "all-img", style: "margin-top: 20px;" %>
                 </div>
                 <div class="text-prf-2">
                      <h3 class="text-weight">
@@ -293,18 +276,18 @@
                     <div class="prf-width"><%= image_tag '14.09.07.png', :size => '300x100' %></div>
                     保存先にマウスを乗せると保存先一覧が出ます。保存したいファイルを選択します。<br >保存中のファイルには（保存中）となります。</p>
                 </div>
-                <div class="top-img" id="top-img">
+                <div class="top-img">
                     <%= image_tag '0.56.18.png', class: "all-img", :size => '900x300' %>
                 </div>
             </div>
         </div>
         <div class="contents-wrp">
             <div class="text-content">
-                <div class="text-prf">
+                <div class="text-prf-3">
                     <p>ファイルページからでも、保存先の移動、記事の削除ができます。</p>
                 </div>
                 <div class="top-img" style="padding-top: 20px;">
-                    <%= image_tag '17.06.19.png', class: "all-img", :size => '900x200' %>
+                    <%= image_tag '1.45.18.png', class: "all-img", :size => '900x250' %>
                 </div>
             </div>
         </div>
