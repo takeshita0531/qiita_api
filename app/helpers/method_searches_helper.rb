@@ -1,0 +1,2 @@
+module MethodSearchesHelper
+end

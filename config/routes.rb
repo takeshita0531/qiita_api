@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :files, only: [:index, :edit, :update, :create]
   delete 'files/:id' => 'files#destroy'
   resources :folders, only: [:index, :top, :create, :update, :destroy]
-
+  resources :method_searches
  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
