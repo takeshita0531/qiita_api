@@ -1,0 +1,22 @@
+<style>
+    main {
+        width: 100%;
+        position: fixed;
+        text-align: center;
+        padding: 10px 0;
+    }
+</style>
+<main>
+    <div class="code_area">
+        <%= form_tag(method_searches_path, method: :get) do %>
+            <%= text_area_tag :code %>
+            <%= submit_tag "検索" %>
+        <% end %>
+    </div>
+    
+    
+    <% @extracted_methods.each do |method| %>
+        <%= method %>
+    <% end %>
+    
+</main>

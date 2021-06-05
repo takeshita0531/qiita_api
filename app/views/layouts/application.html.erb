@@ -26,7 +26,12 @@
             <div class="file-letter">ファイル</div>
           <% end %>
         </div>
-
+        <div class="file">
+          <%= link_to "/method_searches", class: "btn btn-success" do %>
+            <i class="fa fa-folder-open fa-2x"></i> 
+            <div class="file-letter">検索</div>
+          <% end %>
+        </div>
         <div class="user">
           <%= link_to  "/users/#{current_user.id}", class: "btn btn-success" do %>
             <i class="fa fa-user fa-2x"></i>
