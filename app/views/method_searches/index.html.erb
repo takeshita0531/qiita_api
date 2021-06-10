@@ -1,22 +1,76 @@
 <style>
     main {
-        width: 100%;
-        position: fixed;
         text-align: center;
-        padding: 10px 0;
+        padding-top: 30px;
     }
+    
+    table,td {
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid #333;
+        padding: 10px;
+    }
+
+    thead,tfoot {
+        background-color: #333;
+        color: #fff;
+    }
+    
+    .flex_box {
+        text-align: center;
+        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0 auto;
+    }
+    
+    .flex_item {
+        width: 20%;
+        height: 30px;
+        border: 1px solid #8c8b8b;
+    }
+    
+    .method_index {
+        border-top: 1px solid #8c8b8b;
+        width: 50%;
+        padding-top: 20px;
+        margin: 30px auto 0 auto;
+    }
+    
+    .label {
+        font-weight: bold;
+        font-size: 25px;
+    }
+    
+    .submit {
+        margin-top: 10px;
+    }
+
 </style>
 <main>
     <div class="code_area">
         <%= form_tag(method_searches_path, method: :get) do %>
-            <%= text_area_tag :code %>
-            <%= submit_tag "検索" %>
+        <div class="label">
+            <%= label_tag "メソッド検索" %>
+        </div>
+            <%= text_area_tag :code, '', placeholder: "コードを入力してください。", :size => "60x10" %>
+        <div class="submit">
+            <%= submit_tag "コード検索" %>
+        </div>
         <% end %>
     </div>
-    
-    
-    <% @extracted_methods.each do |method| %>
-        <%= method %>
+    <% if @extracted_methods.present? %>
+    <div class="method_index">
+        <h3>メソッド</h3>
+    </div>
+        <div class="flex_box">
+            <% @extracted_methods.each do |method| %>
+                <div class="flex_item">
+                    <%= method %>
+                </div>
+            <% end %>
+        </div>
     <% end %>
     
 </main>

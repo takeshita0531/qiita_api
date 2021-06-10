@@ -1,0 +1,2 @@
+class MethodSearche < ApplicationRecord
+end
