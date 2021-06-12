@@ -62,7 +62,7 @@
     </div>
     <% if @extracted_methods.present? %>
     <div class="method_index">
-        <h3>メソッド</h3>
+        <h3>メソッド一覧</h3>
     </div>
         <div class="flex_box">
             <% @extracted_methods.each do |method| %>
@@ -71,6 +71,17 @@
                 </div>
             <% end %>
         </div>
+        
+        <% @ruby_class.each do |ruby| %>
+            <% @ruby_class_url = ruby[:href].match(/class(.*)/) %>
+            <% @ruby_method_url = @agent.get("https://docs.ruby-lang.org/ja/latest/#{@ruby_class_url}") %>
+            <% @ruby_methods = @ruby_method_url.search('.class-toc a') %>
+            <% @ruby_methods.each do |ruby_method| %>
+                <% @ruby_method_result= @agent.get("https://docs.ruby-lang.org/ja/latest/#{@ruby_class_url}#{ruby_method[:href]}") %>
+                <% @ruby_method_text = @ruby_method_result.search('.method-heading') %>
+            <h1><%= @ruby_method_text.inner_text %></h1>
+            <% end %>
+        <% end %>
     <% end %>
     
 </main>
