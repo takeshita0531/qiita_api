@@ -59,7 +59,6 @@ gem 'public_uid'
 gem 'data-confirm-modal'
 gem 'dotenv-rails'
 gem 'slack-api'
-gem 'rb-readline'
 
 group :production do
   gem 'mysql2', '~> 0.5.3'
@@ -78,3 +77,4 @@ gem 'data-confirm-modal'
 gem "appengine", "~> 0.6.0"
 gem 'daemons'
 gem 'mechanize'
+gem 'rb-readline'

@@ -46,8 +46,11 @@ ActiveRecord::Schema.define(version: 20210610061009) do
   end
 
   create_table "method_searches", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "method_name"
+    t.text     "method_description"
+    t.string   "method_url"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "qiita_memories", force: :cascade do |t|
