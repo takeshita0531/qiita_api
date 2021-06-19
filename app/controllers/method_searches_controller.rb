@@ -18,22 +18,29 @@ class MethodSearchesController < ApplicationController
         ruby_library = @agent.get("https://docs.ruby-lang.org/ja/latest/library/_builtin.html")
         @ruby_class = ruby_library.search('.signature a')
         
+        @extracted_method_url = []
+        
          @ruby_class.each do |ruby| 
-             @ruby_class_url = ruby[:href].match(/class(.*)/) 
-             @ruby_method_url = @agent.get("https://docs.ruby-lang.org/ja/latest/#{@ruby_class_url}") 
-             @ruby_methods = @ruby_method_url.search('dl a') 
-             @ruby_methods.each do |ruby_url|
-                @ruby_method_url_child = ruby_url[:href].match(/#(.*)/) 
-                @ruby_method_child_commentary = "https://docs.ruby-lang.org/ja/latest/#{@ruby_class_url}#{@ruby_method_url_child}"
-                
-                # puts @ruby_method_child_commentary.match(/.*#(.*)/)
-                # メソッドのurl取得
-                @ruby_method_description = @agent.get("#{@ruby_method_child_commentary.match(/.*#(.*)/)}")
-                # puts @all_method = ruby_url
-                # メソッドの内容説明
-                @all_method = @ruby_method_description.search('.method-description p')
-                
-             end 
+            @ruby_class_url = ruby[:href].match(/class(.*)/) 
+            @ruby_method_url = @agent.get("https://docs.ruby-lang.org/ja/latest/#{@ruby_class_url}") 
+            @ruby_methods = @ruby_method_url.search('dl a')
+                @ruby_methods.each do |ruby_url|
+                    @ruby_method_url_child = ruby_url[:href].match(/#(.*)/) 
+                    code_all = params[:code]
+                    inner_text = ruby_url.inner_text
+                    if code_all.present?
+                        @ruby_method_inner_text = inner_text.match(code_all) 
+                    end 
+                    if @ruby_method_inner_text.present? && @ruby_method_url_child.present?
+                        @ruby_method_child_commentary = "https://docs.ruby-lang.org/ja/latest/#{@ruby_class_url}#{@ruby_method_url_child}"
+                        @ruby_method_child_commentary.match(/.*#(.*)/)
+                        @ruby_method_description = @agent.get("#{@ruby_method_child_commentary.match(/.*#(.*)/)}")
+                        @all_method = @ruby_method_description.search("#{@ruby_method_url_child} code")
+                        @extracted_method_url.push(@all_method)
+                    end 
+                    
+                end  
+            # end 
          end 
         
         # @ruby_class.each do |ruby|

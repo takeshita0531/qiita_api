@@ -71,6 +71,11 @@
                 </div>
             <% end %>
         </div>
+        
+        <% @extracted_method_url.each do |method_name| %>
+            <%= method_name.inner_text %>
+        <% end %>
+        
         <% if false %>
         <% @ruby_class.each do |ruby| %>
             <% @ruby_class_url = ruby[:href].match(/class(.*)/) %>
