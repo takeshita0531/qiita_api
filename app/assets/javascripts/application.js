@@ -15,5 +15,5 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
-// = require data-confirm-modal
+//= require data-confirm-modal
 //= require data-confirm-modal

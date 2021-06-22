@@ -18,8 +18,8 @@ class MethodSearchesController < ApplicationController
         ruby_library = @agent.get("https://docs.ruby-lang.org/ja/latest/library/_builtin.html")
         @ruby_class = ruby_library.search('.signature a')
         
+        @extracted_method_name = []
         @extracted_method_url = []
-        
          @ruby_class.each do |ruby| 
             @ruby_class_url = ruby[:href].match(/class(.*)/) 
             @ruby_method_url = @agent.get("https://docs.ruby-lang.org/ja/latest/#{@ruby_class_url}") 
@@ -29,14 +29,16 @@ class MethodSearchesController < ApplicationController
                     code_all = params[:code]
                     inner_text = ruby_url.inner_text
                     if code_all.present?
-                        @ruby_method_inner_text = inner_text.match(code_all) 
+                        # @ruby_method_inner_text = inner_text.match(/^#{code_all}$/) 
+                        @ruby_method_inner_text = code_all.slice(inner_text.to_s)
                     end 
                     if @ruby_method_inner_text.present? && @ruby_method_url_child.present?
                         @ruby_method_child_commentary = "https://docs.ruby-lang.org/ja/latest/#{@ruby_class_url}#{@ruby_method_url_child}"
                         @ruby_method_child_commentary.match(/.*#(.*)/)
                         @ruby_method_description = @agent.get("#{@ruby_method_child_commentary.match(/.*#(.*)/)}")
                         @all_method = @ruby_method_description.search("#{@ruby_method_url_child} code")
-                        @extracted_method_url.push(@all_method)
+                        @extracted_method_name.push(@all_method)
+                        @extracted_method_url.push(@ruby_method_child_commentary)
                     end 
                     
                 end  

@@ -71,9 +71,16 @@
                 </div>
             <% end %>
         </div>
+        <% if @extracted_method_name.present? %>
+            <% @extracted_method_name.each do |method_name| %>
+                <%= method_name.inner_text %>
+            <% end %>
+        <% end %>
         
-        <% @extracted_method_url.each do |method_name| %>
-            <%= method_name.inner_text %>
+        <% if @extracted_method_url.present? %>
+            <% @extracted_method_url.each do |method_name| %>
+                <%= link_to method_name, method_name %>
+            <% end %>
         <% end %>
         
         <% if false %>
