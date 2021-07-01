@@ -57,10 +57,9 @@ ActiveRecord::Schema.define(version: 20210610061009) do
     t.string   "title_memo"
     t.string   "url_memo"
     t.string   "user_memo"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "id_memo"
-    t.datetime "create_time_memo"
   end
 
   create_table "users", force: :cascade do |t|

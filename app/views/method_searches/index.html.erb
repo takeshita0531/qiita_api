@@ -67,35 +67,16 @@
         <div class="flex_box">
             <% @extracted_methods.each do |method| %>
                 <div class="flex_item">
-                    <%= method %>
+                    <%= link_to method, method_searches_path(method_code: method), remote: true %>
                 </div>
             <% end %>
         </div>
-        <% if @extracted_method_name.present? %>
-            <% @extracted_method_name.each do |method_name| %>
-                <%= method_name.inner_text %>
-            <% end %>
-        <% end %>
-        
-        <% if @extracted_method_url.present? %>
-            <% @extracted_method_url.each do |method_name| %>
-                <%= link_to method_name, method_name %>
-            <% end %>
-        <% end %>
-        
-        <% if false %>
-        <% @ruby_class.each do |ruby| %>
-            <% @ruby_class_url = ruby[:href].match(/class(.*)/) %>
-            <% @ruby_method_url = @agent.get("https://docs.ruby-lang.org/ja/latest/#{@ruby_class_url}") %>
-            <% @ruby_methods = @ruby_method_url.search('.class-toc a') %>
-            <% @ruby_methods.each do |ruby_url| %>
-                <% @ruby_method_url_child = ruby_url[:href].match(/#(.*)/) %>
-                <% @ruby_method_child_commentary = "https://docs.ruby-lang.org/ja/latest/#{@ruby_class_url}#{@ruby_method_url_child}" %>
-                <% @ruby_method_description = @agent.get("#{@ruby_method_child_commentary.match(/.*#(.*)/)}") %>
-            <h1><%= @ruby_method_description.inner_text %></h1>
-            <% end %>
-        <% end %>
-        <% end %>
     <% end %>
     
+    <div class="method_code">
+        <% if @extracted_method_name.present? && @extracted_method_url.present? %>
+                <%= render 'method_searches/method_code', extracted_method_name: @extracted_method_name, extracted_method_url: @extracted_method_url %>
+        <% end %>
+    </div>
+       
 </main>
