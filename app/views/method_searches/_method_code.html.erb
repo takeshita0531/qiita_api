@@ -1,4 +1,14 @@
-<% extracted_method_name.zip(extracted_method_url) do |method_name, method_url| %>
-    <%= method_name %>
-    <%= link_to method_url, method_url %>
+<% extracted_method_name.zip(extracted_method_url, extracted_method_class, extracted_method_description).each do |method_name, method_url, method_class, method_description| %>
+<ul>
+    <li>
+        <%= method_class %>
+        <%= method_name %>
+        <%= link_to method_url, method_url, target: :_blank %>
+        <%= method_description %>
+    </li>
+</ul>
 <% end %>
+
+<script>
+    
+</script>
