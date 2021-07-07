@@ -26,7 +26,8 @@ class MethodSearchesController < ApplicationController
             @extracted_method_url = []
             @extracted_method_class = []
             @extracted_method_description = []
-             @ruby_class.each do |ruby| 
+
+            @ruby_class.each do |ruby| 
                 @ruby_class_url = ruby[:href].match(/class(.*)/) 
                 @ruby_method_url = @agent.get("https://docs.ruby-lang.org/ja/latest/#{@ruby_class_url}") 
                 @ruby_methods = @ruby_method_url.search('dl a')
@@ -46,28 +47,22 @@ class MethodSearchesController < ApplicationController
                             @ruby_class_description = @agent.get("#{@ruby_class_name.match(/.*#(.*)/)}")
                             @all_method = @ruby_method_description.search("#{@ruby_method_url_child} code")
                             @all_class = @ruby_class_description.search("h1")
-                            @method_heading = ""
+                            # @method_heading = ""
                             @method_dt = ""
-                            @method_heading = "#{@ruby_method_url_child}" + "#{@method_dt}" + "+ .method-description"
                             20.times do
+                                @method_heading = "#{@ruby_method_url_child}#{@method_dt}"
+                                @all_method_description = @ruby_method_description.search("#{@method_heading}"+ "+ .method-description")
                                 @method_dt += "+ .method-heading"
+                                if @all_method_description.present?
+                                    @extracted_method_description.push(@all_method_description.inner_text)
+                                end
                             end 
-                            @all_method_description = @ruby_method_description.search("#{@method_heading}")
-                            # @all_method_description = @ruby_method_description.search("#{@ruby_method_url_child} > .method-description")
-                            # if @all_method_description.empty?
-                                # @all_method_description = @ruby_method_description.search("#{@ruby_method_url_child} #{@method_heading} + .method-description")
-                            # end 
-                            # if @all_method_description.empty?
-                                # @all_method_description = @ruby_method_description.search("#{@ruby_method_url_child}+ .method-heading+ .method-description")
-                            # end 
                             @extracted_method_name.push(@all_method.inner_text)
                             @extracted_method_url.push(@ruby_method_child_commentary)
                             @extracted_method_class.push(@all_class.inner_text)
-                            @extracted_method_description.push(@all_method_description.inner_text)
                         end 
-
                     end  
-                end 
+            end 
         end
     end 
 end

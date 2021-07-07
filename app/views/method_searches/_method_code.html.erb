@@ -1,14 +1,57 @@
+<style>
+* {
+    word-break: break-all;
+}
+    .main_container {
+        /*width: 60%;*/
+        padding: 0.5em 1em;
+        margin: 2em 0;
+        /*color: #00BCD4;*/
+        /*background: #e4fcff;*/
+        
+        border-top: solid 6px black;
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+        /*float: left;*/
+    }
+    .class_name {
+        border-bottom: solid 1px black;
+        padding-bottom: 10px;
+    }
+    .class_container {
+        float: left;
+        font-size: 20px;
+    }
+    .name_container {
+        padding-right: 100px;
+    }
+    .description_container {
+        word-wrap: break-word;
+        /*word-wrap: normal;*/
+        /*word-break: break-all;*/
+    }
+</style>
+
 <% extracted_method_name.zip(extracted_method_url, extracted_method_class, extracted_method_description).each do |method_name, method_url, method_class, method_description| %>
-<ul>
-    <li>
-        <%= method_class %>
-        <%= method_name %>
-        <%= link_to method_url, method_url, target: :_blank %>
-        <%= method_description %>
-    </li>
-</ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-11 offset-1">
+                <div class="main_container">
+                    <div class="class_name">
+                        <div class="class_container">
+                            <%= method_class %>
+                        </div>
+                        <div class="name_container">
+                            <%= method_name %>
+                        </div>
+                    </div>
+                    <h7 class="description_container">
+                        <%= method_description %>
+                    </>
+                    <%= link_to method_url, method_url, target: :_blank %>
+                </div>
+            </div>
+        </div>
+    </div>
+   
 <% end %>
 
-<script>
-    
-</script>
