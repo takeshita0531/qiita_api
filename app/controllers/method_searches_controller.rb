@@ -26,7 +26,21 @@ class MethodSearchesController < ApplicationController
             @extracted_method_url = []
             @extracted_method_class = []
             @extracted_method_description = []
+            @expected_method_qiita = []
+            @expected_url_qiita = []
+            
+            @qiita_method_url = @agent.get("https://qiita.com/search?q=rails+#{method_code}") 
+            @qiita_method_url.each do |qiita_method|
+                @expected_qiita_description = @qiita_method_url.search('.searchResult_main')
+                @expected_qiita_description.each do |qiita_description|
+                    @expected_method_qiita.push(qiita_description.inner_text)
+                end
 
+                @qiita_method_title = @qiita_method_url.search('.searchResult_itemTitle a')
+                @qiita_method_title.each do |qiita_title|
+                    @expected_url_qiita.push(qiita_title[:href])
+                end
+            end
             @ruby_class.each do |ruby| 
                 @ruby_class_url = ruby[:href].match(/class(.*)/) 
                 @ruby_method_url = @agent.get("https://docs.ruby-lang.org/ja/latest/#{@ruby_class_url}") 

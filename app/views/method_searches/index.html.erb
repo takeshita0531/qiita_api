@@ -25,10 +25,20 @@
         margin: 0 auto;
     }
     
-    .flex_item {
-        width: 20%;
-        height: 30px;
+    .method_button {
         border: 1px solid #8c8b8b;
+        border-radius:40px;
+        display: block;
+    	position: relative;
+    	width: 160px;
+    	padding: 0.8em;
+    	text-decoration: none;
+    }
+    
+    .method_button:hover {
+        letter-spacing: 2px;
+        text-decoration: none;
+        color: black; 
     }
     
     .method_index {
@@ -56,7 +66,7 @@
         </div>
             <%= text_area_tag :code, '', placeholder: "コードを入力してください。", :size => "60x10" %>
         <div class="submit">
-            <%= submit_tag "コード検索" %>
+            <%= submit_tag "コード検索", class: "btn btn-success" %>
         </div>
         <% end %>
     </div>
@@ -67,7 +77,7 @@
         <div class="flex_box">
             <% @extracted_methods.each do |method| %>
                 <div class="flex_item">
-                    <%= link_to method, method_searches_path(method_code: method), remote: true %>
+                    <%= link_to method, method_searches_path(method_code: method), remote: true, class: "method_button" %>
                 </div>
             <% end %>
         </div>
@@ -76,6 +86,12 @@
     <div class="method_code">
         <% if @extracted_method_name.present? && @extracted_method_url.present? %>
             <%= render 'method_searches/method_code', extracted_method_name: @extracted_method_name, extracted_method_url: @extracted_method_url, extracted_method_class: @extracted_method_class, extracted_method_description: @extracted_method_description %>
+        <% end %>
+    </div>
+    
+    <div class="method_code">
+        <% if @expected_method_qiita.present? && @expected_url_qiita.present? %>
+            <%= render 'method_searches/qiita_method_code', expected_method_qiita: @expected_method_qiita, expected_url_qiita: @expected_url_qiita %>
         <% end %>
     </div>
 </main>

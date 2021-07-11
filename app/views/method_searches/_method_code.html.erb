@@ -29,6 +29,23 @@
         /*word-wrap: normal;*/
         /*word-break: break-all;*/
     }
+    .article_url {
+        
+        text-align: right;
+    }
+    .article_button {
+        display: inline-block;
+        padding: 0.3em 1em;
+        text-decoration: none;
+        color: black;
+        border: solid 2px #CC0000;
+        border-radius: 3px;
+        transition: .4s;
+    }
+    .article_button:hover {
+        background: #CC0000;
+        color: white;
+    }
 </style>
 
 <% extracted_method_name.zip(extracted_method_url, extracted_method_class, extracted_method_description).each do |method_name, method_url, method_class, method_description| %>
@@ -46,8 +63,10 @@
                     </div>
                     <h7 class="description_container">
                         <%= method_description %>
-                    </>
-                    <%= link_to method_url, method_url, target: :_blank %>
+                    </h7>
+                    <div class="article_url">
+                        <%= link_to "記事へ", method_url, target: :_blank, class: "article_button" %>
+                    </div>
                 </div>
             </div>
         </div>
