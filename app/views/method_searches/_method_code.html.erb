@@ -6,7 +6,7 @@
         padding: 0.5em 1em;
         margin: 2em 0;
         border-top: solid 6px black;
-        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
     }
     .class_name {
         border-bottom: solid 1px black;
@@ -38,30 +38,36 @@
         background: #CC0000;
         color: white;
     }
+    .ruby_result {
+        padding: 20px;
+    }
 </style>
-<% extracted_method_name.zip(extracted_method_url, extracted_method_class, extracted_method_description).each do |method_name, method_url, method_class, method_description| %>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-11 offset-1">
-                <div class="main_container">
-                    <div class="class_name">
-                        <div class="class_container">
-                            <%= method_class %>
+<% if extracted_method_name.present? %>
+    <% extracted_method_name.zip(extracted_method_url, extracted_method_class, extracted_method_description).each do |method_name, method_url, method_class, method_description| %>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-11 offset-1">
+                    <div class="main_container">
+                        <div class="class_name">
+                            <div class="class_container">
+                                <%= method_class %>
+                            </div>
+                            <div class="name_container">
+                                <%= method_name %>
+                            </div>
                         </div>
-                        
-                        <div class="name_container">
-                            <%= method_name %>
+                        <h7 class="description_container">
+                            <%= method_description %>
+                        </h7>
+                        <div class="article_url">
+                            <%= link_to "記事へ", method_url, target: :_blank, class: "article_button" %>
                         </div>
-                    </div>
-                    <h7 class="description_container">
-                        <%= method_description %>
-                    </h7>
-                    <div class="article_url">
-                        <%= link_to "記事へ", method_url, target: :_blank, class: "article_button" %>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    <% end %>
+<% else %>
+    <h5 class="ruby_result">検索条件と一致する結果がありませんでした。</h5>
 <% end %>
 

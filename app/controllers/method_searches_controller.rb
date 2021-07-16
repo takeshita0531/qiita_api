@@ -30,7 +30,7 @@ class MethodSearchesController < ApplicationController
             @expected_url_qiita = []
             @expected_title_qiita = []
             
-            @qiita_method_url = @agent.get("https://qiita.com/search?q=rails+#{@method_code}") 
+            @qiita_method_url = @agent.get("https://qiita.com/search?q=ruby+#{@method_code}") 
             @qiita_method_url.each do |qiita_method|
                 @expected_qiita_description = @qiita_method_url.search('.searchResult_snippet')
                 @expected_qiita_description.each do |qiita_description|
@@ -54,21 +54,17 @@ class MethodSearchesController < ApplicationController
                 @ruby_methods = @ruby_method_url.search('dl a')
                     @ruby_methods.each do |ruby_url|
                         @ruby_method_url_child = ruby_url[:href].match(/#(.*)/) 
-                        # method_code = params[:method_code]
                         inner_text = ruby_url.inner_text
                         if @method_code.present?
-                            # @ruby_method_inner_text = inner_text.match(/^#{code_all}$/) 
                             @ruby_method_inner_text = @method_code.slice(inner_text.to_s)
                         end 
                         if @ruby_method_inner_text.present? && @ruby_method_url_child.present?
                             @ruby_method_child_commentary = "https://docs.ruby-lang.org/ja/latest/#{@ruby_class_url}#{@ruby_method_url_child}"
                             @ruby_class_name = "https://docs.ruby-lang.org/ja/latest/#{@ruby_class_url}"
-                            # @ruby_method_child_commentary.match(/.*#(.*)/)
                             @ruby_method_description = @agent.get("#{@ruby_method_child_commentary.match(/.*#(.*)/)}")
                             @ruby_class_description = @agent.get("#{@ruby_class_name.match(/.*#(.*)/)}")
                             @all_method = @ruby_method_description.search("#{@ruby_method_url_child} code")
                             @all_class = @ruby_class_description.search("h1")
-                            # @method_heading = ""
                             @method_dt = ""
                             20.times do
                                 @method_heading = "#{@ruby_method_url_child}#{@method_dt}"

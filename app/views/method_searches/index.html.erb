@@ -23,6 +23,7 @@
         flex-wrap: wrap;
         align-items: center;
         margin: 0 auto;
+        padding-bottom: 20px;
     }
     
     .method_button {
@@ -66,6 +67,11 @@
     .search_result {
         padding-top: 10px;
     }
+    
+    .code_area {
+        margin-bottom: 30px;
+    }
+    
 </style>
 <main>
     <div class="code_area">
@@ -83,48 +89,47 @@
     <div class="method_index">
         <h3>メソッド一覧</h3>
     </div>
-        <div class="flex_box">
-            <% @extracted_methods.each do |method| %>
-                <div class="flex_item">
-                    <%= link_to method, method_searches_path(method_code: method), remote: true, class: "method_button" %>
-                </div>
-            <% end %>
-        </div>
-    <% end %>
-<div class="change_tab">
-    <ul class="nav nav-tabs nav-pills">
-        <li class="nav-item">
-            <a href="#contents1" class="nav-link active" data-toggle="tab">Ruby</a>
-        </li>
-        <li class="nav-item">
-            <a href="#contents2" class="nav-link" data-toggle="tab">Qiita</a>
-        </li>
-    </ul>
-</div>
-<div class="tab-content">
-    <div class="tab-pane active" id="contents1">
-        <div class="method_code">
-            <% if @extracted_method_name.present? && @extracted_method_url.present? %>
-                <%= render 'method_searches/method_code', extracted_method_name: @extracted_method_name, extracted_method_url: @extracted_method_url, extracted_method_class: @extracted_method_class, extracted_method_description: @extracted_method_description %>
-            <% else %>
-                <div class="search_result">
-                    検索結果が表示されます。
-                </div>
-            <% end %>
-        </div>
-    
+    <div class="flex_box">
+        <% @extracted_methods.each do |method| %>
+            <div class="flex_item">
+                <%= link_to method, method_searches_path(method_code: method), remote: true, class: "method_button" %>
+            </div>
+        <% end %>
     </div>
-    <div class="tab-pane" id="contents2">
-        <div class="qiita_method">
-            <% if @expected_method_qiita.present? && @expected_url_qiita.present? %>
-                <%= render 'method_searches/qiita_method_code', expected_method_qiita: @expected_method_qiita, expected_url_qiita: @expected_url_qiita, expected_title_qiita: @expected_title_qiita %>
-            <% else %>
-                <div class="search_result">
-                    検索結果が表示されます。
-                </div>
-            <% end %>
+    <div class="change_tab">
+        <ul class="nav nav-tabs nav-pills">
+            <li class="nav-item">
+                <a href="#contents1" class="nav-link active" data-toggle="tab">Ruby</a>
+            </li>
+            <li class="nav-item">
+                <a href="#contents2" class="nav-link" data-toggle="tab">Qiita</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div class="tab-pane active" id="contents1">
+            <div class="method_code">
+                <% if @extracted_method_name.present? && @extracted_method_url.present? %>
+                    <%= render 'method_searches/method_code', extracted_method_name: @extracted_method_name, extracted_method_url: @extracted_method_url, extracted_method_class: @extracted_method_class, extracted_method_description: @extracted_method_description %>
+                <% else %>
+                    <div class="search_result">
+                        検索結果が表示されます。
+                    </div>
+                <% end %>
+            </div>
+        </div>
+        <div class="tab-pane" id="contents2">
+            <div class="qiita_method">
+                <% if @expected_method_qiita.present? && @expected_url_qiita.present? %>
+                    <%= render 'method_searches/qiita_method_code', expected_method_qiita: @expected_method_qiita, expected_url_qiita: @expected_url_qiita, expected_title_qiita: @expected_title_qiita %>
+                <% else %>
+                    <div class="search_result">
+                        検索結果が表示されます。
+                    </div>
+                <% end %>
+            </div>
         </div>
     </div>
-</div>
+<% end %>
 </main>
 
