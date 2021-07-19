@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+  before_action :correct_user, only: [:edit, :update, :show]
+  
   def show
     @user = current_user
     @folders = @user.folders.order(created_at: :desc)
@@ -48,4 +49,11 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name)
   end 
+  
+  def correct_user
+    user = User.find_by(id: params[:id])
+    unless user.id == current_user.id 
+      redirect_to root_path, alert: '不正な操作を検知しました。'
+    end
+  end
 end

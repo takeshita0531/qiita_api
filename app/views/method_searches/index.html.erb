@@ -28,10 +28,10 @@
     
     .method_button {
         border: 1px solid #8c8b8b;
-        border-radius:40px;
+        border-radius: 40px;
         display: block;
     	position: relative;
-    	width: 160px;
+    	width: 140px;
     	padding: 0.8em;
     	text-decoration: none;
     }
@@ -72,6 +72,27 @@
         margin-bottom: 30px;
     }
     
+    .text_form {
+        width: 400px;
+        height: 250px;
+    }
+    
+    @media screen and (max-width: 500px) {
+        .text_form {
+            width: 300px;
+            height: 200px;
+        }
+        .method_button {
+    	    width: 95px;
+        }
+    }
+    
+    @media screen and (max-width: 600px) {
+        .offset-1 {
+            margin-left: 0px;
+        }
+    }
+    
 </style>
 <main>
     <div class="code_area">
@@ -79,9 +100,9 @@
         <div class="label">
             <%= label_tag "メソッド検索" %>
         </div>
-            <%= text_area_tag :code, '', placeholder: "コードを入力してください。", :size => "60x10" %>
+            <%= text_area_tag :code, '', placeholder: "メソッドを入力してください。", class: "text_form" %>
         <div class="submit">
-            <%= submit_tag "コード検索", class: "btn btn-success" %>
+            <%= submit_tag "メソッドを検索", class: "btn btn-success" %>
         </div>
         <% end %>
     </div>
@@ -130,6 +151,6 @@
             </div>
         </div>
     </div>
-<% end %>
+    <% end %>
 </main>
 

@@ -1,6 +1,7 @@
 class MethodSearchesController < ApplicationController
     def index
         code_all = params[:code]
+        
         if code_all.present?
             extracted_method_array = []
             ObjectSpace.each_object(Class) do |class_all|

@@ -41,6 +41,16 @@
     .ruby_result {
         padding: 20px;
     }
+    
+    @media screen and (max-width: 770px) {
+        .class_container {
+            position: static;
+            font-size: 20px;
+        }
+        .name_container {
+            position: static;
+        }
+    }
 </style>
 <% if extracted_method_name.present? %>
     <% extracted_method_name.zip(extracted_method_url, extracted_method_class, extracted_method_description).each do |method_name, method_url, method_class, method_description| %>
