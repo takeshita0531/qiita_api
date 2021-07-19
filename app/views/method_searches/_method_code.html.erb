@@ -25,7 +25,20 @@
     .article_url {
         text-align: right;
     }
-    .article_button {
+    .article_button1 {
+        display: inline-block;
+        padding: 0.3em 1em;
+        text-decoration: none;
+        color: black;
+        border: solid 2px blue;
+        border-radius: 3px;
+        transition: .4s;
+    }
+    .article_button1:hover {
+        background: blue;
+        color: white;
+    }
+     .article_button2 {
         display: inline-block;
         padding: 0.3em 1em;
         text-decoration: none;
@@ -34,8 +47,19 @@
         border-radius: 3px;
         transition: .4s;
     }
-    .article_button:hover {
+    .article_button2:hover {
         background: #CC0000;
+        color: white;
+    }
+    .article_button3 {
+        display: inline-block;
+        padding: 0.3em 1em;
+        text-decoration: none;
+        color: black;
+        border: solid 2px blue;
+        border-radius: 3px;
+        transition: .4s;
+        background: blue;
         color: white;
     }
     .ruby_result {
@@ -70,7 +94,7 @@
                             <%= method_description %>
                         </h7>
                         <div class="article_url">
-                            <%= link_to "記事へ", method_url, target: :_blank, class: "article_button" %>
+                            <%= link_to "記事へ", method_url, target: :_blank, class: "article_button2" %>
                         </div>
                     </div>
                 </div>

@@ -20,7 +20,7 @@ class FoldersController < ApplicationController
   def create
       query = 'created:>2015-10-09'
       status, next_page, @items = QiitaApiManager.search(query)
-      folder = Folder.new(folder_params)
+      folder = current_user.folders.new(folder_params)
       respond_to do |format|
       if folder.save
         format.html  {redirect_back(fallback_location: true)}

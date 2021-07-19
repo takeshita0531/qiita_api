@@ -3,7 +3,7 @@
         font-size: 20px;
     }
 </style>
-<% expected_method_qiita.zip(expected_url_qiita, expected_title_qiita).each do |qiita_method, qiita_url, qiita_name| %>
+<% expected_method_qiita.zip(expected_url_qiita, expected_title_qiita, expected_user_name, qiita_url_saved).each do |qiita_method, qiita_url, qiita_name, user_name, url_saved| %>
 <div class="container">
     <div class="row">
         <div class="col-md-11 offset-1">
@@ -17,7 +17,14 @@
                     <%= qiita_method %>
                 </h7>
                 <div class="article_url">
-                    <%= link_to "記事へ", "https://qiita.com#{qiita_url}", target: :_blank, class: "article_button" %>
+                    <% if url_saved == "https://qiita.com#{qiita_url}" %>
+                        <div class="article_button3">
+                            保存済み
+                        </div>
+                    <% else %>
+                       <%= link_to "保存", method_searches_path(title: qiita_name, url: "https://qiita.com#{qiita_url}", user_name: user_name, code: request.url, method_code: "ss"), method: :post, target: :_blank, class: "article_button1", remote: true %>
+                    <% end %>
+                    <%= link_to "記事へ", "https://qiita.com#{qiita_url}", target: :_blank, class: "article_button2" %>
                 </div>
             </div>
         </div>
