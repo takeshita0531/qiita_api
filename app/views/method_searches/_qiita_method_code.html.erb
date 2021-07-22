@@ -22,7 +22,7 @@
                             保存済み
                         </div>
                     <% else %>
-                       <%= link_to "保存", method_searches_path(title: qiita_name, url: "https://qiita.com#{qiita_url}", user_name: user_name, code: request.url, method_code: "ss"), method: :post, target: :_blank, class: "article_button1", remote: true %>
+                       <%= link_to "保存", method_searches_path(title: qiita_name, url: "https://qiita.com#{qiita_url}", user_name: user_name, method_code: @method_code), method: :post, target: :_blank, class: "article_button1", remote: true %>
                     <% end %>
                     <%= link_to "記事へ", "https://qiita.com#{qiita_url}", target: :_blank, class: "article_button2" %>
                 </div>

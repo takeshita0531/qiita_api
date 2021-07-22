@@ -77,7 +77,7 @@
     }
 </style>
 <% if extracted_method_name.present? %>
-    <% extracted_method_name.zip(extracted_method_url, extracted_method_class, extracted_method_description).each do |method_name, method_url, method_class, method_description| %>
+    <% extracted_method_name.zip(extracted_method_url, extracted_method_class, extracted_method_description, method_url_saved).each do |method_name, method_url, method_class, method_description, url_saved| %>
         <div class="container">
             <div class="row">
                 <div class="col-md-11 offset-1">
@@ -94,6 +94,13 @@
                             <%= method_description %>
                         </h7>
                         <div class="article_url">
+                        <% if url_saved == method_url %>
+                            <div class="article_button3">
+                                保存済み
+                            </div>
+                        <% else %>
+                            <%= link_to "保存", method_searches_path(title: method_name, url: method_url, method_code: method_code), method: :post, target: :_blank, class: "article_button1", remote: true %>
+                        <% end %>
                             <%= link_to "記事へ", method_url, target: :_blank, class: "article_button2" %>
                         </div>
                     </div>
