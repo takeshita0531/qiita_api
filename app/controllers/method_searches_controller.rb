@@ -39,6 +39,7 @@ class MethodSearchesController < ApplicationController
                 expected_qiita_description.each do |qiita_description|
                     @expected_method_qiita.push(qiita_description.inner_text)
                 end
+                    @expected_method_qiita = Kaminari.paginate_array(@expected_method_qiita).page(params[:page]).per(10)
 
                 qiita_method_title = qiita_method_url.search('.searchResult_itemTitle a')
                 qiita_method_title.each do |qiita_title|
@@ -48,16 +49,19 @@ class MethodSearchesController < ApplicationController
                         @qiita_url_saved.push(qiita_url.url)
                     end
                 end
+                    @expected_url_qiita = Kaminari.paginate_array(@expected_url_qiita).page(params[:page]).per(10)
                 
                 expected_qiita_name = qiita_method_url.search('.searchResult_itemTitle')
                 expected_qiita_name.each do |qiita_name|
                     @expected_title_qiita.push(qiita_name.inner_text)
                 end
+                    @xpected_title_qiita = Kaminari.paginate_array(@expected_title_qiita).page(params[:page]).per(10)
                 
                 expected_qiita_user_name = qiita_method_url.search('.searchResult_header a')
                 expected_qiita_user_name.each do |user_name|
                     @expected_user_name.push(user_name.inner_text)
                 end
+                    @expected_user_name = Kaminari.paginate_array(@expected_user_name).page(params[:page]).per(10)
             end
             
             ruby_class.each do |ruby| 

@@ -131,7 +131,7 @@
         <div class="tab-pane active" id="contents1">
             <div class="method_code">
                 <% if @extracted_method_name.present? && @extracted_method_url.present? %>
-                    <%= render 'method_searches/method_code', extracted_method_name: @extracted_method_name, extracted_method_url: @extracted_method_url, extracted_method_class: @extracted_method_class, extracted_method_description: @extracted_method_description, method_url_saved: @method_url_saved %>
+                    <%= render 'method_searches/method_code', extracted_method_name: @extracted_method_name, extracted_method_url: @extracted_method_url, extracted_method_class: @extracted_method_class, extracted_method_description: @extracted_method_description, method_url_saved: @method_url_saved, method_code: @method_code %>
                 <% else %>
                     <div class="search_result">
                         検索結果が表示されます。

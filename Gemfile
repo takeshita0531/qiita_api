@@ -78,3 +78,4 @@ gem "appengine", "~> 0.6.0"
 gem 'daemons'
 gem 'mechanize'
 gem 'rb-readline'
+gem 'kaminari'
