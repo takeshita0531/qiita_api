@@ -2,6 +2,9 @@
     .class_container_qiita {
         font-size: 20px;
     }
+    .pagination {
+        justify-content: center;
+    }
 </style>
 <% expected_method_qiita.zip(expected_url_qiita, expected_title_qiita, expected_user_name).each do |qiita_method, qiita_url, qiita_name, user_name| %>
 <div class="container">
@@ -31,4 +34,4 @@
     </div>
 </div>
 <% end %>
-<%= paginate expected_method_qiita %>
+

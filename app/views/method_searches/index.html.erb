@@ -149,6 +149,13 @@
                     </div>
                 <% end %>
             </div>
+            <div class="qiita_page">
+            <% if false %>
+            <% if @expected_method_qiita.present? && @expected_url_qiita.present? %>
+                <%= render 'method_searches/qiita_page', expected_method_qiita: @expected_method_qiita, expected_url_qiita: @expected_url_qiita, expected_title_qiita: @expected_title_qiita, expected_user_name: @expected_user_name, qiita_url_saved: @qiita_url_saved, method_code: @method_code %>
+            <% end %>
+            <% end %>
+            </div>
         </div>
     </div>
     <% else %>
