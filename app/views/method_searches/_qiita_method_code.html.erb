@@ -34,4 +34,13 @@
     </div>
 </div>
 <% end %>
+<div class="paginate">
+    <%= paginate expected_method_qiita, remote: true %>
+</div>
 
+<script>
+$('.article_button1').on('click', function () {
+    $(this).addClass("article_button3");
+    $(this).text('保存済み');
+});
+</script>

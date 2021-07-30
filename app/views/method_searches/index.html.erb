@@ -106,16 +106,12 @@
         </div>
         <% end %>
     </div>
-    <% if @extracted_methods.present? %>
+    <% if @method_search.present? %>
     <div class="method_index">
         <h3>メソッド一覧</h3>
     </div>
     <div class="flex_box">
-        <% @extracted_methods.each do |method| %>
-            <div class="flex_item">
-                <%= link_to method, method_searches_path(method_code: method), remote: true, class: "method_button" %>
-            </div>
-        <% end %>
+        <%= @method_search %>
     </div>
     <div class="change_tab">
         <ul class="nav nav-tabs nav-pills">
@@ -149,13 +145,17 @@
                     </div>
                 <% end %>
             </div>
-            <div class="qiita_page">
             <% if false %>
-            <% if @expected_method_qiita.present? && @expected_url_qiita.present? %>
-                <%= render 'method_searches/qiita_page', expected_method_qiita: @expected_method_qiita, expected_url_qiita: @expected_url_qiita, expected_title_qiita: @expected_title_qiita, expected_user_name: @expected_user_name, qiita_url_saved: @qiita_url_saved, method_code: @method_code %>
-            <% end %>
-            <% end %>
+            <div class="qiita_page">
+                <div class="qiita_page">
+                    <%= render 'method_searches/qiita_page', expected_method_qiita: @expected_method_qiita, expected_url_qiita: @expected_url_qiita, expected_title_qiita: @expected_title_qiita, expected_user_name: @expected_user_name, qiita_url_saved: @qiita_url_saved, method_code: @method_code %>
+                </div>
+                <%= paginate @expected_method_qiita, @expected_url_qiita, @expected_title_qiita, @expected_user_name, remote: true %>
+                <% if @expected_method_qiita.present? && @expected_url_qiita.present? %>
+                    <%= render 'method_searches/qiita_page', expected_method_qiita: @expected_method_qiita, expected_url_qiita: @expected_url_qiita, expected_title_qiita: @expected_title_qiita, expected_user_name: @expected_user_name, qiita_url_saved: @qiita_url_saved, method_code: @method_code %>
+                <% end %>
             </div>
+            <% end %>
         </div>
     </div>
     <% else %>
@@ -163,5 +163,6 @@
             検索結果がありませんでした。
         </div>
     <% end %>
+    
 </main>
 

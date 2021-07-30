@@ -1,3 +1,4 @@
+<%= render 'method_searches/qiita_page', expected_method_qiita: @expected_method_qiita, expected_url_qiita: @expected_url_qiita, expected_title_qiita: @expected_title_qiita, expected_user_name: @expected_user_name, qiita_url_saved: @qiita_url_saved, method_code: @method_code %>
 <div class="paginate">
     <%= paginate expected_method_qiita, remote: true %>
 </div>

@@ -17,5 +17,6 @@ module Api
     config.active_record.time_zone_aware_types = [:datetime, :time]
     config.time_zone = 'Tokyo'
     config.i18n.default_locale = :ja
+    config.paths.add 'lib', eager_load: true
   end
 end
