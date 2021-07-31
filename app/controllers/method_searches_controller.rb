@@ -2,12 +2,12 @@ class MethodSearchesController < ApplicationController
 
     def index
         code_all = params[:code]
-        method_code = params[:method_code]
+        @method_code = params[:method_code]
         paginate = params[:page]
         
         @method_search = Api::SearchMethod.new
-        @method_search.search_method(code_all, method_code, paginate)
-        # @extracted_methods = @method_search.protected_methods
+        @method_search.search_method(code_all, @method_code, paginate)
+        # @extracted_methods = @method_search(@extracted_methods)
         # binding.pry
         # @extracted_methods = method_search.extracted_methods
         # code_all = params[:code]

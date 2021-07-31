@@ -1,4 +1,5 @@
 class Api::SearchMethod
+    attr_accessor :extracted_methods, :extracted_method_name, :extracted_method_url, :extracted_method_class, :extracted_method_description, :expected_method_qiita, :expected_url_qiita, :expected_title_qiita, :expected_user_name, :qiita_url_saved, :method_url_saved
     
     def search_method(code_all, method_code, paginate)
         if code_all.present?

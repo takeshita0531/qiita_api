@@ -39,8 +39,21 @@
 </div>
 
 <script>
+
 $('.article_button1').on('click', function () {
     $(this).addClass("article_button3");
     $(this).text('保存済み');
+});
+
+// $('.paginate').on('click', function () {
+//     $('body, html').animate({ scrollTop: 0 }, 500);
+//     return false;
+// })
+
+$(function(){
+    $('.paginate').click(function () {
+        //id名#pagetopがクリックされたら、以下の処理を実行
+        $("html,body").animate({scrollTop:0},"300");
+    });
 });
 </script>
