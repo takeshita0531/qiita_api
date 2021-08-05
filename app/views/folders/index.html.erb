@@ -94,7 +94,7 @@ li {
             </thead>
             <tbody>
                 <div id="folder_create">
-                    <%= render partial: "folders/create", :locals => {items: @items, folder_new: @folder_new} %>
+                    <%= render partial: "folders/create", :locals => {items: @qiita_api.items, folder_new: @folder_new, qiita_url: @qiita_api.qiita_url} %>
                 </div>
             </tbody>
         </table>
