@@ -15,24 +15,21 @@ class FoldersController < ApplicationController
     QiitaMemoryJob.delay(run_at: 1.minutes).perform_later
     @folder_new = Folder.new
     @folders = QiitaMemory.search(params[:search])
-    # # url = @qiita_api.items
-    # @qiita_url = []
-    # @qiita_api.items.each do |url|
-    #   url = Folder.find_by
-    # # folders = Folder.all
-    # # @qiita_url = Folder.select("url")
-    # #   binding.pry
-    # end
+    
+    @folder_user = []
+    folders =  current_user.folders
+    folders.each do |folder| 
+      @folder_user.push(folder.url)
+    end
   end
   
   def create
-      @qiita_api = Api::QiitaApi.new
-      @qiita_api.qiita_api
-      @folder_new = Folder.new
-      #   # @qiita_api.items.each do |url|
-      #     @qiita_url = Folder.all
-        # end
-      folder = current_user.folders.new(folder_params)
+      folder = Folder.new
+      folder.user_id = current_user.id
+      folder.article_id = params[:article_id]
+      folder.title = params[:title]
+      folder.url = params[:url]
+      folder.user_name = params[:user_name]
       respond_to do |format|
       if folder.save
         format.html  {redirect_back(fallback_location: true)}
@@ -68,8 +65,9 @@ class FoldersController < ApplicationController
   
   private
   
-  def folder_params
-    params.fetch(:folder, {}).permit(:user_id, :article_id, :title, :url, :user_name)
-  end 
+  # def folder_params
+  #   # params.fetch(:folder, {}).permit(:article_id, :title, :url, :user_name)
+  #   params.require(:folder).permit(:article_id, :title, :url, :user_name)
+  # end 
 
 end

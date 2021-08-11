@@ -86,7 +86,7 @@ li {
                     <%= render partial: "folders/search_folder", :locals => {folders: @folders, folder_new: @folder_new} %>
                 </div>
             </tbody>
-        </table> 
+        </taqble> 
         <% end %>
         <table class="table table-striped table-bordered table-hover table-condensed create-table">
             <thead style="background-color: #BAD3FF;">
@@ -94,7 +94,7 @@ li {
             </thead>
             <tbody>
                 <div id="folder_create">
-                    <%= render partial: "folders/create", :locals => {items: @qiita_api.items, folder_new: @folder_new, qiita_url: @qiita_api.qiita_url} %>
+                    <%= render partial: "folders/create", :locals => {items: @qiita_api.items, folders: @folder_user} %>
                 </div>
             </tbody>
         </table>
