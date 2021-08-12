@@ -1,5 +1,5 @@
 class Api::SearchMethod
-    attr_accessor :extracted_methods, :extracted_method_name, :extracted_method_url, :extracted_method_class, :extracted_method_description, :expected_method_qiita, :expected_url_qiita, :expected_title_qiita, :expected_user_name, :qiita_url_saved, :method_url_saved
+    attr_accessor :extracted_methods, :extracted_method_name, :extracted_method_url, :extracted_method_class, :extracted_method_description, :expected_method_qiita, :expected_url_qiita, :expected_title_qiita, :expected_user_name
     
     def search_method(code_all, method_code, paginate)
         if code_all.present?
@@ -17,7 +17,6 @@ class Api::SearchMethod
             end 
         end
         
-        # method_code = method_code
         if method_code.present?
             agent = Mechanize.new
             ruby_library = agent.get("https://docs.ruby-lang.org/ja/latest/library/_builtin.html")
@@ -30,8 +29,6 @@ class Api::SearchMethod
             @expected_url_qiita = []
             @expected_title_qiita = []
             @expected_user_name = []
-            @qiita_url_saved = []
-            @method_url_saved = []
             page = 1
             20.times do
                 qiita_method = agent.get("https://qiita.com/search?page=#{page}&q=ruby+#{method_code}")
@@ -45,10 +42,6 @@ class Api::SearchMethod
                 qiita_method_title = qiita_method.search('.searchResult_itemTitle a')
                 qiita_method_title.each do |qiita_title|
                     @expected_url_qiita.push(qiita_title[:href])
-                    qiita_url = Folder.find_by(url: "https://qiita.com#{qiita_title[:href]}")
-                    if qiita_url.present?
-                        @qiita_url_saved.push(qiita_url.url)
-                    end
                 end
                     
                 expected_qiita_name = qiita_method.search('.searchResult_itemTitle')
@@ -95,10 +88,6 @@ class Api::SearchMethod
                             @extracted_method_name.push(all_method.inner_text)
                             @extracted_method_url.push(ruby_method_child_commentary)
                             @extracted_method_class.push(all_class.inner_text)
-                            method_url = Folder.find_by(url: ruby_method_child_commentary)
-                            if method_url.present?
-                                @method_url_saved.push(method_url.url)
-                            end
                         end 
                     end  
             end 
