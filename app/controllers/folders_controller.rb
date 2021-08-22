@@ -16,10 +16,9 @@ class FoldersController < ApplicationController
     @folder_new = Folder.new
     @folders = QiitaMemory.search(params[:search])
     
-    @folder_user = []
     folders =  current_user.folders
-    folders.each do |folder| 
-      @folder_user.push(folder.url)
+    @folder_user = folders.map do |folder|
+        folder.url
     end
   end
   

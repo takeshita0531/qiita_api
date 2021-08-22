@@ -8,10 +8,9 @@ class MethodSearchesController < ApplicationController
         @method_search = Api::SearchMethod.new
         @method_search.search_method(code_all, @method_code, paginate)
         
-        @folder_user = []
         folders =  current_user.folders
-        folders.each do |folder| 
-          @folder_user.push(folder.url)
+        @folder_user = folders.map do |folder|
+            folder.url
         end
     end 
     

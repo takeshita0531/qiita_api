@@ -1,0 +1,511 @@
+=> [[1;34m#(Element:0x3f9cbec3be9c {[0m name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m, attributes = [ [1;34m#(Attr:0x3f9cba1ac05c {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m#I_--21[1;31m"[0m[31m[0m })], children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m![1;31m"[0m[31m[0m)] }),
+ [1;34m#(Element:0x3f9cbec3be88 {[0m name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m, attributes = [ [1;34m#(Attr:0x3f9cba1afb44 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m#I_--21--3D[1;31m"[0m[31m[0m })], children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m!=[1;31m"[0m[31m[0m)] }),
+ [1;34m#(Element:0x3f9cbec3be74 {[0m name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m, attributes = [ [1;34m#(Attr:0x3f9cba1af66c {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m#I_--3D--3D[1;31m"[0m[31m[0m })], children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m==[1;31m"[0m[31m[0m)] }),
+ [1;34m#(Element:0x3f9cbec3be60 {[0m name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m, attributes = [ [1;34m#(Attr:0x3f9cba1af194 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m#I___ID__[1;31m"[0m[31m[0m })], children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m__id__[1;31m"[0m[31m[0m)] }),
+ [1;34m#(Element:0x3f9cbec3be4c {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1aecd0 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m#I___SEND__[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m__send__[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3be38 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1ae820 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m#I_EQUAL--3F[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mequal?[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3be24 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1ae348 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m#I_INSTANCE_EVAL[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31minstance_eval[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3be10 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b1e58 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m#I_INSTANCE_EXEC[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31minstance_exec[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bdfc {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b19a8 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m#I_METHOD_MISSING[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mmethod_missing[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bde8 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b14d0 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m#I_SINGLETON_METHOD_ADDED[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31msingleton_method_added[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bdd4 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b0fe4 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m#I_SINGLETON_METHOD_REMOVED[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31msingleton_method_removed[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bdc0 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b0b34 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m#I_SINGLETON_METHOD_UNDEFINED[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31msingleton_method_undefined[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bdac {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b065c {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/=21.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mpermalink[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bd98 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b01ac {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://docs.ruby-lang.org/en/3.0.0/BasicObject.html#method-i-21[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mrdoc[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bd84 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [
+     [1;34m#(Attr:0x3f9cba1b3c30 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://github.com/rurema/doctree/edit/master/refm/api/src/_builtin/BasicObject#L100[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31medit[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bd70 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b35b4 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/=21=3d.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mpermalink[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bd5c {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b2eac {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://docs.ruby-lang.org/en/3.0.0/BasicObject.html#method-i-21-3D[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mrdoc[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bd48 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [
+     [1;34m#(Attr:0x3f9cba1b28e4 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://github.com/rurema/doctree/edit/master/refm/api/src/_builtin/BasicObject#L146[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31medit[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bd34 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b2074 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/=3d=3d.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mBasicObject#==[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bd20 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b5b70 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/=21=3d.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mBasicObject#!=[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bd0c {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b5698 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/=21.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mBasicObject#![1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bcf8 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b51e8 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/=3d=3d.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mBasicObject#==[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bce4 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b4cfc {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/=21.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mBasicObject#![1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bcd0 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b4824 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/=3d=3d.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mpermalink[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bcbc {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b4374 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://docs.ruby-lang.org/en/3.0.0/BasicObject.html#method-i-3D-3D[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mrdoc[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bca8 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [
+     [1;34m#(Attr:0x3f9cba1b7e84 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://github.com/rurema/doctree/edit/master/refm/api/src/_builtin/BasicObject#L46[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31medit[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bc94 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b79d4 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Object/i/equal=3f.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mObject#equal?[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bc80 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b7498 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/equal=3f.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mBasicObject#equal?[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bc6c {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b6fc0 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Object/i/=3d=3d.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mObject#==[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bc58 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b6afc {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Object/i/equal=3f.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mObject#equal?[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bc44 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b6624 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Object/i/eql=3f.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mObject#eql?[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bc30 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b6174 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/__id__.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mpermalink[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bc1c {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b9c70 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://docs.ruby-lang.org/en/3.0.0/BasicObject.html#method-i-__id__[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mrdoc[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bc08 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [
+     [1;34m#(Attr:0x3f9cba1b9798 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://github.com/rurema/doctree/edit/master/refm/api/src/_builtin/BasicObject#L210[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31medit[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bbf4 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b92e8 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Object/i/object_id.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mObject#object_id[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bbe0 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b8dfc {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../class/BasicObject.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mBasicObject[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bbcc {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1b8924 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Object/i/object_id.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mObject#object_id[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bbb8 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [
+     [1;34m#(Attr:0x3f9cba1b8474 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mexternal[1;31m"[0m[31m[0m }),
+     [1;34m#(Attr:0x3f9cba1b8460 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttp://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/42840[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m[ruby-dev:42840][1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bba4 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1bbda4 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/__send__.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mpermalink[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bb90 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1bb8cc {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://docs.ruby-lang.org/en/3.0.0/BasicObject.html#method-i-__send__[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mrdoc[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bb7c {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [
+     [1;34m#(Attr:0x3f9cba1bb41c {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://github.com/rurema/doctree/edit/master/refm/api/src/_builtin/BasicObject#L184[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31medit[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bb68 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1baf30 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../class/Symbol.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mSymbol[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bb54 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1baa80 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Object/i/send.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mObject#send[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bb40 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1ba5a8 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/equal=3f.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mpermalink[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bb2c {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba1ba0d0 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://docs.ruby-lang.org/en/3.0.0/BasicObject.html#method-i-equal-3F[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mrdoc[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bb18 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [
+     [1;34m#(Attr:0x3f9cba435be8 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://github.com/rurema/doctree/edit/master/refm/api/src/_builtin/BasicObject#L76[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31medit[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bb04 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba435724 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../class/BasicObject.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mBasicObject[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3baf0 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba435260 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Object/i/equal=3f.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mObject#equal?[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3badc {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba434d88 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Object/i/=3d=3d.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mObject#==[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bac8 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba4348b0 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Object/i/eql=3f.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mObject#eql?[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3bab4 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba434400 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/instance_eval.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mpermalink[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3baa0 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba437f10 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://docs.ruby-lang.org/en/3.0.0/BasicObject.html#method-i-instance_eval[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mrdoc[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3ba8c {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [
+     [1;34m#(Attr:0x3f9cba437a38 {[0m
+       name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m,
+       value = [31m[1;31m"[0m[31mhttps://github.com/rurema/doctree/edit/master/refm/api/src/_builtin/BasicObject.public_methods_from_Object#L1[1;31m"[0m[31m[0m
+       })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31medit[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3ba78 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba437510 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../doc/spec=2fdef.html#nest_method[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mクラス／メソッドの定義/メソッド定義のネスト[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3ba64 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba436d54 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Module/i/module_eval.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mModule#module_eval[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3ba50 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba4366b0 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Kernel/m/eval.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mKernel.#eval[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3ba3c {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba436098 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/instance_exec.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mBasicObject#instance_exec[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3ba28 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba439b44 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/instance_exec.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mpermalink[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3ba14 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba439680 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://docs.ruby-lang.org/en/3.0.0/BasicObject.html#method-i-instance_exec[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mrdoc[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3ba00 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [
+     [1;34m#(Attr:0x3f9cba4391bc {[0m
+       name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m,
+       value = [31m[1;31m"[0m[31mhttps://github.com/rurema/doctree/edit/master/refm/api/src/_builtin/BasicObject.public_methods_from_Object#L65[1;31m"[0m[31m[0m
+       })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31medit[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b9ec {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba438cf8 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Module/i/class_exec.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mModule#class_exec[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b9d8 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba438820 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Module/i/module_exec.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mModule#module_exec[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b9c4 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba438348 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/instance_eval.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mBasicObject#instance_eval[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b9b0 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba43be6c {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/method_missing.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mpermalink[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b99c {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba43b930 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://docs.ruby-lang.org/en/3.0.0/BasicObject.html#method-i-method_missing[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mrdoc[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b988 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [
+     [1;34m#(Attr:0x3f9cba43b458 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://github.com/rurema/doctree/edit/master/refm/api/src/_builtin/BasicObject#L235[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31medit[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b974 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba43afa8 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../class/Symbol.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mSymbol[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b960 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba43aaa8 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../class/NoMethodError.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mNoMethodError[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b94c {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba43a5f8 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Object/i/respond_to=3f.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mObject#respond_to?[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b938 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba43a0f8 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Object/i/respond_to_missing=3f.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mObject#respond_to_missing?[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b924 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba43dc08 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Object/i/respond_to=3f.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mObject#respond_to?[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b910 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba43d730 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Object/i/respond_to_missing=3f.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mObject#respond_to_missing?[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b8fc {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba43d26c {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/singleton_method_added.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mpermalink[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b8e8 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [
+     [1;34m#(Attr:0x3f9cba43cdbc {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://docs.ruby-lang.org/en/3.0.0/BasicObject.html#method-i-singleton_method_added[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mrdoc[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b8d4 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [
+     [1;34m#(Attr:0x3f9cba43c8d0 {[0m
+       name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m,
+       value = [31m[1;31m"[0m[31mhttps://github.com/rurema/doctree/edit/master/refm/api/src/_builtin/BasicObject.private_methods_from_Object#L1[1;31m"[0m[31m[0m
+       })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31medit[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b8c0 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba43c3f8 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Module/i/method_added.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mModule#method_added[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b8ac {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba43ff1c {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../class/Symbol.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mSymbol[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b898 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba43fa44 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Module/i/method_added.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mModule#method_added[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b884 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba43f56c {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/singleton_method_removed.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mBasicObject#singleton_method_removed[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b85c {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba43f0bc {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/singleton_method_undefined.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mBasicObject#singleton_method_undefined[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b848 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba43ebd0 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/singleton_method_removed.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mpermalink[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b834 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [
+     [1;34m#(Attr:0x3f9cba43e70c {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://docs.ruby-lang.org/en/3.0.0/BasicObject.html#method-i-singleton_method_removed[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mrdoc[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b820 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [
+     [1;34m#(Attr:0x3f9cba43e248 {[0m
+       name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m,
+       value = [31m[1;31m"[0m[31mhttps://github.com/rurema/doctree/edit/master/refm/api/src/_builtin/BasicObject.private_methods_from_Object#L30[1;31m"[0m[31m[0m
+       })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31medit[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b80c {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba441d58 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Module/i/remove_method.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mModule#remove_method[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b7f8 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba441880 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Module/i/method_removed.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mModule#method_removed[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b7e4 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba4413bc {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../class/Symbol.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mSymbol[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b7d0 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba440ef8 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Module/i/method_removed.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mModule#method_removed[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b7a8 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba440a20 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/singleton_method_added.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mBasicObject#singleton_method_added[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b794 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba440548 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/singleton_method_undefined.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mBasicObject#singleton_method_undefined[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b780 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba440084 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/singleton_method_undefined.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mpermalink[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b76c {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [
+     [1;34m#(Attr:0x3f9cba443b08 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://docs.ruby-lang.org/en/3.0.0/BasicObject.html#method-i-singleton_method_undefined[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mrdoc[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b758 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [
+     [1;34m#(Attr:0x3f9cba443374 {[0m
+       name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m,
+       value = [31m[1;31m"[0m[31mhttps://github.com/rurema/doctree/edit/master/refm/api/src/_builtin/BasicObject.private_methods_from_Object#L64[1;31m"[0m[31m[0m
+       })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31medit[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b744 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba442ca8 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Module/i/undef_method.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mModule#undef_method[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b730 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba442690 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Module/i/method_undefined.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mModule#method_undefined[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b71c {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba442140 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../class/Symbol.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mSymbol[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b708 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba445c3c {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/Module/i/method_undefined.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mModule#method_undefined[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b6f4 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba445778 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/singleton_method_added.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mBasicObject#singleton_method_added[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b6e0 {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba4452b4 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../method/BasicObject/i/singleton_method_removed.html[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mBasicObject#singleton_method_removed[1;31m"[0m[31m[0m)]
+   }),
+ [1;34m#(Element:0x3f9cbec3b6cc {[0m
+   name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+   attributes = [ [1;34m#(Attr:0x3f9cba444ddc {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m../doc/spec=2fdef.html#undef[1;31m"[0m[31m[0m })],
+   children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mクラス／メソッドの定義/undef[1;31m"[0m[31m[0m)]
+   })]
