@@ -6,7 +6,7 @@
     }
     
     .delete_button {
-        margin: 0 auto;
+        text-align: right;
     }
 </style>
 
@@ -20,7 +20,7 @@
                     <%= f.submit "保存", class: "btn btn-primary", :style=>"margin-left: 7px" %>
                 <% end %>
                 <div class="delete_button">
-                    <%= button_to "ファイル削除", "/files/#{@file.id}", method: :delete, data: {confirm: "本当に削除しますか？"}, :style=>"margin-top: 3px; " %>
+                    <%= button_to "ファイル削除", "/files/#{@file.id}", method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger", :style=>"margin-top: 3px; " %>
                 </div>
             </div>
         </div>

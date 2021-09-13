@@ -6,16 +6,16 @@ class Api::QiitaApi
     require 'json'
   
   def qiita_api
-        query = 'created:>2015-10-09'
-        status, next_page, @items = QiitaApiManager.search(query)
-
-        @qiita_url = []
-        @items.each do |url|
-          folder_url = Folder.find_by(url: url['url'])
-          if folder_url.present?
-              @qiita_url.push(folder_url.url)
-          end
-        end
+    query = 'created:>2015-10-09'
+    status, next_page, @items = QiitaApiManager.search(query)
+  
+    @qiita_url = []
+    @items.each do |url|
+      folder_url = Folder.find_by(url: url['url'])
+      if folder_url.present?
+          @qiita_url.push(folder_url.url)
+      end
+    end
   end
     
   class QiitaApiManager

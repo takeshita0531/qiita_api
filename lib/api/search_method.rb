@@ -57,11 +57,10 @@ class Api::SearchMethod
                 ruby_methods = ruby_method_url.search('dl a')
                 # ruby_url1 = ruby_methods.to_s.slice(method_code)
                 # result = ruby_methods.select { |x| x.children }
-                ruby_methods.select { |ruby_url|
+                # ruby_methods.select { |ruby_url|
                 # result.each do |ruby_url|
-                    # ruby_methods.each do |ruby_url|
-                    ruby_method_url_child = ruby_url[:href].match(/#(.*)/) 
-                        # ruby_method_url_child = ruby_url[:href].match(/#(.*)/) 
+                    ruby_methods.each do |ruby_url|
+                        ruby_method_url_child = ruby_url[:href].match(/#(.*)/) 
                         ruby_method_inner_text = method_code.slice(ruby_url.inner_text)
                         if ruby_method_inner_text.present? && ruby_method_url_child.present?
                             ruby_method_child_commentary = "https://docs.ruby-lang.org/ja/latest/#{ruby_class_url}#{ruby_method_url_child}"
@@ -82,12 +81,9 @@ class Api::SearchMethod
                             @extracted_method_name << all_method.inner_text
                             @extracted_method_url << ruby_method_child_commentary
                             @extracted_method_class << all_class.inner_text
-                            # @extracted_method_name.push(all_method.inner_text)
-                            # @extracted_method_url.push(ruby_method_child_commentary)
-                            # @extracted_method_class.push(all_class.inner_text)
                         end 
-                    # end
-                    }
+                    end
+                    # }
                     # ruby_methods.each do |ruby_url|
                     #     # ruby_method_url_child = ruby_url[:href].match(/#(.*)/) 
                     #     # inner_text = ruby_url.inner_text

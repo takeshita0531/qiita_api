@@ -15,7 +15,7 @@
     <div class="side-bar">
       <% if user_signed_in? %>
         <div class="home">
-          <%= link_to  "/folders", class: "btn btn-success" do %>
+          <%= link_to  "/folders", class: "btn btn-success active" do %>
             <i class="fa fa-home fa-2x"></i>
             <div class="home-letter">ホーム</div>
           <% end %>
@@ -42,5 +42,17 @@
     </div>
   <% end %>
   <%= yield %>
+  <script>
+  $(function(){
+    $('.side-bar a').each(function(){
+        var $href = $(this).attr('href');
+        if(location.href.match($href)) {
+        $(this).addClass('active');
+        } else {
+        $(this).removeClass('active');
+        }
+    });
+  });
+  </script>
   </body>
 </html>

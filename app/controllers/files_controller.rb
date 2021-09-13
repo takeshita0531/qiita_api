@@ -9,6 +9,8 @@ class FilesController < ApplicationController
     folder = Folder.find_by(id: folder_id)
     file_id = params[:file_id]
     destroy = params[:destroy]
+    @files = Folder.search(params[:search])
+    # @search = params[:search]
     if file_id.present?
       folder.file_id = file_id
       if folder.save
