@@ -80,32 +80,32 @@
 
 <header>
     <div class="file-create">
-        <%= form_for(@file, url:{controller: 'files', action: 'create'}) do |f| %>
+        <%= form_for(@file_new, url:{controller: 'file_names', action: 'create'}) do |f| %>
             <%= f.text_field :file_name, placeholder: "ファイルを作成する" %>
             <%= f.submit "新規作成" %>
             <%= f.hidden_field :user_id, value: current_user.id %>
         <% end %>
     </div>
     <div class="file_search">
-        <%= form_tag(files_path, method: :get) do %>
-            <%= text_field_tag :search, "", placeholder: "記事検索" %>
-            <%= submit_tag '検索' %>
+        <%= form_tag(file_names_path, :method => "get") do %>
+            <%= text_field_tag :search, '', placeholder: "記事検索" %>
+            <%= submit_tag '検索', :username => nil, class: "button is-info"%>
         <% end %>
     </div>
 </header>
 <div class="main">
     <div class="container-index">
-        <% if @files.present? %>
+        <% if @files_search.present? %>
         <table class="table table-striped table-bordered table-hover table-condensed" style="margin-bottom: 30px;">
             <thead style="background-color: #CBFFD3;">
                 <tr><th style="width: 25%;">検索結果<br>ファイル名</th><th>タイトル</th></tr>
             </thead>
             <tbody>
                 <div class="search-file">
-                    <%= render partial: "files/search_file", :locals => {files: @files} %>
+                    <%= render partial: "file_names/search_file", :locals => {files: @file_id, folder_all: @folder_all} %>
                 </div>
             </tbody>
-        </taqble> 
+        </table> 
         <% end %>
         <table class="table table-striped table-bordered table-hover table-condensed">
             <thead style="background-color: #D0B0FF">
@@ -114,7 +114,7 @@
             <tbody>
                 <% if @file_all.present?%>
                     <% @file_all.each do |file| %>
-                        <tr><td class="width" style="width: 15%;"><%= file.file_name %><a class="fa fa-ellipsis-v" style="float: right;" href=<%= edit_file_path(file) %>></a></td>
+                        <tr><td class="width" style="width: 15%;"><%= file.file_name %><a class="fa fa-ellipsis-v" style="float: right;" href=<%= edit_file_name_path(file) %>></a></td>
                         <td>
                         <% @folders.each do |folder| %>
                             <% if folder.file_id == file.id %>
@@ -131,7 +131,7 @@
                                                     <a class="dropdown-item" href="#">
                                                     <% @file_all.each do |file| %>
                                                         <ul class="file-select">
-                                                            <li><%= link_to file.file_name, {controller: "files", action: "index", file_id: file.id, folder_id: folder.id} %>
+                                                            <li><%= link_to file.file_name, {controller: "file_names", action: "index", file_id: file.id, folder_id: folder.id} %>
                                                               <% if folder.file_id == file.id %>
                                                                  (保存中)
                                                               <% end %>

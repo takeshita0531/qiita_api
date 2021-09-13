@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     folder = Folder.find_by(id: folder_id)
     destroy = params[:destroy]
     file_id = params[:file_id]
+    search = params[:search]
+    if search.present?
+      @files_search = Folder.search(params[:search])
+    end
     if file_id.present?
       folder.file_id = file_id
       if folder.save

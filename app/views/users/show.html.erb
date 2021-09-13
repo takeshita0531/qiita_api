@@ -37,6 +37,9 @@
   dropup, .dropright, .dropdown, .dropleft {
     position: static;
   }
+  .search {
+    float: right;
+  }
  
   @media screen and (max-width: 850px) {
     .container-show {
@@ -57,7 +60,25 @@
         <% if @user.id == current_user.id %>
           <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-primary" %>
         <% end %>
+      <div class="search">
+        <%= form_tag(user_path, :method => "get") do %>
+            <%= text_field_tag :search, '', placeholder: "記事を探す" %> 
+            <%= submit_tag "記事検索" ,:username => nil ,class: "button is-info"%> 
+        <% end %> 
       </div>
+      </div>
+        <% if @files_search.present? %>
+        <table class="table table-striped table-bordered table-hover table-condensed" style="margin-bottom: 30px;">
+            <thead style="background-color: #CBFFD3;">
+                <tr><th style="width: 25%;">検索結果<br>ファイル名</th><th>タイトル</th></tr>
+            </thead>
+            <tbody>
+                <div class="search-file">
+                    <%= render partial: "users/search_file", :locals => {files: @files_search} %>
+                </div>
+            </tbody>
+        </table> 
+        <% end %>
         <% if @user.id == current_user.id %>
           <table class="table table-striped table-bordered table-hover table-condensed">
             <thead style="background-color: #E9FFA5">

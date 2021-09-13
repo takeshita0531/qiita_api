@@ -1,0 +1,10 @@
+<% files.each do |file| %>
+     <div class="folder_form">
+        <tr>
+        <td>
+        <%= file.user_name %>
+        <td><a href =<%= file.url %> target = ["_blenk"]><%= file.title %></a>
+        </td>
+        </tr>
+    </div>
+<% end %>

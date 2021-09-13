@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :edit, :update, :destroy]
   
-  resources :files, only: [:index, :edit, :update, :create]
+  resources :file_names, only: [:index, :edit, :update, :create]
   delete 'files/:id' => 'files#destroy'
   resources :folders, only: [:index, :top, :create, :update, :destroy]
   resources :method_searches

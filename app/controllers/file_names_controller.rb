@@ -1,7 +1,7 @@
-class FilesController < ApplicationController
+class FileNamesController < ApplicationController
 
   def index
-    @file = FileName.new
+    @file_new = FileName.new
     user = current_user
     @folders = user.folders.order(created_at: :desc)
     @file_all = user.file_names
@@ -9,8 +9,17 @@ class FilesController < ApplicationController
     folder = Folder.find_by(id: folder_id)
     file_id = params[:file_id]
     destroy = params[:destroy]
-    @files = Folder.search(params[:search])
-    # @search = params[:search]
+    search = params[:search]
+    if search.present?
+      @files_search = FileName.search(params[:search])
+      @file = @files_search.select { |file|
+        if search == file.file_name
+          file
+        end
+      }
+      @file_id = @file.first
+      @folder_all = Folder.where(file_id: @file_id)
+    end
     if file_id.present?
       folder.file_id = file_id
       if folder.save
@@ -37,9 +46,9 @@ class FilesController < ApplicationController
   def create
      file = FileName.new(file_params)
      if file.save
-       redirect_to files_path
+       redirect_to file_names_path
      else
-       redirect_to files_path
+       redirect_to file_names_path
        flash[:notice] = "ファイル名を入力してください"
      end 
   end 
@@ -47,7 +56,7 @@ class FilesController < ApplicationController
   def update
     file = FileName.find(params[:id])
     if file.update(file_name: file_params[:file_name])
-      redirect_to files_path
+      redirect_to file_names_path
     else
       flash[:notice] = "保存できませんでした"
       render "edit"
@@ -57,7 +66,7 @@ class FilesController < ApplicationController
   def destroy
     file = FileName.find(params[:id])
     if file.delete
-      redirect_to files_path
+      redirect_to file_names_path
     else
       flash[:notice] = "削除できませんでした。"
       render "edit"

@@ -5,4 +5,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         
+  def Folder.search(search)
+      # return Folder.all unless search
+      Folder.where(['title LIKE ?', "%#{search}%"])
+      # Folder.where(['UPPER(title) LIKE ?', "%#{search.upcase}%"])
+  end
 end

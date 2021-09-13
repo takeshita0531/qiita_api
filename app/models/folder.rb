@@ -1,6 +1,6 @@
 class Folder < ApplicationRecord
     belongs_to :user
-    belongs_to :file
+    belongs_to :file_name
     
     def QiitaMemory.search(search)
      if search
