@@ -14,13 +14,13 @@
     <div class="row">
         <div col-7>
             <div class="file-edit">
-                <%= form_for(@file, url:{controller: 'files', action: 'update'}) do |f| %>
+                <%= form_for(@file, url:{controller: 'file_names', action: 'update'}) do |f| %>
                     <%= f.label :ファイル名 %>
                     <%= f.text_field :file_name, placeholder: "ファイル名", value: @file.file_name %>
                     <%= f.submit "保存", class: "btn btn-primary", :style=>"margin-left: 7px" %>
                 <% end %>
                 <div class="delete_button">
-                    <%= button_to "ファイル削除", "/files/#{@file.id}", method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger", :style=>"margin-top: 3px; " %>
+                    <%= button_to "ファイル削除", "/file_names/#{@file.id}", method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger", :style=>"margin-top: 3px; " %>
                 </div>
             </div>
         </div>

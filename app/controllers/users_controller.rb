@@ -11,7 +11,12 @@ class UsersController < ApplicationController
     file_id = params[:file_id]
     search = params[:search]
     if search.present?
-      @files_search = Folder.search(params[:search])
+      folder_name = Folder.search(params[:search])
+      @files_search = folder_name.select { |file|
+        if current_user.id == file.user_id
+          file
+        end
+      }
     end
     if file_id.present?
       folder.file_id = file_id

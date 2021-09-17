@@ -7,9 +7,16 @@
     width: 100%;
     position: fixed;
     text-align: center;
-    padding: 10px 0;
+    z-index: 10;
+    padding-top: 10px;
+ }
+ 
+ .file-create {
+    position: fixed;
+    width: 100%;
     z-index: 10;
  }
+ 
  
  .container-index {
     width: 80%;
@@ -62,10 +69,17 @@
     position: static;
   }
   
+  .file_search {
+        position: fixed;
+        right: 10px;
+        z-index: 100;
+        /*float: right;*/
+  }
+  
  @media screen and (max-width: 850px) {
     .container-index {
         float: none;
-        margin: 50px auto 77px auto;
+        margin: 90px auto 77px auto;
         padding: 0 20px 0 20px;
         width: 100%
     }
@@ -74,6 +88,12 @@
         position: relative;
         top: 0px;
         position: fixed;
+    }
+    
+    .file_search {
+        position: fixed;
+        top: 50px;
+        width: 100%;
     }
 }
 </style>
@@ -88,14 +108,14 @@
     </div>
     <div class="file_search">
         <%= form_tag(file_names_path, :method => "get") do %>
-            <%= text_field_tag :search, '', placeholder: "記事検索" %>
+            <%= text_field_tag :search, '', placeholder: "ファイル検索" %>
             <%= submit_tag '検索', :username => nil, class: "button is-info"%>
         <% end %>
     </div>
 </header>
 <div class="main">
     <div class="container-index">
-        <% if @files_search.present? %>
+        <% if @file_id.present? %>
         <table class="table table-striped table-bordered table-hover table-condensed" style="margin-bottom: 30px;">
             <thead style="background-color: #CBFFD3;">
                 <tr><th style="width: 25%;">検索結果<br>ファイル名</th><th>タイトル</th></tr>

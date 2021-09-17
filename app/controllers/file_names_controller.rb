@@ -13,12 +13,14 @@ class FileNamesController < ApplicationController
     if search.present?
       @files_search = FileName.search(params[:search])
       @file = @files_search.select { |file|
-        if search == file.file_name
+        if current_user.id == file.user_id
           file
         end
       }
       @file_id = @file.first
       @folder_all = Folder.where(file_id: @file_id)
+      # binding.pry
+      
     end
     if file_id.present?
       folder.file_id = file_id
