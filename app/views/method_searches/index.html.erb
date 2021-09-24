@@ -130,24 +130,42 @@
     <div class="tab-content">
         <div class="tab-pane active" id="contents1">
             <div class="method_code">
-                <% if @method_search.extracted_method_name.present? && @method_search.extracted_method_url.present? %>
-                    <%= render 'method_searches/method_code', extracted_method_name: @method_search.extracted_method_name, extracted_method_url: @method_search.extracted_method_url, extracted_method_class: @method_search.extracted_method_class, extracted_method_description: @method_search.extracted_method_description, method_code: @method_code, folder_user: @folder_user %>
+                 <% if @method_memories.present? %>
+                        <%= render 'method_searches/method_code', method_memories: @method_memories %>
                 <% else %>
                     <div class="search_result">
                         検索結果が表示されます。
                     </div>
+                <% end %>
+                <% if false %>
+                    <% if @method_search.extracted_method_name.present? && @method_search.extracted_method_url.present? %>
+                        <%= render 'method_searches/method_code', extracted_method_name: @method_search.extracted_method_name, extracted_method_url: @method_search.extracted_method_url, extracted_method_class: @method_search.extracted_method_class, extracted_method_description: @method_search.extracted_method_description, method_code: @method_code, folder_user: @folder_user %>
+                    <% else %>
+                        <div class="search_result">
+                            検索結果が表示されます。
+                        </div>
+                    <% end %>
                 <% end %>
             </div>
         </div>
         <div class="tab-pane" id="contents2">
             <div class="qiita_method">
-                <% if @method_search.expected_method_qiita.present? && @method_search.expected_url_qiita.present? %>
-                    <%= render 'method_searches/qiita_method_code', expected_method_qiita: @method_search.expected_method_qiita, expected_url_qiita: @method_search.expected_url_qiita, expected_title_qiita: @method_search.expected_title_qiita, expected_user_name: @method_search.expected_user_name, method_code: @method_code, folder_user: @folder_user %>
+                 <% if @method_memories.present? %>
+                    <%= render 'method_searches/qiita_method_code', method_memories: @method_memories %>
                 <% else %>
                     <div class="search_result">
                         検索結果が表示されます。
                     </div>
                 <% end %>
+                <% if false %>
+                    <% if @method_search.expected_method_qiita.present? && @method_search.expected_url_qiita.present? %>
+                        <%= render 'method_searches/qiita_method_code', expected_method_qiita: @method_search.expected_method_qiita, expected_url_qiita: @method_search.expected_url_qiita, expected_title_qiita: @method_search.expected_title_qiita, expected_user_name: @method_search.expected_user_name, method_code: @method_code, folder_user: @folder_user %>
+                    <% else %>
+                        <div class="search_result">
+                            検索結果が表示されます。
+                        </div>
+                    <% end %>
+                 <% end %>
             </div>
         </div>
     </div>

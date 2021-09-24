@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  extracted_method_name: MyString
+  extracted_method_url: MyString
+  extracted_method_class: MyString
+  extracted_method_description: MyString
+  expected_method_qiita: MyString
+  expected_url_qiita: MyString
+  expected_title_qiita: MyString
+  expected_user_name: MyString
+  extracted_method_name: MyString
+  extracted_method_url: MyString
+  extracted_method_class: MyString
+
+two:
+  extracted_method_name: MyString
+  extracted_method_url: MyString
+  extracted_method_class: MyString
+  extracted_method_description: MyString
+  expected_method_qiita: MyString
+  expected_url_qiita: MyString
+  expected_title_qiita: MyString
+  expected_user_name: MyString
+  extracted_method_name: MyString
+  extracted_method_url: MyString
+  extracted_method_class: MyString

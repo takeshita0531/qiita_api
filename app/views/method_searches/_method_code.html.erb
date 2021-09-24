@@ -83,6 +83,34 @@
         }
     }
 </style>
+<% if @method_memories.present? %>
+    <% @method_memories.each do |method_memory| %>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-11 offset-1">
+                    <div class="main_container">
+                        <div class="class_name">
+                            <div class="class_container">
+                                <%= method_memory.method %>
+                            </div>
+                            <div class="name_container">
+                                <%= method_memory.method %>
+                            </div>
+                        </div>
+                        <h7 class="description_container">
+                            <%= method_memory.method %>
+                        </h7>
+                        <div class="article_url">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>
+<% else %>
+    <h5 class="ruby_result">検索条件と一致する結果がありませんでした。</h5>
+<% end %>
+<% if false %>
 <% if extracted_method_name.present? %>
     <% extracted_method_name.zip(extracted_method_url, extracted_method_class, extracted_method_description).each do |method_name, method_url, method_class, method_description| %>
         <div class="container">
@@ -118,7 +146,7 @@
 <% else %>
     <h5 class="ruby_result">検索条件と一致する結果がありませんでした。</h5>
 <% end %>
-
+<% end %>
 <script>
     $('.article_button1').on('click', function () {
         $(this).addClass("article_button3");

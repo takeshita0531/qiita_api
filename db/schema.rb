@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210610061009) do
+ActiveRecord::Schema.define(version: 20210924063026) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -43,6 +43,20 @@ ActiveRecord::Schema.define(version: 20210610061009) do
     t.string   "url"
     t.string   "user_name"
     t.integer  "file_id"
+  end
+
+  create_table "method_memories", force: :cascade do |t|
+    t.string   "method"
+    t.string   "extracted_method_name"
+    t.string   "extracted_method_url"
+    t.string   "extracted_method_class"
+    t.string   "extracted_method_description"
+    t.string   "expected_method_qiita"
+    t.string   "expected_url_qiita"
+    t.string   "expected_title_qiita"
+    t.string   "expected_user_name"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "method_searches", force: :cascade do |t|

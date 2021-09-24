@@ -1,0 +1,2 @@
+class MethodMemory < ApplicationRecord
+end

@@ -6,6 +6,28 @@
         justify-content: center;
     }
 </style>
+<% @method_memories.each do |method_memory| %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-11 offset-1">
+            <div class="main_container">
+                <div class="class_name">
+                    <div class="class_container_qiita">
+                        <%= method_memory.method %>
+                    </div>
+                </div>
+                <h7 class="description_container">
+                    <%= method_memory.method %>
+                </h7>
+                <div class="article_url">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>
+<% if false %>
 <% expected_method_qiita.zip(expected_url_qiita, expected_title_qiita, expected_user_name).each do |qiita_method, qiita_url, qiita_name, user_name| %>
 <div class="container">
     <div class="row">
@@ -34,9 +56,8 @@
     </div>
 </div>
 <% end %>
-<div class="paginate">
-    <%= paginate expected_method_qiita, remote: true %>
-</div>
+<% end %>
+
 
 <script>
 
