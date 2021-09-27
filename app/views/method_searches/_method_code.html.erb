@@ -83,70 +83,40 @@
         }
     }
 </style>
-<% if @method_memories.present? %>
-    <% @method_memories.each do |method_memory| %>
+<% if @method_memory.present? %>
         <div class="container">
             <div class="row">
                 <div class="col-md-11 offset-1">
                     <div class="main_container">
                         <div class="class_name">
                             <div class="class_container">
-                                <%= method_memory.method %>
+                                <%= @method_memory.extracted_method_class %>
                             </div>
                             <div class="name_container">
-                                <%= method_memory.method %>
+                                <%= @method_memory.extracted_method_name %>
                             </div>
                         </div>
                         <h7 class="description_container">
-                            <%= method_memory.method %>
+                            <%= @method_memory.extracted_method_description %>
                         </h7>
                         <div class="article_url">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <% end %>
-<% else %>
-    <h5 class="ruby_result">検索条件と一致する結果がありませんでした。</h5>
-<% end %>
-<% if false %>
-<% if extracted_method_name.present? %>
-    <% extracted_method_name.zip(extracted_method_url, extracted_method_class, extracted_method_description).each do |method_name, method_url, method_class, method_description| %>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-11 offset-1">
-                    <div class="main_container">
-                        <div class="class_name">
-                            <div class="class_container">
-                                <%= method_class %>
-                            </div>
-                            <div class="name_container">
-                                <%= method_name %>
-                            </div>
-                        </div>
-                        <h7 class="description_container">
-                            <%= method_description %>
-                        </h7>
-                        <div class="article_url">
-                        <% if folder_user.include?(method_url) %>
+                            <% if folder_user.include?(@method_memory.extracted_method_url) %>
                             <div class="article_button3">
                                 保存済み
                             </div>
-                        <% else %>
-                            <%= link_to "保存", method_searches_path(title: method_name, url: method_url, method_code: method_code), method: :post, target: :_blank, class: "article_button1", remote: true %>
-                        <% end %>
-                            <%= link_to "記事へ", method_url, target: :_blank, class: "article_button2" %>
-                        </div>
+                            <% else %>
+                                <%= link_to "保存", method_searches_path(title: @method_memory.extracted_method_name, url: @method_memory.extracted_method_url, method_code: @method_memory.method), method: :post, target: :_blank, class: "article_button1", remote: true %>
+                            <% end %>
+                                <%= link_to "記事へ", @method_memory.extracted_method_url, target: :_blank, class: "article_button2" %>
+                            </div>
                     </div>
                 </div>
             </div>
         </div>
-    <% end %>
 <% else %>
     <h5 class="ruby_result">検索条件と一致する結果がありませんでした。</h5>
 <% end %>
-<% end %>
+
 <script>
     $('.article_button1').on('click', function () {
         $(this).addClass("article_button3");

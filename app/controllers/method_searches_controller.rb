@@ -3,19 +3,18 @@ class MethodSearchesController < ApplicationController
     def index
         code_all = params[:code]
         @method_code = params[:method_code]
-        # paginate = params[:page]
-        
+
         MethodSearchJob.perform_later(@method_code)
-        # binding.pry
-        # .delay(run_at: 1.minutes).perform_later
         @method_search = Api::SearchMethod.new
         @method_search.search_method(code_all)
-        # @method_search.search_method(code_all, @method_code)
         folders =  current_user.folders
         @folder_user = folders.map do |folder|
             folder.url
         end
-        @method_memories = MethodMemory.all
+        if @method_code.present?
+            @method_memories = MethodMemory.where(method: @method_code)
+            @method_memory = MethodMemory.find_by(method: @method_code)
+        end
     end 
     
     def create
