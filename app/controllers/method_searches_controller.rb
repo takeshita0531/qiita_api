@@ -3,7 +3,7 @@ class MethodSearchesController < ApplicationController
     def index
         code_all = params[:code]
         @method_code = params[:method_code]
-
+        # MethodSearchJob.delay(run_at: 1.minutes).perform_later(@method_code)
         MethodSearchJob.perform_later(@method_code)
         @method_search = Api::SearchMethod.new
         @method_search.search_method(code_all)
@@ -14,7 +14,9 @@ class MethodSearchesController < ApplicationController
         if @method_code.present?
             @method_memories = MethodMemory.where(method: @method_code)
             @method_memory = MethodMemory.find_by(method: @method_code)
+            flash[:notice] = "しばらくしたら更新してください。"
         end
+        
     end 
     
     def create

@@ -77,6 +77,37 @@
         height: 250px;
     }
     
+#overlay{ 
+  position: fixed;
+  top: 100;
+  z-index: 100;
+  width: 100%;
+  height:100%;
+  display: none;
+}
+.cv-spinner {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px #ddd solid;
+  border-top: 4px #2e93e6 solid;
+  border-radius: 50%;
+  animation: sp-anime 0.8s infinite linear;
+}
+@keyframes sp-anime {
+  100% { 
+    transform: rotate(360deg); 
+  }
+}
+.is-hide{
+  display:none;
+}
+    
     @media screen and (max-width: 500px) {
         .text_form {
             width: 300px;
@@ -112,7 +143,7 @@
     </div>
     <div class="flex_box">
         <% @method_search.extracted_methods.each do |method| %>
-            <div class="flex_item">
+            <div id="button" class="flex_item">
                 <%= link_to method, method_searches_path(method_code: method), remote: true, class: "method_button" %>
             </div>
         <% end %>
@@ -135,6 +166,11 @@
                 <% else %>
                     <div class="search_result">
                         検索結果が表示されます。
+                        <div id="overlay">
+                          <div class="cv-spinner">
+                            <span class="spinner"></span>
+                          </div>
+                        </div>
                     </div>
                 <% end %>
             </div>
@@ -158,3 +194,20 @@
     <% end %>
 </main>
 
+
+<script>
+    jQuery(function($){
+  $(document).ajaxSend(function() {
+    $("#overlay").fadeIn(300);　
+  });
+    
+  $('#button').click(function(){
+    $.ajax({
+      type: 'GET',
+      success: function(data){
+        console.log(data);
+      }
+    })
+  }); 
+});
+</script>

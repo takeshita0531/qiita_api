@@ -4,7 +4,11 @@ class MethodSearchJob < ApplicationJob
   def perform(method_code)
         if method_code.present?
             agent = Mechanize.new
-                qiita_method = agent.get("https://qiita.com/search?page=1&q=ruby+#{method_code}")
+            page = 1
+                10.times do
+                qiita_method = agent.get("https://qiita.com/search?page=#{page}&q=ruby+#{method_code}")
+                    page += 1
+                
                 method_memories = MethodMemory.find_by(method: method_code)
                     if method_memories.blank?
                         expected_qiita_description = qiita_method.search('.searchResult_snippet')
@@ -55,6 +59,7 @@ class MethodSearchJob < ApplicationJob
                             end
                         end
                     end 
+                end
         end
                             
   end

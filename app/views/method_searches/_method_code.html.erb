@@ -114,7 +114,9 @@
             </div>
         </div>
 <% else %>
-    <h5 class="ruby_result">検索条件と一致する結果がありませんでした。</h5>
+    <h5 class="ruby_result">検索条件と一致する結果がありませんでした。<br>
+    <%= flash[:notice] %></h5>
+    <div id="container" class="sample">
 <% end %>
 
 <script>
@@ -122,4 +124,23 @@
         $(this).addClass("article_button3");
         $(this).text('保存済み');
     });
+    
+(function($){
+ //コントローラ
+ var MethodSearchesControllerr = {
+
+  __name: 'MethodSearchesController,
+
+  //クリックイベントハンドラ
+  '#indicator click': function(){
+   //インジケータ表示処理
+   this.indicator({
+    message: 'block'
+   }).show();
+  }
+ };
+ 
+ //div範囲とコントローラを紐つける
+ $(function(){ h5.core.controller('#container', 'MethodSearchesController') });
+})(jQuery);
 </script>

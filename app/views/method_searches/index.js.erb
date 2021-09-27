@@ -1,2 +1,25 @@
 $(".method_code").html("<%= j( render partial: "method_searches/method_code", locals: {method_memorie: @method_memor, folder_user: @folder_user } ) %>")
 $(".qiita_method").html("<%= j( render partial: "method_searches/qiita_method_code", locals: {method_memories: @method_memories, folder_user: @folder_user} ) %>")
+
+<!--var indicatorController = {-->
+
+<!--  __name: 'indicatorController',-->
+
+<!--  /** インジケータ表示ボタン押下イベント */-->
+<!--  '#indicator click': function(){-->
+
+<!--   //インジケータ表示-->
+<!--   var indicator = this.indicator({-->
+<!--    message: 'block'-->
+<!--   }).show();-->
+
+<!--   setTimeout(function() {-->
+
+<!--    //インジケータ除去-->
+<!--    indicator.hide();-->
+
+<!--   }, 800);-->
+<!--  }-->
+<!-- };-->
+<!-- $(function(){ h5.core.controller('#container', indicatorController)});-->
+<!--})(jQuery);-->
